@@ -4,7 +4,7 @@ YiiCMS
 YiiCMS (http://www.yiicms.com) 是 Yii Framework 中文社区 (http://www.yiichina.com) 发起的开源项目，遵循 BSD 开源协议。
 致力于帮助刚入门的同学理解 Yii2 的使用。
 
-
+YiiCMS群：7594839 (加群请注明：YiiCMS)
 
 
 目录结构
@@ -64,7 +64,7 @@ TBD
 If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
 at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
-You can then install the application using the following command:
+您也可以安装应用程序使用以下命令：
 
 ~~~
 php composer.phar global require "fxp/composer-asset-plugin:1.0.0"
