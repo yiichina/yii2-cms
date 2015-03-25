@@ -1,17 +1,13 @@
-Yii 2 Advanced Application Template
+YiiCMS
 ===================================
 
-Yii 2 Advanced Application Template is a skeleton Yii 2 application best for
-developing complex Web applications with multiple tiers.
-
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
-
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
+YiiCMS (http://www.yiicms.com) 是 Yii Framework 中文社区 (http://www.yiichina.com) 发起的开源项目，遵循 BSD 开源协议。
+致力于帮助刚入门的同学理解 Yii2 的使用。
 
 
-DIRECTORY STRUCTURE
+
+
+目录结构
 -------------------
 
 ```
@@ -49,24 +45,21 @@ tests                    contains various tests for the advanced application
 ```
 
 
-REQUIREMENTS
+要求
 ------------
 
-The minimum requirement by this application template that your Web server supports PHP 5.4.0.
+此项目需要您的WEB服务器最低为PHP5.4.0。
 
 
-INSTALLATION
+安装
 ------------
 
-### Install from an Archive File
+### 从归档文件安装
 
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `advanced` that is directly under the Web root.
-
-Then follow the instructions given in "GETTING STARTED".
+TBD
 
 
-### Install via Composer
+### 通过 Composer 安装
 
 If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
 at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
@@ -79,7 +72,7 @@ php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-
 ~~~
 
 
-GETTING STARTED
+开始
 ---------------
 
 After you install the application, you have to conduct the following steps to initialize
