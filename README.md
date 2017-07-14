@@ -1,6 +1,8 @@
 YiiCMS
 ===================================
 
+[![Build Status](https://img.shields.io/travis/yiichina/yii2-cms.svg)](http://travis-ci.org/yiichina/yii2-cms)
+
 YiiCMS (http://www.yiicms.com) 是 Yii Framework 中文社区 (http://www.yiichina.com) 发起的开源项目，遵循 BSD 开源协议。
 致力于帮助刚入门的同学理解 Yii2 的使用。
 
