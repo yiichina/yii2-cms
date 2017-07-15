@@ -4,7 +4,7 @@ YiiCMS
 [![Latest Stable Version](https://poser.pugx.org/yiichina/yii2-cms/v/stable.png)](https://packagist.org/packages/yiichina/yii2-cms)
 [![Total Downloads](https://poser.pugx.org/yiichina/yii2-cms/downloads.png)](https://packagist.org/packages/yiichina/yii2-cms)
 [![Build Status](https://img.shields.io/travis/yiichina/yii2-cms.svg)](http://travis-ci.org/yiichina/yii2-cms)
-![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)
+[![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
 
 YiiCMS (http://www.yiicms.com) 是 Yii Framework 中文社区 (http://www.yiichina.com) 发起的开源项目，遵循 BSD 开源协议。
 致力于帮助刚入门的同学理解 Yii2 的使用。
