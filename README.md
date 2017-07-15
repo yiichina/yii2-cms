@@ -53,8 +53,8 @@ tests                    contains various tests for the advanced application
 要求
 ------------
 
-此项目需要您的WEB服务器最低为PHP5.4.0。
-
+- 此项目需要您的WEB服务器最低为 PHP 5.4。
+- 在 PHP 7 环境工作更好。
 
 安装
 ------------
