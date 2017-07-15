@@ -1,8 +1,8 @@
 YiiCMS
 ===================================
 
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2/v/stable.png)](https://packagist.org/packages/yiisoft/yii2)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2/downloads.png)](https://packagist.org/packages/yiisoft/yii2)
+[![Latest Stable Version](https://poser.pugx.org/yiichina/yii2-cms/v/stable.png)](https://packagist.org/packages/yiichina/yii2-cms)
+[![Total Downloads](https://poser.pugx.org/yiichina/yii2-cms/downloads.png)](https://packagist.org/packages/yiichina/yii2-cms)
 [![Build Status](https://img.shields.io/travis/yiichina/yii2-cms.svg)](http://travis-ci.org/yiichina/yii2-cms)
 ![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)
 
