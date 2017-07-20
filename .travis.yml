@@ -33,8 +33,3 @@ before_script:
 script:
   - composer validate --strict
   - vendor/bin/codecept run
-
-addons:
-  apt:
-    packages:
-      - imagemagick
