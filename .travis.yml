@@ -9,7 +9,7 @@ php:
 #  - hhvm
 
 # faster builds on new travis setup not using sudo
-sudo: false
+# sudo: false
 
 services:
   - memcached
