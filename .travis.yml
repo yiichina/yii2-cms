@@ -9,10 +9,12 @@ php:
 #  - hhvm
 
 # faster builds on new travis setup not using sudo
-sudo: false
+# sudo: false
 
 mysql:
+  database: yii2advance_test
   username: root
+  encoding: utf8
 
 # cache vendor dirs
 cache:
