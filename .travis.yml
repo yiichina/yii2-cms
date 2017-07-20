@@ -9,12 +9,7 @@ php:
 #  - hhvm
 
 # faster builds on new travis setup not using sudo
-# sudo: false
-
-mysql:
-  database: yii2advance_test
-  username: root
-  encoding: utf8
+sudo: false
 
 # cache vendor dirs
 cache:
@@ -28,7 +23,6 @@ install:
 # setup application:
   - |
     ./init --env=Development
-    sed -i s/root/travis/ common/config/main-local.php
     sed -i "s/'cookieValidationKey' => ''/'cookieValidationKey' => 'testkey'/" frontend/config/main.php
     sed -i "s/'cookieValidationKey' => ''/'cookieValidationKey' => 'testkey'/" backend/config/main.php
 before_script:
