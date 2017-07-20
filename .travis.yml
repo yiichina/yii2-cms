@@ -18,7 +18,8 @@ cache:
 
 install:
   - travis_retry composer self-update && composer --version
-  - travis_retry composer require "fxp/composer-asset-plugin:^1.2.0"
+  - travis_retry composer config -g github-oauth.github.com "$GITHUB_TOKEN"
+  - travis_retry composer global require "fxp/composer-asset-plugin:^1.2.0"
   - travis_retry composer update --dev --prefer-dist --no-interaction
 # setup application:
   - |
