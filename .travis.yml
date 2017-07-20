@@ -37,4 +37,4 @@ script:
 addons:
   apt:
     packages:
-      - zlib
+      - zlib1g
