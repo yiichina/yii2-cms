@@ -9,6 +9,9 @@
  * return [
  *     'environment name' => [
  *         'path' => 'directory storing the local files',
+ *         'skipFiles'  => [
+ *             // list of files that should only copied once and skipped if they already exist
+ *         ],
  *         'setWritable' => [
  *             // list of directories that should be set writable
  *         ],
@@ -36,6 +39,7 @@ return [
         ],
         'setExecutable' => [
             'yii',
+            'yii_test',
         ],
         'setCookieValidationKey' => [
             'backend/config/main-local.php',
