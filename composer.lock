@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b0c72fe2da9bce512e91378f5236931a",
+    "content-hash": "0f66d44e32f860f9ed54a427c35507cf",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -320,6 +320,43 @@
             "keywords": [
                 "upload"
             ]
+        },
+        {
+            "name": "bower-asset/treegrid",
+            "version": "v0.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dkhlystov/jquery-treegrid.git",
+                "reference": "91853bf8b8fe8c2c618c01fc962e15a7c92b4a5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dkhlystov/jquery-treegrid/zipball/91853bf8b8fe8c2c618c01fc962e15a7c92b4a5a",
+                "reference": "91853bf8b8fe8c2c618c01fc962e15a7c92b4a5a",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.9.1"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./dist/js/treegrid.jquery.js",
+                    "./dist/css/treegrid.jquery.css"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests",
+                    "docs"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "TreeGrid plugin for jQuery, supported data manipulating."
         },
         {
             "name": "bower-asset/yii2-pjax",
@@ -723,6 +760,48 @@
             "time": "2017-07-22T00:30:44+00:00"
         },
         {
+            "name": "yiichina/yii2-treegrid",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiichina/yii2-treegrid.git",
+                "reference": "158a48a4846a929293c246c346c9d5d92ff797c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiichina/yii2-treegrid/zipball/158a48a4846a929293c246c346c9d5d92ff797c1",
+                "reference": "158a48a4846a929293c246c346c9d5d92ff797c1",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/treegrid": "*",
+                "yiisoft/yii2": ">=2.0.6"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yiichina\\treegrid\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "cuileon",
+                    "email": "admin@yiichina.com"
+                }
+            ],
+            "description": "TreeGrid Template",
+            "keywords": [
+                "Tree Grid",
+                "extension",
+                "yii2"
+            ],
+            "time": "2017-07-22T00:59:17+00:00"
+        },
+        {
             "name": "yiisoft/yii2",
             "version": "2.0.12",
             "source": {
@@ -1032,25 +1111,6 @@
                 "parser"
             ],
             "time": "2016-10-30T11:50:56+00:00"
-        },
-        {
-            "name": "bower-asset/adminlte",
-            "version": "v2.3.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/almasaeed2010/AdminLTE.git",
-                "reference": "2be703222af2edcb87e562d3da2299e4352bff8a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/2be703222af2edcb87e562d3da2299e4352bff8a",
-                "reference": "2be703222af2edcb87e562d3da2299e4352bff8a",
-                "shasum": null
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
         },
         {
             "name": "bower-asset/typeahead.js",
