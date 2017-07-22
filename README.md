@@ -14,7 +14,7 @@ YiiCMS群：7594839 (加群请注明：YiiCMS)
 
 
 目录结构
---------
+-------------------
 
 ```
 common
@@ -49,11 +49,4 @@ frontend
     widgets/             contains frontend widgets
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
-```
-
-安装方式
---------
-
-```
-composer create-project yiichina/yii2-cms yii2-cms
 ```
