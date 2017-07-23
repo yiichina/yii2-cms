@@ -69,17 +69,20 @@ AppAsset::register($this);
             [
                 'label' => '仪表盘', 
                 'url' => Yii::$app->homeUrl, 
-                'icon' => 'fa fa-dashboard'
+                'icon' => 'fa fa-dashboard',
+                'active' => Yii::$app->controller->id == 'site',
             ],
             [
                 'label' => '栏目管理',
                 'url' => ['node/index'],
                 'icon' => 'fa fa-columns',
+                'active' => Yii::$app->controller->id == 'node',
             ],
             [
                 'label' => '模板管理',
                 'url' => ['template/index'],
                 'icon' => 'fa fa-file-code-o',
+                'active' => Yii::$app->controller->id == 'template',
             ],
             [
                 'label' => Icon::show('file', 'fa') . '内容区', 
@@ -90,6 +93,7 @@ AppAsset::register($this);
                 'icon' => 'fa fa-files-o',
                 'url' => '#',
                 'items'=> Node::getMenuItems(),
+                'active' => Yii::$app->controller->id == 'node',
             ],
             [
                 'label' => Icon::show('file', 'fa') . '用户区', 
@@ -99,11 +103,19 @@ AppAsset::register($this);
                 'label' => '用户管理',
                 'url' => ['user/index'],
                 'icon' => 'fa fa-users',
+                'active' => Yii::$app->controller->id == 'user',
             ],
             [
-                'label' => '权限管理',
-                'url' => ['authority/index'],
+                'label' => '权限组管理',
+                'url' => ['rbac/index'],
                 'icon' => 'fa fa-key',
+                'active' => Yii::$app->controller->id == 'rbac',
+            ],
+            [
+                'label' => '编辑组管理',
+                'url' => ['authority/index'],
+                'icon' => 'fa fa-user-secret',
+                'active' => Yii::$app->controller->id == 'authority',
             ],
         ],
     ])
