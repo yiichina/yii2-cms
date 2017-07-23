@@ -28,12 +28,10 @@ class m130524_201442_init extends Migration
         // 栏目表
         $this->createTable('{{%node}}', [
             'id' => $this->primaryKey(),
-            'parent_id' => $this->string()->notNull()->unique(),
-            'name' => $this->smallInteger()->notNull()->defaultValue(10),
-            'description' => $this->smallInteger()->notNull()->defaultValue(10),
+            'parent_id' => $this->smallInteger()->notNull(),
+            'name' => $this->string()->notNull(),
+            'description' => $this->string()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
-            'created_at' => $this->integer()->notNull(),
-            'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
 
         // 模板表
