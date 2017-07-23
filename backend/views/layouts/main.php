@@ -90,7 +90,21 @@ AppAsset::register($this);
                 'icon' => 'fa fa-files-o',
                 'url' => '#',
                 'items'=> Node::getMenuItems(),
-            ]
+            ],
+            [
+                'label' => Icon::show('file', 'fa') . '用户区', 
+                'options' => ['class' => 'header'],
+            ],
+            [
+                'label' => '用户管理',
+                'url' => ['user/index'],
+                'icon' => 'fa fa-users',
+            ],
+            [
+                'label' => '权限管理',
+                'url' => ['authority/index'],
+                'icon' => 'fa fa-key',
+            ],
         ],
     ])
     ?>

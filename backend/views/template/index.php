@@ -1,28 +1,49 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ListView;
-
+use yii\grid\GridView;
+use yii\widgets\Pjax;
+use yiichina\adminlte\Box;
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\TemplateSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Templates';
-$this->params['breadcrumbs'][] = $this->title;
+$mainTitle = '模板管理';
+$subTitle = '模板列表';
+$this->title = $subTitle . ' - ' . $mainTitle . ' - ' . Yii::$app->name;
+$breadcrumbs[] = ['label' => $mainTitle, 'url' => ['index']];
+$breadcrumbs[] = $subTitle;
+$this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'breadcrumbs'));
 ?>
 <div class="template-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+<?php Box::begin([
+    'type' => 'primary',
+    'title' => '高级搜索',
+    'tools' => ['collapse'],
+    'collapsed' => true
+]); ?>
+<?= $this->render('_search', ['model' => $searchModel]) ?>
+<?php Box::end(); ?>
 
-    <p>
-        <?= Html::a('Create Template', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-    <?= ListView::widget([
-        'dataProvider' => $dataProvider,
-        'itemOptions' => ['class' => 'item'],
-        'itemView' => function ($model, $key, $index, $widget) {
-            return Html::a(Html::encode($model->name), ['view', 'id' => $model->id]);
-        },
-    ]) ?>
+<?php Box::begin([
+    'type' => 'primary',
+    'title' => $subTitle,
+    'tools' => ['refresh', 'collapse', 'remove'],
+    'collapsed' => false
+]); ?>
+<?= Html::a('Create Template', ['create'], ['class' => 'btn btn-success']) ?>
+<?php Pjax::begin(); ?>
+<?= GridView::widget([
+    'dataProvider' => $dataProvider,
+    'columns' => [
+        ['class' => 'yii\grid\CheckboxColumn'],
+        'id',
+        'user_id',
+        'status',
+        ['class' => 'yii\grid\ActionColumn'],
+    ],
+]) ?>
+<?php Pjax::end(); ?>
+<?php Box::end(); ?>
 </div>
