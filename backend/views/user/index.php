@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use common\widgets\GridView;
 use yii\widgets\Pjax;
 use yiichina\adminlte\Box;
 /* @var $this yii\web\View */
@@ -34,22 +34,6 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
 <?php Pjax::begin(); ?>
 <?= GridView::widget([
     'dataProvider' => $dataProvider,
-    'layout' => "<div class=\"grid-tool\">
-     <div class=\"btn-group\">
-                  <button type=\"button\" class=\"btn btn-warning btn-sm btn-flat\">批量操作</button>
-                  <button type=\"button\" class=\"btn btn-warning btn-sm btn-flat dropdown-toggle\" data-toggle=\"dropdown\">
-                    <span class=\"caret\"></span>
-                    <span class=\"sr-only\">Toggle Dropdown</span>
-                  </button>
-                  <ul class=\"dropdown-menu\" role=\"menu\">
-                    <li><a href=\"#\">Action</a></li>
-                    <li><a href=\"#\">Another action</a></li>
-                    <li><a href=\"#\">Something else here</a></li>
-                    <li class=\"divider\"></li>
-                    <li><a href=\"#\">Separated link</a></li>
-                  </ul>
-                </div><div class=\"pull-right\"><select class=\"select2\"></select></div>
-<div class=\"pull-right\">{summary}</div></div>\n{items}\n{pager}",
     'columns' => [
         [
             'class' => 'yii\grid\CheckboxColumn',

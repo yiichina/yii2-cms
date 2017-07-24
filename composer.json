@@ -20,7 +20,10 @@
         "yiichina/yii2-auth": "*",
         "yiichina/yii2-comments": "*",
         "yiichina/yii2-simditor": "*",
-        "yiichina/yii2-treegrid": "*"
+        "yiichina/yii2-treegrid": "*",
+        "bower-asset/iCheck": "*",
+        "bower-asset/Chart.js": "*",
+        "bower-asset/select2": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
