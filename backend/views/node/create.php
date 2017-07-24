@@ -16,17 +16,18 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
 ?>
 <div class="node-create">
 
-<?php Box::begin([
-    'type' => 'primary',
-    'title' => $subTitle,
-    'refreshUrl' => '/userinfo',
-    'tools' => ['refresh', 'collapse', 'remove'],
-    'collapsed' => false
-]); ?>
+    <?php Box::begin([
+        'type' => 'primary',
+        'title' => $subTitle,
+        'refreshUrl' => '/userinfo',
+        'tools' => ['refresh', 'collapse', 'remove'],
+        'collapsed' => false
+    ]); ?>
 
-<?= $this->render('_form', [
-    'model' => $model,
-]) ?>
+    <?= $this->render('_form', [
+        'model' => $model,
+    ]) ?>
 
-<?php Box::end(); ?>
+    <?php Box::end(); ?>
+
 </div>

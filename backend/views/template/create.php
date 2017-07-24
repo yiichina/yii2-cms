@@ -1,21 +1,32 @@
 <?php
 
 use yii\helpers\Html;
+use yiichina\adminlte\Box;
 
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Template */
 
-$this->title = 'Create Template';
-$this->params['breadcrumbs'][] = ['label' => 'Templates', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$mainTitle = '模板管理';
+$subTitle = '新建模板';
+$this->title = $subTitle . ' - ' . $mainTitle . ' - ' . Yii::$app->name;
+$breadcrumbs[] = ['label' => $mainTitle, 'url' => ['index']];
+$breadcrumbs[] = $subTitle;
+$this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'breadcrumbs'));
 ?>
 <div class="template-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <?php Box::begin([
+        'type' => 'primary',
+        'title' => $subTitle,
+        'tools' => ['collapse', 'remove'],
+        'collapsed' => false
+    ]); ?>
 
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
+
+    <?php Box::end(); ?>
 
 </div>

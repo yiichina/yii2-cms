@@ -32,7 +32,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
     'tools' => ['refresh', 'collapse', 'remove'],
     'collapsed' => false
 ]); ?>
-<?= Html::a('Create Template', ['create'], ['class' => 'btn btn-success']) ?>
+<?= Html::a('Create Template', ['create'], ['class' => 'btn btn-success btn-flat']) ?>
 <?php Pjax::begin(); ?>
 <?= GridView::widget([
     'dataProvider' => $dataProvider,
