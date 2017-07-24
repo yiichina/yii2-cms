@@ -1,1 +1,4 @@
 .main-header .logo { padding: 0; }
+.grid-tool { padding-bottom: 10px; }
+.grid-tool div { display: inline-block; }
+.grid-tool .summary { padding-right: 10px; line-height: 30px; }

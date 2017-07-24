@@ -28,14 +28,13 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
 <?php Box::begin([
     'type' => 'primary',
     'title' => $subTitle,
-    'noPadding' => true,
     'tools' => ['refresh', 'collapse', 'remove'],
     'collapsed' => false
 ]); ?>
 <?php Pjax::begin(); ?>
 <?= GridView::widget([
     'dataProvider' => $dataProvider,
-    'layout' => "<div class=\"tool\">
+    'layout' => "<div class=\"grid-tool\">
      <div class=\"btn-group\">
                   <button type=\"button\" class=\"btn btn-warning btn-sm btn-flat\">批量操作</button>
                   <button type=\"button\" class=\"btn btn-warning btn-sm btn-flat dropdown-toggle\" data-toggle=\"dropdown\">
@@ -49,8 +48,8 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
                     <li class=\"divider\"></li>
                     <li><a href=\"#\">Separated link</a></li>
                   </ul>
-                </div>
-{summary}<select></select></div>\n{items}\n{pager}",
+                </div><div class=\"pull-right\"><select class=\"select2\"></select></div>
+<div class=\"pull-right\">{summary}</div></div>\n{items}\n{pager}",
     'columns' => [
         [
             'class' => 'yii\grid\CheckboxColumn',
