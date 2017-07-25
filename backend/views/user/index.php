@@ -26,7 +26,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
 ]); ?>
 <?php Pjax::begin(); ?>
 
-<div style="display: none;">
+<div class="search">
 <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 </div>
 <?= GridView::widget([
@@ -34,7 +34,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
     'columns' => [
         [
             'class' => 'yii\grid\CheckboxColumn',
-            'options' => ['width' => 30],
+            'options' => ['width' => 40],
         ],
         [
             'attribute' => 'id',
@@ -54,7 +54,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
         [
             'class' => 'yii\grid\ActionColumn',
             'header' => '操作',
-            'options' => ['width' => 120],
+            'options' => ['width' => 100],
         ],
     ],
 ]); ?>

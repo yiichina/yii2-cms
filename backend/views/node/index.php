@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use backend\widgets\GridView;
 use yii\widgets\Pjax;
 use yiichina\adminlte\Box;
 /* @var $this yii\web\View */
@@ -19,20 +19,14 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
 <div class="node-index">
 <?php Box::begin([
     'type' => 'primary',
-    'title' => '高级搜索',
-    'tools' => ['collapse'],
-    'collapsed' => true
-]); ?>
-<?php echo $this->render('_search', ['model' => $searchModel]); ?>
-<?php Box::end(); ?>
-<?php Box::begin([
-    'type' => 'primary',
     'title' => $subTitle,
     'tools' => ['refresh', 'collapse', 'remove'],
     'collapsed' => false
 ]); ?>
-<?= Html::a(Yii::t('app', '创建栏目'), ['create'], ['class' => 'btn btn-success btn-flat pull-right']) ?>
 <?php Pjax::begin(); ?>
+<div class="search">
+<?php echo $this->render('_search', ['model' => $searchModel]); ?>
+</div>
 <?= GridView::widget([
     'dataProvider' => $dataProvider,
     'columns' => [

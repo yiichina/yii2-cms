@@ -22,7 +22,7 @@ use common\models\Node;
         </div>
 
         <div class="col-xs-3">
-            <?= $form->field($model, 'name', ['template' => '{input}'])->textInput(['placeholder' => $model->getAttributeLabel('name')]) ?>
+            <?= $form->field($model, 'name', ['template' => '{input}', 'inputOptions' => ['class' => 'form-control input-sm']])->textInput(['placeholder' => $model->getAttributeLabel('name')]) ?>
         </div>
 
         <div class="col-xs-3">

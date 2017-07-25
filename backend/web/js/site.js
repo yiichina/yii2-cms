@@ -3,5 +3,13 @@ jQuery(document).ready(function () {
 		checkboxClass: 'icheckbox_minimal',
 		radioClass: 'iradio_minimal',
 	});
-	$('select').select2();
+	$('select').select2({
+		width: '100%'
+	});
+	$('.btn-search').click(function(){
+		$(this).toggleClass('active');
+		$('.search').animate({
+			height: 'toggle'
+		});
+	});
 });
