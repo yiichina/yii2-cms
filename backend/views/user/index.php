@@ -16,22 +16,19 @@ $breadcrumbs[] = $subTitle;
 $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'breadcrumbs'));
 ?>
 <div class="user-index">
-<?php Box::begin([
-    'type' => 'primary',
-    'title' => '高级搜索',
-    'tools' => ['collapse'],
-    'collapsed' => true
-]); ?>
-<?php echo $this->render('_search', ['model' => $searchModel]); ?>
-<?php Box::end(); ?>
+
 
 <?php Box::begin([
     'type' => 'primary',
     'title' => $subTitle,
-    'tools' => ['refresh', 'collapse', 'remove'],
+    'tools' => ['search', 'collapse', 'remove'],
     'collapsed' => false
 ]); ?>
 <?php Pjax::begin(); ?>
+
+<div style="display: none;">
+<?php echo $this->render('_search', ['model' => $searchModel]); ?>
+</div>
 <?= GridView::widget([
     'dataProvider' => $dataProvider,
     'columns' => [

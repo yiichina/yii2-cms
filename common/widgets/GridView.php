@@ -6,6 +6,7 @@
  */
 
 namespace common\widgets;
+use yii\helpers\ArrayHelper;
 
 use Yii;
 
@@ -23,9 +24,8 @@ class GridView extends \yii\grid\GridView
      */
     public $layout = "<div class=\"grid-tool\">
      <div class=\"btn-group\">
-                  <button type=\"button\" class=\"btn btn-warning btn-sm btn-flat\">批量操作</button>
                   <button type=\"button\" class=\"btn btn-warning btn-sm btn-flat dropdown-toggle\" data-toggle=\"dropdown\">
-                    <span class=\"caret\"></span>
+                    批量操作 <span class=\"caret\"></span>
                     <span class=\"sr-only\">Toggle Dropdown</span>
                   </button>
                   <ul class=\"dropdown-menu\" role=\"menu\">
@@ -35,8 +35,8 @@ class GridView extends \yii\grid\GridView
                     <li class=\"divider\"></li>
                     <li><a href=\"#\">Separated link</a></li>
                   </ul>
-                </div><div class=\"pull-right\"><select class=\"form-control select2\"><option>每页显示20条</option></select></div>
-<div class=\"pull-right\">{summary}</div></div>\n{items}\n{pager}";
+                </div><div class=\"pull-right\"><select class=\"form-control select2\"><option>每页显示20条</option></select><a class=\"btn btn-flat btn-sm btn-success\">新建</a></div>
+</div>\n{items}\n{summary}<div class=\"pull-right\">{pager}\n</div>";
 	
 	/**
      * Initializes the grid view.
@@ -45,6 +45,33 @@ class GridView extends \yii\grid\GridView
     public function init()
     {
 		parent::init();
+        $this->pager['hideOnSinglePage'] = false;
 	}
+
+    /**
+     * Renders a section of the specified name.
+     * If the named section is not supported, false will be returned.
+     * @param string $name the section name, e.g., `{summary}`, `{items}`.
+     * @return string|bool the rendering result of the section, or false if the named section is not supported.
+     */
+    public function renderSection($name)
+    {
+        $result = parent::renderSection($name);
+        if($result === false) {
+            switch ($name) {
+                case '{summary}':
+                    return $this->renderSummary();
+                case '{items}':
+                    return $this->renderItems();
+                case '{pager}':
+                    return $this->renderPager();
+                case '{sorter}':
+                    return $this->renderSorter();
+                default:
+                    return false;
+            }
+        }
+        return $result;
+    }
 
 }

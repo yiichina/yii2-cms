@@ -2,3 +2,5 @@
 .grid-tool { padding-bottom: 10px; }
 .grid-tool div { display: inline-block; }
 .grid-tool .summary { padding-right: 10px; line-height: 30px; }
+.pagination { margin: 0; }
+.summary { display: inline-block; }
