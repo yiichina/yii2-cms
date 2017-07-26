@@ -32,34 +32,11 @@ AppAsset::register($this);
     <?php
     NavBar::begin([
         'brandLabel' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']) . 'Yii CMS',
-        'brandLabelSm' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']),
-        'items' => [
-            ['label'=>'', 'url' => '#', 'icon' => 'fa fa-dashboard'],
-            [
-                'label' => '栏目管理',
-                'items'=>[
-                    ['label'=>'child#2-1', 'url' => '#child2-1'],
-                    ['label'=>'child#2-2', 'url' => '#child2-2']
-                ]
-            ],
-            [
-                'label' => '模板管理',
-                'items'=>[
-                    ['label'=>'child#2-1', 'url' => '#child2-1'],
-                    ['label'=>'child#2-2', 'url' => '#child2-2']
-                ]
-            ],
-            [
-                'label' => '会员管理',
-                'items'=>[
-                    ['label'=>'child#3-1', 'url' => '#child3-1'],
-                    ['label'=>'child#3-2', 'url' => '#child3-2']
-                ]
-            ],
-        ],
+        'brandLabelMini' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']),
+
     ]);
     NavBar::end();
-    echo Sidebar::widget([
+    Sidebar::begin([
         'encodeLabels' => false,
         'items' => [
             [
@@ -118,7 +95,11 @@ AppAsset::register($this);
                 'active' => Yii::$app->controller->id == 'authority',
             ],
         ],
-    ])
+    ]);
+    echo Html::beginForm(['/site/search'], 'get', ['class' => 'sidebar-form']);
+    echo Html::tag('div', Html::textInput('q', Yii::$app->request->get('q'), ['class' => 'form-control', 'placeholder' => '搜索']) . Html::tag('span', Html::submitButton('<span class="fa fa-search"></span>', ['class'=>'btn btn-flat']), ['class'=>'input-group-btn']), ['class'=>'input-group']);
+    echo Html::endForm();
+    SideBar::end();
     ?>
 
     <div class="content-wrapper">
