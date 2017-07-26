@@ -3,7 +3,9 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
+use yiichina\icons\Icon;
 
 /**
  * This is the model class for table "node".
@@ -72,7 +74,7 @@ class Node extends \yii\db\ActiveRecord
         if(count($model)) {
             foreach($model as $item) {
                 $items[] = [
-                    'label' => $item->name,
+                    'label' => Icon::show('circle-o', 'fa') . Html::tag('span', $item->name),
                     'url' => ['post/index', 'id' => $item->id],
                     'items' => self::getMenuItems($item->id),
                     'active' => Yii::$app->controller->id == 'post',

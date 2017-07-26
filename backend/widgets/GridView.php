@@ -1,12 +1,7 @@
 <?php
-/**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
 
 namespace backend\widgets;
-use yii\helpers\ArrayHelper;
+
 use yii\bootstrap\ButtonDropdown;
 use yii\helpers\Html;
 use yiichina\icons\Icon;
@@ -15,17 +10,10 @@ use Yii;
 
 class GridView extends \yii\grid\GridView
 {
-    /**
-     * @var string the layout that determines how different sections of the list view should be organized.
-     * The following tokens will be replaced with the corresponding section contents:
-     *
-     * - `{summary}`: the summary section. See [[renderSummary()]].
-     * - `{errors}`: the filter model error summary. See [[renderErrors()]].
-     * - `{items}`: the list items. See [[renderItems()]].
-     * - `{sorter}`: the sorter. See [[renderSorter()]].
-     * - `{pager}`: the pager. See [[renderPager()]].
-     */
-    public $layout = "<div class=\"grid-tool\">{batch}<div class=\"pull-right\"><div class=\"btn-toolbar\">{perpage}{create}</div></div></div>\n{items}\n{summary}<div class=\"pull-right\">{pager}\n</div>";
+	public $batchItems = false;
+	public $sizeItems = false;
+	public $button = false;
+    public $layout = "<div class=\"grid-tool\">{batch}<div class=\"pull-right\"><div class=\"btn-toolbar\">{size}{button}</div></div></div>\n{items}\n{summary}<div class=\"pull-right\">{pager}\n</div>";
 	
 	/**
      * Initializes the grid view.
@@ -50,10 +38,10 @@ class GridView extends \yii\grid\GridView
             switch ($name) {
                 case '{batch}':
                     return $this->renderBatch();
-                case '{perpage}':
-                    return $this->renderPerPage();
-                case '{create}':
-                    return $this->renderCreate();
+                case '{size}':
+                    return $this->renderSize();
+                case '{button}':
+                    return $this->renderButton();
                 default:
                     return false;
             }
@@ -68,33 +56,28 @@ class GridView extends \yii\grid\GridView
             'options' => ['class' => 'btn-sm btn-flat btn-warning'],
             'encodeLabel' => false,
             'dropdown' => [
-                'items' => [
-                    ['label' => 'DropdownA', 'url' => '/'],
-                    ['label' => 'DropdownB', 'url' => '#'],
-                ],
+                'items' => $this->batchItems,
             ],
         ]);
     }
 
-    protected function renderPerPage()
+    protected function renderSize()
     {
+		$pageSize = $this->dataProvider->pagination->pageSize;
         return ButtonDropdown::widget([
-            'label' => Icon::show('list', 'fa') . '每页显示 <b>20</b> 条',
+            'label' => Icon::show('list', 'fa') . "每页显示 <b>$pageSize</b> 条",
             'options' => ['class' => 'btn-sm btn-flat btn-primary'],
             'containerOptions' => ['role' => 'group'],
             'encodeLabel' => false,
             'dropdown' => [
-                'items' => [
-                    ['label' => 'DropdownA', 'url' => '/'],
-                    ['label' => 'DropdownB', 'url' => '#'],
-                ],
+                'items' => $this->sizeItems,
             ],
         ]); 
     }
 
-    protected function renderCreate()
+    protected function renderButton()
     {
-        return Html::tag('div', Html::a(Icon::show('plus', 'fa') . '新建用户', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']), ['class' => 'btn-group', 'role' => 'group']);
+        return Html::tag('div', $this->button, ['class' => 'btn-group', 'role' => 'group']);
     }
 
 }

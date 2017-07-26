@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use backend\widgets\GridView;
 use yii\widgets\Pjax;
 use yiichina\adminlte\Box;
+use yiichina\icons\Icon;
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\NodeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -29,6 +30,15 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
 </div>
 <?= GridView::widget([
     'dataProvider' => $dataProvider,
+	'batchItems' => [
+		['label' =>'禁用', 'url' => ['disable']],
+		['label' => '启用', 'url' => ['enable']],
+	],
+	'sizeItems' => [
+		['label' =>'30条', 'url' => ['disable']],
+		['label' => '50条', 'url' => ['enable']],
+	],
+	'button' => Html::a(Icon::show('plus', 'fa') . '新建栏目', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
     'columns' => [
         ['class' => 'yii\grid\CheckboxColumn'],
         'id',
