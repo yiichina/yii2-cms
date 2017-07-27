@@ -18,37 +18,32 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
 ?>
 
 <div class="node-index">
-<?php Box::begin([
-    'type' => 'primary',
-    'title' => $subTitle,
-    'tools' => ['refresh', 'collapse', 'remove'],
-    'collapsed' => false
-]); ?>
-<?php Pjax::begin(); ?>
-<div class="search">
-<?php echo $this->render('_search', ['model' => $searchModel]); ?>
-</div>
-<?= GridView::widget([
-    'dataProvider' => $dataProvider,
-	'batchItems' => [
-		['label' =>'禁用', 'url' => ['disable']],
-		['label' => '启用', 'url' => ['enable']],
-	],
-	'sizeItems' => [
-		['label' =>'30条', 'url' => ['disable']],
-		['label' => '50条', 'url' => ['enable']],
-	],
-	'button' => Html::a(Icon::show('plus', 'fa') . '新建栏目', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
-    'columns' => [
-        ['class' => 'yii\grid\CheckboxColumn'],
-        'id',
-        'parent_id',
-        'name',
-        'description',
-        'status',
-        ['class' => 'yii\grid\ActionColumn'],
-    ],
-]); ?>
-<?php Pjax::end(); ?>
-<?php Box::end(); ?>
+    <?php Box::begin([
+        'options' => ['class' => 'box-primary'],
+        'title' => $subTitle,
+        'tools' => Html::a(Icon::show('search-plus', 'fa') . '高级搜索', 'javascript:void(0)', ['class' => 'btn btn-sm btn-flat btn-primary btn-search']),
+    ]); ?>
+    <?php Pjax::begin(); ?>
+    <div class="search">
+        <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+    </div>
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'batchItems' => [
+            ['label' => '禁用', 'url' => ['disable']],
+            ['label' => '启用', 'url' => ['enable']],
+        ],
+        'button' => Html::a(Icon::show('plus', 'fa') . '新建栏目', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
+        'columns' => [
+            ['class' => 'yii\grid\CheckboxColumn'],
+            'id',
+            'parent_id',
+            'name',
+            'description',
+            'status',
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+    <?php Pjax::end(); ?>
+    <?php Box::end(); ?>
 </div>

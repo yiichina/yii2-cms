@@ -17,10 +17,8 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
 <div class="template-create">
 
     <?php Box::begin([
-        'type' => 'primary',
+        'options' => ['class' => 'box-primary'],
         'title' => $subTitle,
-        'tools' => ['collapse', 'remove'],
-        'collapsed' => false
     ]); ?>
 
     <?= $this->render('_form', [

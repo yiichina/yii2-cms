@@ -626,21 +626,21 @@
         },
         {
             "name": "yiichina/yii2-adminlte",
-            "version": "v1.7.0",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiichina/yii2-adminlte.git",
-                "reference": "594823bf19f430d27ce192532c53a127caea1f97"
+                "reference": "088857322ff1eb80ccfac32b64ddffb6de0a51b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiichina/yii2-adminlte/zipball/594823bf19f430d27ce192532c53a127caea1f97",
-                "reference": "594823bf19f430d27ce192532c53a127caea1f97",
+                "url": "https://api.github.com/repos/yiichina/yii2-adminlte/zipball/088857322ff1eb80ccfac32b64ddffb6de0a51b3",
+                "reference": "088857322ff1eb80ccfac32b64ddffb6de0a51b3",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/adminlte": ">=2.3.0",
-                "yiisoft/yii2": ">=2.0.6"
+                "yiisoft/yii2-bootstrap": ">=2.0.6"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -664,7 +664,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-07-23T23:58:54+00:00"
+            "time": "2017-07-26T14:56:57+00:00"
         },
         {
             "name": "yiichina/yii2-auth",
@@ -756,16 +756,16 @@
         },
         {
             "name": "yiichina/yii2-icons",
-            "version": "v0.2.0",
+            "version": "0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiichina/yii2-icons.git",
-                "reference": "f8054e7f0febdbe85a6e53a5063e461879da35f3"
+                "reference": "f06fafbc08532dae63218e97cc8ace941e2ed1af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiichina/yii2-icons/zipball/f8054e7f0febdbe85a6e53a5063e461879da35f3",
-                "reference": "f8054e7f0febdbe85a6e53a5063e461879da35f3",
+                "url": "https://api.github.com/repos/yiichina/yii2-icons/zipball/f06fafbc08532dae63218e97cc8ace941e2ed1af",
+                "reference": "f06fafbc08532dae63218e97cc8ace941e2ed1af",
                 "shasum": ""
             },
             "require": {
@@ -796,7 +796,7 @@
                 "icons",
                 "yii2"
             ],
-            "time": "2017-07-23T03:01:18+00:00"
+            "time": "2017-07-26T14:55:29+00:00"
         },
         {
             "name": "yiichina/yii2-simditor",

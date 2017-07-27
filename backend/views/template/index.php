@@ -1,9 +1,11 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+
+use backend\widgets\GridView;
 use yii\widgets\Pjax;
 use yiichina\adminlte\Box;
+use yiichina\icons\Icon;
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\TemplateSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -16,34 +18,30 @@ $breadcrumbs[] = $subTitle;
 $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'breadcrumbs'));
 ?>
 <div class="template-index">
-
-<?php Box::begin([
-    'type' => 'primary',
-    'title' => '高级搜索',
-    'tools' => ['collapse'],
-    'collapsed' => true
-]); ?>
-<?= $this->render('_search', ['model' => $searchModel]) ?>
-<?php Box::end(); ?>
-
-<?php Box::begin([
-    'type' => 'primary',
-    'title' => $subTitle,
-    'tools' => ['refresh', 'collapse', 'remove'],
-    'collapsed' => false
-]); ?>
-<?= Html::a('Create Template', ['create'], ['class' => 'btn btn-success btn-flat']) ?>
-<?php Pjax::begin(); ?>
-<?= GridView::widget([
-    'dataProvider' => $dataProvider,
-    'columns' => [
-        ['class' => 'yii\grid\CheckboxColumn'],
-        'id',
-        'user_id',
-        'status',
-        ['class' => 'yii\grid\ActionColumn'],
-    ],
-]) ?>
-<?php Pjax::end(); ?>
-<?php Box::end(); ?>
+    <?php Box::begin([
+        'options' => ['class' => 'box-primary'],
+        'title' => $subTitle,
+        'tools' => Html::a(Icon::show('search-plus', 'fa') . '高级搜索', 'javascript:void(0);', ['class' => 'btn btn-sm btn-flat btn-primary btn-search']),
+    ]); ?>
+    <div class="search">
+        <?= $this->render('_search', ['model' => $searchModel]) ?>
+    </div>
+    <?php Pjax::begin(); ?>
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'batchItems' => [
+            ['label' => '禁用', 'url' => ['disable']],
+            ['label' => '启用', 'url' => ['enable']],
+        ],
+        'button' => Html::a(Icon::show('plus', 'fa') . '新建栏目', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
+        'columns' => [
+            ['class' => 'yii\grid\CheckboxColumn'],
+            'id',
+            'user_id',
+            'status',
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]) ?>
+    <?php Pjax::end(); ?>
+    <?php Box::end(); ?>
 </div>

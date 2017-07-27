@@ -37,6 +37,7 @@ class m130524_201442_init extends Migration
         // 模板表
         $this->createTable('{{%template}}', [
             'id' => $this->primaryKey(),
+            'user_id' => $this->string()->notNull(),
             'name' => $this->smallInteger()->notNull()->defaultValue(10),
             'description' => $this->smallInteger()->notNull()->defaultValue(10),
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
@@ -47,7 +48,7 @@ class m130524_201442_init extends Migration
         // 文档信息表
         $this->createTable('{{%post}}', [
             'id' => $this->primaryKey(),
-            'user_id' => $this->string()->notNull()->unique(),
+            'user_id' => $this->string()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),

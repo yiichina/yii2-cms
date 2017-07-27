@@ -11,7 +11,10 @@ use Yii;
 class GridView extends \yii\grid\GridView
 {
 	public $batchItems = false;
-	public $sizeItems = false;
+	public $sizeItems = [
+        ['label' =>'30条', 'url' => ['disable']],
+        ['label' => '50条', 'url' => ['enable']],
+    ];
 	public $button = false;
     public $layout = "<div class=\"grid-tool\">{batch}<div class=\"pull-right\"><div class=\"btn-toolbar\">{size}{button}</div></div></div>\n{items}\n{summary}<div class=\"pull-right\">{pager}\n</div>";
 	

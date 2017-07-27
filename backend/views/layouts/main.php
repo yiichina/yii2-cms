@@ -5,6 +5,7 @@
 
 use yii\helpers\Html;
 use backend\assets\AppAsset;
+use yiichina\adminlte\Nav;
 use yiichina\adminlte\NavBar;
 use yiichina\adminlte\SideBar;
 use yiichina\icons\Icon;
@@ -28,14 +29,20 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrapper">
-    <!-- header -->
-    <?php
-    NavBar::begin([
+    <?php NavBar::begin([
         'brandLabel' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']) . 'Yii CMS',
         'brandLabelMini' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']),
-
-    ]);
-	?>
+    ]); ?>
+    <?php echo Nav::widget([
+        'options' => ['class' => 'navbar-nav'],
+        'items' => [
+            [
+                'label' => 'a',
+                'url' => '#',
+                'options' => ['class' => '']
+            ],
+        ],
+    ]); ?>
 	<ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
@@ -281,7 +288,7 @@ AppAsset::register($this);
     <?php NavBar::end();
     Sidebar::begin([
         'encodeLabels' => false,
-		'defaultRight' => Icon::show('angle-left', 'fa', ['class' => 'pull-right']),
+		'defaultRight' => Icon::show('angle-left', 'fa', null, null, ['class' => 'pull-right']),
         'items' => [
             [
 				'icon' => Icon::show('cogs'),

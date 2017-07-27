@@ -21,7 +21,7 @@ class Template extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'template';
+        return '{{%template}}';
     }
 
     /**
@@ -30,8 +30,7 @@ class Template extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'description', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['created_at', 'updated_at'], 'required'],
+            [['name', 'description'], 'required'],
         ];
     }
 
@@ -42,11 +41,29 @@ class Template extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'description' => 'Description',
-            'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'name' => '模板名称',
+            'description' => '模板描述',
+            'status' => '状态',
+            'created_at' => '创建时间',
+            'updated_at' => '修改时间',
         ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function beforeSave($insert)
+    {
+        if(parent::beforeSave($insert)) {
+            if($insert) {
+                $this->user_id = Yii::$app->user->id;
+                $this->created_at = $this->updated_at = time();
+            } else {
+                $this->updated_at = time();
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 }

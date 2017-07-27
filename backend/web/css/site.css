@@ -4,7 +4,6 @@
 .grid-tool .summary { padding-right: 10px; line-height: 30px; }
 .pagination { margin: 0; }
 .summary { display: inline-block; }
-.btn-search { margin: -5px 0;}
 .btn-search.active .fa-search-plus:before { content: "\f010"; }
 .search { display: none; background: #f4f4f4; margin-bottom: 10px; padding: 10px 10px 0 10px; }
 .search .form-group { margin-bottom: 10px; }

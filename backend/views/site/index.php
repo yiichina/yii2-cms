@@ -1,5 +1,10 @@
 <?php
 
+use yiichina\adminlte\Box;
+use yiichina\adminlte\SmallBox;
+use yiichina\icons\Icon;
+use yii\helpers\Html;
+
 /* @var $this yii\web\View */
 
 $mainTitle = '仪表盘';
@@ -9,62 +14,48 @@ $breadcrumbs[] = $subTitle;
 $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'breadcrumbs'));
 ?>
 <div class="site-index">
-<!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3>150</h3>
-              <p>栏目总数</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-bag"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
+            <?php SmallBox::begin([
+                'options' => ['class' => 'bg-aqua'],
+                'icon' => Icon::show('file'),
+                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => '#'],
+            ]);
+            echo Html::tag('h3', 150);
+            echo Html::tag('p', '栏目总数');
+            SmallBox::end(); ?>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <?php SmallBox::begin([
+                'options' => ['class' => 'bg-aqua'],
+                'icon' => Icon::show('file'),
+                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => '#'],
+            ]);
+            echo Html::tag('h3', 150);
+            echo Html::tag('p', '模板总数');
+            SmallBox::end(); ?>
         </div>
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-              <p>模板总数</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
+            <?php SmallBox::begin([
+                'options' => ['class' => 'bg-aqua'],
+                'icon' => Icon::show('file'),
+                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => '#'],
+            ]);
+            echo Html::tag('h3', 150);
+            echo Html::tag('p', '用户总数');
+            SmallBox::end(); ?>
         </div>
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>44</h3>
-              <p>用户总数</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>65</h3>
-              <p>文章总数</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
+            <?php SmallBox::begin([
+                'options' => ['class' => 'bg-aqua'],
+                'icon' => Icon::show('file'),
+                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => '#'],
+            ]);
+            echo Html::tag('h3', 150);
+            echo Html::tag('p', '文章总数');
+            SmallBox::end(); ?>
         </div>
         <!-- ./col -->
       </div>
