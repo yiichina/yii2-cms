@@ -18,7 +18,7 @@ use common\models\Node;
 
     <div class="row">
         <div class="col-xs-3">
-            <?= $form->field($model, 'parent_id', ['template' => '{input}'])->dropDownList($model->parentList, ['prompt' => '请选择父栏目']) ?>
+            <?= $form->field($model, 'parent_id', ['template' => '{input}', 'inputOptions' => ['class' => 'form-control input-sm']])->dropDownList($model->parentList, ['prompt' => '请选择父栏目']) ?>
         </div>
 
         <div class="col-xs-3">
@@ -31,8 +31,8 @@ use common\models\Node;
 
         <div class="col-xs-3">
             <div class="form-group pull-right">
-                <?= Html::submitButton(Yii::t('app', '搜索'), ['class' => 'btn btn-primary btn-flat']) ?>
-                <?= Html::resetButton(Yii::t('app', '重置'), ['class' => 'btn btn-default btn-flat']) ?>
+                <?= Html::submitButton('搜索', ['class' => 'btn btn-primary btn-sm btn-flat']) ?>
+                <?= Html::resetButton('重置', ['class' => 'btn btn-default btn-sm btn-flat']) ?>
             </div>
         </div>
     </div>
