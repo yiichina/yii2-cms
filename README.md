@@ -61,3 +61,13 @@ cd <project-name>
 ./init
 ./yii migrate
 ```
+
+功能简介
+-------
+
+1. adminLTE
+2. 国际化
+3. RBAC
+4. 第三方登录
+5. 评论模块
+6. 后台更换主题
