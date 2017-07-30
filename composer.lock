@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0de2b2b7e15995e6e5ddaec7ef7bfe41",
+    "content-hash": "d0c20ab602742bedce90418bee90c602",
     "packages": [
         {
             "name": "bower-asset/adminlte",
@@ -1045,16 +1045,16 @@
         },
         {
             "name": "yiichina/yii2-ckeditor",
-            "version": "v0.3.0",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiichina/yii2-ckeditor.git",
-                "reference": "42230aaf1b2b01d1999be61f4a2929fdad6fe741"
+                "reference": "ac64728eb36f68566b5a722563153ef97115102b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/yiichina/yii2-ckeditor/42230aaf1b2b01d1999be61f4a2929fdad6fe741.zip",
-                "reference": "42230aaf1b2b01d1999be61f4a2929fdad6fe741",
+                "url": "https://files.phpcomposer.com/files/yiichina/yii2-ckeditor/ac64728eb36f68566b5a722563153ef97115102b.zip",
+                "reference": "ac64728eb36f68566b5a722563153ef97115102b",
                 "shasum": ""
             },
             "require": {
@@ -1083,7 +1083,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-07-30T07:41:50+00:00"
+            "time": "2017-07-30T08:01:45+00:00"
         },
         {
             "name": "yiichina/yii2-comments",
@@ -1363,6 +1363,58 @@
             "time": "2017-06-05T14:33:41+00:00"
         },
         {
+            "name": "yiisoft/yii2-authclient",
+            "version": "2.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-authclient.git",
+                "reference": "eec33d8584558aac1ec8d68ba605a898cee2d6e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/yiisoft/yii2-authclient/eec33d8584558aac1ec8d68ba605a898cee2d6e8.zip",
+                "reference": "eec33d8584558aac1ec8d68ba605a898cee2d6e8",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2-httpclient": "~2.0.1"
+            },
+            "suggest": {
+                "spomky-labs/jose": "required for JWS,JWT or JWK related flows like OpenIDConnect"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\authclient\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Klimov",
+                    "email": "klimov.paul@gmail.com"
+                }
+            ],
+            "description": "External authentication via OAuth and OpenID for the Yii framework",
+            "keywords": [
+                "OpenID Connect",
+                "OpenId",
+                "api",
+                "auth",
+                "oauth",
+                "yii2"
+            ],
+            "time": "2017-06-23T09:45:49+00:00"
+        },
+        {
             "name": "yiisoft/yii2-bootstrap",
             "version": "2.0.6",
             "source": {
@@ -1461,6 +1513,53 @@
                 "yii2"
             ],
             "time": "2016-12-20T13:26:02+00:00"
+        },
+        {
+            "name": "yiisoft/yii2-httpclient",
+            "version": "2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-httpclient.git",
+                "reference": "720e3c9bdda260abffe61babfe39b91c4308ac4c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/yiisoft/yii2-httpclient/720e3c9bdda260abffe61babfe39b91c4308ac4c.zip",
+                "reference": "720e3c9bdda260abffe61babfe39b91c4308ac4c",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\httpclient\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Klimov",
+                    "email": "klimov.paul@gmail.com"
+                }
+            ],
+            "description": "HTTP client extension for the Yii framework",
+            "keywords": [
+                "curl",
+                "http",
+                "httpclient",
+                "yii2"
+            ],
+            "time": "2017-06-23T09:36:13+00:00"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
