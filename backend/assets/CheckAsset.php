@@ -8,7 +8,7 @@ class CheckAsset extends AssetBundle
 	// to specify the sourcePath property. Notice the @vendor alias used.
 	public $sourcePath = '@bower/icheck';
     public $css = [
-        'skins/minimal/minimal.css',
+        'skins/minimal/blue.css',
     ];
     public $js = [
         'icheck.min.js',

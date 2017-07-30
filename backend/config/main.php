@@ -8,10 +8,10 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'name' => 'Yii CMS 管理后台',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',

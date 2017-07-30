@@ -123,13 +123,13 @@ AppAsset::register($this);
             ],
             [
 				'icon' => Icon::show('columns', 'fa'),
-                'label' => Html::tag('span', '栏目管理'),
+                'label' => '栏目管理',
                 'url' => ['node/index'],
                 'active' => Yii::$app->controller->id == 'node',
             ],
             [
 				'icon' => Icon::show('file-code-o', 'fa'),
-                'label' => Html::tag('span', '模板管理'),
+                'label' => '模板管理',
                 'url' => ['template/index'],
                 'active' => Yii::$app->controller->id == 'template',
             ],
@@ -140,7 +140,7 @@ AppAsset::register($this);
             ],
             [
 				'icon' => Icon::show('files-o', 'fa'),
-                'label' => Html::tag('span', '所有栏目'),
+                'label' => '所有栏目',
 				'url' => '#',
                 'items'=> Node::getMenuItems(),
                 'active' => Yii::$app->controller->id == 'post',
@@ -152,20 +152,36 @@ AppAsset::register($this);
             ],
             [
 				'icon' => Icon::show('user', 'fa'),
-                'label' => Html::tag('span', '用户管理'),
+                'label' => '用户管理',
                 'url' => ['user/index'],
                 'active' => Yii::$app->controller->id == 'user',
             ],
             [
 				'icon' => Icon::show('key', 'fa'),
-                'label' => Html::tag('span', '权限组管理'),
+                'label' => '权限管理',
                 'url' => ['rbac/index'],
-                'active' => Yii::$app->controller->id == 'rbac',
+                'items' => [
+                    [
+                        'icon' => Icon::show('circle-o', 'fa'),
+                        'label' => '权限项管理',
+                        'url' => ['permission/index'],
+                    ],
+                    [
+                        'icon' => Icon::show('circle-o', 'fa'),
+                        'label' => '角色管理',
+                        'url' => ['role/index'],
+                    ],
+                    [
+                        'icon' => Icon::show('circle-o', 'fa'),
+                        'label' => '规则管理',
+                        'url' => ['rule/index'],
+                    ],
+                ],
             ],
             [
 				'icon' => Icon::show('user-secret', 'fa'),
                 'label' => Html::tag('span', '编辑组管理'),
-                'url' => ['authority/index'],
+                'url' => ['group/index'],
                 'active' => Yii::$app->controller->id == 'authority',
             ],
         ],
@@ -193,7 +209,6 @@ AppAsset::register($this);
         <section class="content">
             <?php echo $content;?>
         </section>
-
     </div>
 
     <footer class="main-footer">

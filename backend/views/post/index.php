@@ -36,11 +36,28 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
         ],
         'button' => Html::a(Icon::show('plus', 'fa') . '新建文章', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
         'columns' => [
-            ['class' => 'yii\grid\CheckboxColumn'],
-            'id',
-            'user_id',
-            'status',
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\CheckboxColumn',
+                'options' => ['width' => 40],
+            ],
+            [
+                'attribute' => 'id',
+                'options' => ['width' => 60],
+            ],
+            'title',
+            [
+                'attribute' => 'user_id',
+                'options' => ['width' => 100],
+            ],
+            [
+                'attribute' => 'status',
+                'options' => ['width' => 100],
+            ],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'header' => '操作',
+                'options' => ['width' => 65],
+            ],
         ],
     ]); ?>
     <?php Pjax::end(); ?>

@@ -35,7 +35,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
             ['label' => '禁用', 'url' => ['disable']],
             ['label' => '启用', 'url' => ['enable']],
         ],
-        'button' => Html::a(Icon::show('plus', 'fa') . '新建栏目', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
+        'button' => Html::a(Icon::show('plus', 'fa') . '新建用户', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
         'columns' => [
             [
                 'class' => 'yii\grid\CheckboxColumn',

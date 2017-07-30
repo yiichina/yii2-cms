@@ -21,9 +21,11 @@
         "yiichina/yii2-comments": "*",
         "yiichina/yii2-simditor": "*",
         "yiichina/yii2-treegrid": "*",
+        "yiichina/yii2-ckeditor": "*",
         "bower-asset/iCheck": "*",
         "bower-asset/Chart.js": "*",
-        "bower-asset/select2": "*"
+        "bower-asset/select2": "*",
+        "dektrium/yii2-rbac": "1.0.0-alpha@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

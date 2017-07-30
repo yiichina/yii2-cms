@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a25c93cf22d2ef08782bdfd586b1003",
+    "content-hash": "0de2b2b7e15995e6e5ddaec7ef7bfe41",
     "packages": [
         {
             "name": "bower-asset/adminlte",
@@ -131,6 +131,39 @@
                 "MIT"
             ],
             "description": "Simple HTML5 charts using the canvas element."
+        },
+        {
+            "name": "bower-asset/ckeditor",
+            "version": "4.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ckeditor/ckeditor-releases.git",
+                "reference": "d62153e131ad4187700342fc044cf069c2fb5d8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ckeditor/ckeditor-releases/zipball/d62153e131ad4187700342fc044cf069c2fb5d8a",
+                "reference": "d62153e131ad4187700342fc044cf069c2fb5d8a",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "./ckeditor.js"
+            },
+            "license": [
+                "For licensing, see LICENSE.md or http://ckeditor.com/license."
+            ],
+            "description": "JavaScript WYSIWYG web text editor.",
+            "keywords": [
+                "ckeditor",
+                "editor",
+                "fckeditor",
+                "html",
+                "javascript",
+                "richtext",
+                "text",
+                "wysiwyg"
+            ]
         },
         {
             "name": "bower-asset/fontawesome",
@@ -670,6 +703,59 @@
             "time": "2017-07-16T21:13:23+00:00"
         },
         {
+            "name": "dektrium/yii2-rbac",
+            "version": "1.0.0-alpha",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dektrium/yii2-rbac.git",
+                "reference": "0943e66c450132b306584a37caefc2aa04258372"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/dektrium/yii2-rbac/0943e66c450132b306584a37caefc2aa04258372.zip",
+                "reference": "0943e66c450132b306584a37caefc2aa04258372",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-widget-select2": "^2.0",
+                "yiisoft/yii2": "^2.0.8"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "dektrium\\rbac\\Bootstrap",
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "dektrium\\rbac\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Erofeev",
+                    "email": "dmeroff@gmail.com",
+                    "homepage": "http://dmeroff.ru"
+                }
+            ],
+            "description": "RBAC management module for Yii2",
+            "keywords": [
+                "dektrium",
+                "rbac gui",
+                "rbac management",
+                "rbac module",
+                "yii rbac",
+                "yii2",
+                "yii2-rbac"
+            ],
+            "time": "2016-08-15T15:49:54+00:00"
+        },
+        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.9.3",
             "source": {
@@ -715,6 +801,110 @@
                 "html"
             ],
             "time": "2017-06-03T02:28:16+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-krajee-base",
+            "version": "v1.8.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-krajee-base.git",
+                "reference": "2479241c03c87995cfc528ae7b297f5ae9e733cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/kartik-v/yii2-krajee-base/2479241c03c87995cfc528ae7b297f5ae9e733cb.zip",
+                "reference": "2479241c03c87995cfc528ae7b297f5ae9e733cb",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2-bootstrap": "@dev"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.8.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\base\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Base library and foundation components for all Yii2 Krajee extensions.",
+            "homepage": "https://github.com/kartik-v/yii2-krajee-base",
+            "keywords": [
+                "base",
+                "extension",
+                "foundation",
+                "krajee",
+                "widget",
+                "yii2"
+            ],
+            "time": "2017-02-22T05:58:53+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-widget-select2",
+            "version": "v2.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-widget-select2.git",
+                "reference": "03f202e9e2415f4c84e93a64074d85677fd0cc51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/kartik-v/yii2-widget-select2/03f202e9e2415f4c84e93a64074d85677fd0cc51.zip",
+                "reference": "03f202e9e2415f4c84e93a64074d85677fd0cc51",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-krajee-base": "~1.7"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\select2\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Enhanced Yii2 wrapper for the Select2 jQuery plugin (sub repo split from yii2-widgets).",
+            "homepage": "https://github.com/kartik-v/yii2-widget-select2",
+            "keywords": [
+                "dropdown",
+                "extension",
+                "form",
+                "jquery",
+                "plugin",
+                "select2",
+                "widget",
+                "yii2"
+            ],
+            "time": "2017-04-12T09:00:24+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -852,6 +1042,48 @@
                 "yii2"
             ],
             "time": "2017-07-21T23:58:46+00:00"
+        },
+        {
+            "name": "yiichina/yii2-ckeditor",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiichina/yii2-ckeditor.git",
+                "reference": "42230aaf1b2b01d1999be61f4a2929fdad6fe741"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/yiichina/yii2-ckeditor/42230aaf1b2b01d1999be61f4a2929fdad6fe741.zip",
+                "reference": "42230aaf1b2b01d1999be61f4a2929fdad6fe741",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/ckeditor": ">=4.7.0",
+                "yiisoft/yii2": ">=2.0.6"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yiichina\\ckeditor\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "cuileon",
+                    "email": "admin@yiichina.com"
+                }
+            ],
+            "description": "Yii2 中使用在线文本编辑器",
+            "keywords": [
+                "editor",
+                "extension",
+                "yii2"
+            ],
+            "time": "2017-07-30T07:41:50+00:00"
         },
         {
             "name": "yiichina/yii2-comments",
@@ -3906,7 +4138,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "dektrium/yii2-rbac": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

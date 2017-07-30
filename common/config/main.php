@@ -4,8 +4,21 @@ return [
     'language' => 'zh-CN',
     'timeZone' => 'PRC',
     'components' => [
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                    'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
+            ],
+        ],
         'authManager' => [
-            'class' => 'yii\rbac\DbManager',
+            'class' => 'dektrium\rbac\components\DbManager',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',

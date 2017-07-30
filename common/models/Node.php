@@ -75,9 +75,9 @@ class Node extends \yii\db\ActiveRecord
             foreach($model as $item) {
                 $items[] = [
                     'label' => Icon::show('circle-o', 'fa') . Html::tag('span', $item->name),
-                    'url' => ['post/index', 'id' => $item->id],
+                    'url' => ['post/index', 'node_id' => $item->id],
                     'items' => self::getMenuItems($item->id),
-                    'active' => Yii::$app->controller->id == 'post',
+                    'active' => Yii::$app->controller->id == 'post' && Yii::$app->request->get('node_id') == $item->id,
                 ];
             }
         }

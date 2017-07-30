@@ -35,13 +35,26 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
         ],
         'button' => Html::a(Icon::show('plus', 'fa') . '新建栏目', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
         'columns' => [
-            ['class' => 'yii\grid\CheckboxColumn'],
-            'id',
-            'parent_id',
+            [
+                'class' => 'yii\grid\CheckboxColumn',
+                'options' => ['width' => 40],
+            ],
+            [
+                'attribute' => 'id',
+                'options' => ['width' => 60],
+            ],
+            [
+                'attribute' => 'parent_id',
+                'options' => ['width' => 60],
+            ],
             'name',
             'description',
             'status',
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'header' => '操作',
+                'options' => ['width' => 65],
+            ],
         ],
     ]); ?>
     <?php Pjax::end(); ?>
