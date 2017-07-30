@@ -13,19 +13,16 @@
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.6",
-        "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "yiisoft/yii2-authclient": "~2.1.0",
         "yiichina/yii2-adminlte": "*",
         "yiichina/yii2-icons": "*",
         "yiichina/yii2-auth": "*",
         "yiichina/yii2-comments": "*",
-        "yiichina/yii2-simditor": "*",
         "yiichina/yii2-treegrid": "*",
         "yiichina/yii2-ckeditor": "*",
-        "bower-asset/iCheck": "*",
-        "bower-asset/Chart.js": "*",
-        "bower-asset/select2": "*",
+        "yiichina/yii2-select2": "*",
+        "yiichina/yii2-icheck": "*",
+        "yiichina/yii2-chart": "*",
         "dektrium/yii2-rbac": "1.0.0-alpha@dev"
     },
     "require-dev": {

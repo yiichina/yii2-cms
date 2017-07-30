@@ -160,11 +160,13 @@ AppAsset::register($this);
 				'icon' => Icon::show('key', 'fa'),
                 'label' => '权限管理',
                 'url' => ['rbac/index'],
+                'active' => in_array(Yii::$app->controller->id, ['permission', 'role', 'rule']),
                 'items' => [
                     [
                         'icon' => Icon::show('circle-o', 'fa'),
                         'label' => '权限项管理',
                         'url' => ['permission/index'],
+                        'active' => Yii::$app->controller->id == 'permission',
                     ],
                     [
                         'icon' => Icon::show('circle-o', 'fa'),

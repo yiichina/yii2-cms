@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m130524_201442_init extends Migration
+class m170717_850926_app_init extends Migration
 {
     public function up()
     {
@@ -24,7 +24,7 @@ class m130524_201442_init extends Migration
         // 模板表
         $this->createTable('{{%template}}', [
             'id' => $this->primaryKey(),
-            'user_id' => $this->integer()->notNull(),,
+            'user_id' => $this->integer()->notNull(),
             'name' => $this->smallInteger()->notNull()->defaultValue(10),
             'description' => $this->string()->notNull(),
             'content' => $this->text()->notNull(),

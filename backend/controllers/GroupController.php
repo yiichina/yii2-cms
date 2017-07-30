@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * NodeController implements the CRUD actions for Node model.
  */
-class NodeController extends Controller
+class GroupController extends Controller
 {
     /**
      * @inheritdoc

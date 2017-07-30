@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0c20ab602742bedce90418bee90c602",
+    "content-hash": "c46e1eee897ca73046ad48bddd6ef529",
     "packages": [
         {
             "name": "bower-asset/adminlte",
@@ -1004,20 +1004,20 @@
         },
         {
             "name": "yiichina/yii2-auth",
-            "version": "v0.1.0",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiichina/yii2-auth.git",
-                "reference": "6bbfffba70ef4b4866a5fddc1188b6e4811d9c99"
+                "reference": "47e82f6ceb1b859ad64afb776eea320337313a69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiichina/yii2-auth/zipball/6bbfffba70ef4b4866a5fddc1188b6e4811d9c99",
-                "reference": "6bbfffba70ef4b4866a5fddc1188b6e4811d9c99",
+                "url": "https://files.phpcomposer.com/files/yiichina/yii2-auth/47e82f6ceb1b859ad64afb776eea320337313a69.zip",
+                "reference": "47e82f6ceb1b859ad64afb776eea320337313a69",
                 "shasum": ""
             },
             "require": {
-                "yiisoft/yii2": ">=2.0.6"
+                "yiisoft/yii2-authclient": "~2.1.0"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -1041,7 +1041,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-07-21T23:58:46+00:00"
+            "time": "2017-07-30T09:43:40+00:00"
         },
         {
             "name": "yiichina/yii2-ckeditor",
