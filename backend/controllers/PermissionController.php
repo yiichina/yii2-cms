@@ -3,11 +3,10 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Node;
-use common\models\NodeSearch;
+use yii\rbac\Permission;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
+use backend\models\ItemSearch;
 
 /**
  * NodeController implements the CRUD actions for Node model.
@@ -15,27 +14,12 @@ use yii\filters\VerbFilter;
 class PermissionController extends Controller
 {
     /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
-    /**
      * Lists all Node models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new NodeSearch();
+        $searchModel = new ItemSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [

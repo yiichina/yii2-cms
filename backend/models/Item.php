@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 use Yii;
 
@@ -15,7 +15,7 @@ use Yii;
  * @property integer $created_at
  * @property integer $updated_at
  */
-class Node extends \yii\db\ActiveRecord
+class Item extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
