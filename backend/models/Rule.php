@@ -13,14 +13,14 @@ use Yii;
  * @property integer $created_at
  * @property integer $updated_at
  */
-class Post extends \yii\db\ActiveRecord
+class Rule extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'post';
+        return Yii::$app->authManager->ruleTable;
     }
 
     /**
@@ -29,10 +29,7 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'created_at', 'updated_at'], 'required'],
-            [['status', 'created_at', 'updated_at'], 'integer'],
-            [['user_id'], 'string', 'max' => 255],
-            [['user_id'], 'unique'],
+            [['name'], 'required'],
         ];
     }
 
@@ -42,11 +39,8 @@ class Post extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'user_id' => 'User ID',
-            'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'name' => Yii::t('app', 'Name'),
+            'data' => Yii::t('app', 'Data'),
         ];
     }
 }

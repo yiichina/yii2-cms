@@ -14,4 +14,5 @@ return [
     'Name' => '名称',
     'Description' => '描述',
     'Status' => '状态',
+    'Data' => '数据',
 ];
