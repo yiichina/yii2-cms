@@ -5,7 +5,7 @@ namespace backend\models;
 use Yii;
 
 /**
- * This is the model class for table "node".
+ * This is the model class for table "item".
  *
  * @property integer $id
  * @property string $parent_id
@@ -22,7 +22,7 @@ class Item extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'node';
+        return Yii::$app->authManager->itemTable;
     }
 
     /**
@@ -31,10 +31,7 @@ class Item extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id', 'created_at', 'updated_at'], 'required'],
-            [['name', 'description', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['parent_id'], 'string', 'max' => 255],
-            [['parent_id'], 'unique'],
+            [['name'], 'unique'],
         ];
     }
 
@@ -44,13 +41,9 @@ class Item extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'parent_id' => 'Parent ID',
-            'name' => 'Name',
-            'description' => 'Description',
-            'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'name' => Yii::t('app', 'Name'),
+            'description' => Yii::t('app', 'Description'),
+            'rule_name' => Yii::t('app', 'Status'),
         ];
     }
 }

@@ -3,11 +3,10 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Node;
-use common\models\NodeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
+use backend\models\ItemSearch;
+use yii\rbac\Item;
 
 /**
  * NodeController implements the CRUD actions for Node model.
@@ -15,28 +14,13 @@ use yii\filters\VerbFilter;
 class RoleController extends Controller
 {
     /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
-    /**
      * Lists all Node models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new NodeSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $searchModel = new ItemSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, Item::TYPE_ROLE);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

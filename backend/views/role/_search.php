@@ -17,16 +17,9 @@ use common\models\Node;
     ]); ?>
 
     <div class="row">
-        <div class="col-xs-3">
-            <?= $form->field($model, 'parent_id', ['template' => '{input}', 'inputOptions' => ['class' => 'form-control input-sm']])->dropDownList($model->parentList, ['prompt' => '请选择父栏目']) ?>
-        </div>
 
         <div class="col-xs-3">
             <?= $form->field($model, 'name', ['template' => '{input}', 'inputOptions' => ['class' => 'form-control input-sm']])->textInput(['placeholder' => $model->getAttributeLabel('name')]) ?>
-        </div>
-
-        <div class="col-xs-3">
-            <?= $form->field($model, 'status', ['wrapperOptions' => ['style' => 'display:inline-block']])->inline()->radioList($model->statusList) ?>
         </div>
 
         <div class="col-xs-3">

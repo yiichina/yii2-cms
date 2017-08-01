@@ -3,10 +3,10 @@
 namespace backend\controllers;
 
 use Yii;
-use yii\rbac\Permission;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use backend\models\ItemSearch;
+use yii\rbac\Item;
 
 /**
  * NodeController implements the CRUD actions for Node model.
@@ -20,7 +20,7 @@ class PermissionController extends Controller
     public function actionIndex()
     {
         $searchModel = new ItemSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, Item::TYPE_PERMISSION);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

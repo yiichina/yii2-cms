@@ -11,4 +11,7 @@ return [
     'Login' => '登录',
     'If you forgot your password you can' => '如果忘记密码，您可以',
     'Home' => '首页',
+    'Name' => '名称',
+    'Description' => '描述',
+    'Status' => '状态',
 ];

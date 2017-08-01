@@ -4,20 +4,16 @@ namespace backend\models;
 
 use Yii;
 use yii\base\Model;
-use yii\db\Query;
-use yii\data\ArrayDataProvider;
+use yii\data\ActiveDataProvider;
 
 /**
  * NodeSearch represents the model behind the search form about `common\models\Node`.
  */
 class ItemSearch extends Item
 {
-    public $name;
-    public $description;
-    public $rule_name;
-    protected $type = 1;
-    protected $manager;
-
+    /**
+     * @inheritdoc
+     */
     public function rules()
     {
         return [
@@ -25,32 +21,43 @@ class ItemSearch extends Item
         ];
     }
 
-    public function init()
-    {
-        $this->manager = \Yii::$app->authManager;
-    }
-
+    /**
+     * @inheritdoc
+     */
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
-    public function search($params)
+    /**
+     * Creates data provider instance with search query applied
+     *
+     * @param array $params
+     *
+     * @return ActiveDataProvider
+     */
+    public function search($params, $type)
     {
-        $dataProvider = \Yii::createObject(ArrayDataProvider::className());
+        $query = Item::find();
 
-        $query = (new Query)->select(['name', 'description', 'rule_name'])
-            ->andWhere(['type' => $this->type])
-            ->from($this->manager->itemTable);
+        // add conditions that should always apply here
 
-        if ($this->load($params) && $this->validate()) {
-            $query->andFilterWhere(['like', 'name', $this->name])
-                ->andFilterWhere(['like', 'description', $this->description])
-                ->andFilterWhere(['like', 'rule_name', $this->rule_name]);
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to return any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
         }
 
-        $dataProvider->allModels = $query->all($this->manager->db);
+        $query->where(['type' => $type]);
+        // grid filtering conditions
+        $query->andFilterWhere(['like', 'name', $this->name]);
 
         return $dataProvider;
     }
