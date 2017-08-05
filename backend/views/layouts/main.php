@@ -6,7 +6,7 @@
 use yii\helpers\Html;
 use backend\assets\AppAsset;
 use yiichina\adminlte\Nav;
-use yiichina\adminlte\NavBar;
+use yiichina\adminlte\MainHeader;
 use yiichina\adminlte\SideBar;
 use yiichina\icons\Icon;
 use yii\widgets\Breadcrumbs;
@@ -31,7 +31,7 @@ AppAsset::register($this);
 
 <div class="wrapper">
     <?php
-    NavBar::begin([
+    MainHeader::begin([
         'brandLabel' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']) . 'Yii CMS',
         'brandLabelMini' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']),
     ]);
@@ -105,7 +105,7 @@ AppAsset::register($this);
             ]
         ],
     ]);
-    NavBar::end();
+    MainHeader::end();
     Sidebar::begin([
         'encodeLabels' => false,
 		'defaultRight' => Icon::show('angle-left', 'fa', null, null, ['class' => 'pull-right']),

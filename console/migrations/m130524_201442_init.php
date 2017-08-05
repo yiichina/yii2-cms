@@ -12,7 +12,7 @@ class m130524_201442_init extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        // 用户信息表
+        // User
         $this->createTable('{{%user}}', [
             'id' => $this->primaryKey(),
             'username' => $this->string()->notNull()->unique(),
@@ -25,6 +25,7 @@ class m130524_201442_init extends Migration
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
 
+        // Auth
 		$this->createTable('{{%auth}}', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer()->notNull(),
