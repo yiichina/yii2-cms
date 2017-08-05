@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use Yii;
+use common\models\Article;
 use common\models\Post;
 use backend\models\PostSearch;
 use yii\web\Controller;
@@ -33,12 +34,15 @@ class PostController extends Controller
      * Lists all Post models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($node_id)
     {
         $searchModel = new PostSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $queryParams = Yii::$app->request->queryParams;
+        $queryParams['PostSearch']['node_id'] = $node_id;
+        $dataProvider = $searchModel->search($queryParams);
 
         return $this->render('index', [
+            'node_id' => $node_id,
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -61,14 +65,20 @@ class PostController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($node_id)
     {
-        $model = new Post();
+        $post = new Post();
+        $post->node_id = $node_id;
+        $model = new $post->node->typeClass;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($post->load(Yii::$app->request->post()) && $model->load(Yii::$app->request->post())) {
+            Yii::$app->db->transaction(function() use($post, $model) {
+                $post->save() && $post->link($post->node->typeName, $model);
+            });
+            return $this->redirect(['view', 'id' => $post->id]);
         } else {
             return $this->render('create', [
+                'post' => $post,
                 'model' => $model,
             ]);
         }

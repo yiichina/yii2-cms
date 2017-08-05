@@ -18,7 +18,7 @@ class PostSearch extends Post
     public function rules()
     {
         return [
-            [['id', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['id', 'node_id', 'status', 'created_at', 'updated_at'], 'integer'],
             [['user_id'], 'safe'],
         ];
     }
@@ -60,6 +60,7 @@ class PostSearch extends Post
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'node_id' => $this->node_id,
             'status' => $this->status,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

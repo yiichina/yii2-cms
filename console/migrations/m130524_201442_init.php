@@ -1,6 +1,7 @@
 <?php
 
 use yii\db\Migration;
+use common\models\User;
 
 class m130524_201442_init extends Migration
 {
@@ -34,11 +35,22 @@ class m130524_201442_init extends Migration
         ], $tableOptions);
 
         $this->addForeignKey('fk-auth-user_id-user-id', 'auth', 'user_id', 'user', 'id', 'CASCADE', 'CASCADE');
+        $this->dataInit();
     }
 
     public function down()
     {
         $this->dropTable('{{%user}}');
 		$this->dropTable('{{%auth}}');
+    }
+
+    protected function dataInit()
+    {
+        $user = new User();
+        $user->username = 'admin';
+        $user->email = 'admin@yiicms.com';
+        $user->setPassword('www.yiicms.com');
+        $user->generateAuthKey();
+        $user->save();
     }
 }

@@ -9,7 +9,8 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\models\Node;
-use common\widgets\Alert;
+use yiichina\adminlte\Alert;
+use yiichina\icons\Icon;
 
 AppAsset::register($this);
 ?>
@@ -62,11 +63,22 @@ AppAsset::register($this);
 
     <div class="content-wrapper">
         <div class="container">
-            <?= Breadcrumbs::widget([
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            ]) ?>
-            <?= Alert::widget() ?>
-            <?= $content ?>
+            <section class="content-header">
+                <?php if(isset($this->params['mainTitle'])): ?>
+                    <?= Html::tag('h1', $this->params['mainTitle'] . (empty($this->params['subTitle']) ? null : Html::tag('small', $this->params['subTitle']))) ?>
+                <?php endif; ?>
+                <?= Breadcrumbs::widget([
+                    'homeLink' => [
+                        'label' => Icon::show('home') . '首页',
+                        'encode' => false,
+                        'url' => Yii::$app->homeUrl
+                    ],
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                ]) ?>
+            </section>
+            <section class="content">
+                <?php echo $content;?>
+            </section>
         </div>
     </div>
 

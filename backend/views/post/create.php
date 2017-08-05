@@ -1,8 +1,6 @@
 <?php
 
-use yii\helpers\Html;
 use yiichina\adminlte\Box;
-use yiichina\icons\Icon;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Post */
@@ -20,7 +18,8 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
         'title' => $subTitle,
     ]); ?>
 
-    <?= $this->render('_form', [
+    <?= $this->render('_' . $post->node->typeName, [
+        'post' => $post,
         'model' => $model,
     ]) ?>
     <?php Box::end(); ?>

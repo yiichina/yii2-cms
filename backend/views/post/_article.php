@@ -9,17 +9,17 @@ use yiichina\ckeditor\CKEditor;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="post-form">
+<div class="article-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'title')->textInput() ?>
+    <?= $form->field($post, 'title')->textInput() ?>
 
     <?= $form->field($model, 'content')->widget(CKEditor::className()) ?>
 
-    <?= $form->field($model, 'tags')->textInput() ?>
+    <?= $form->field($post, 'tags')->textInput() ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($post, 'status')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? '新建' : '修改', ['class' => $model->isNewRecord ? 'btn btn-success btn-flat' : 'btn btn-primary btn-flat']) ?>

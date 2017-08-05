@@ -21,6 +21,10 @@ class Node extends \yii\db\ActiveRecord
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 1;
 
+    const TYPE_ARTICLE = 1;
+    const TYPE_PICTURE = 2;
+    const TYPE_VIDEO = 3;
+
     /**
      * @inheritdoc
      */
@@ -36,6 +40,7 @@ class Node extends \yii\db\ActiveRecord
     {
         return [
             [['parent_id', 'name', 'description', 'status'], 'required'],
+            ['type', 'safe'],
         ];
     }
 
@@ -49,6 +54,7 @@ class Node extends \yii\db\ActiveRecord
             'parent_id' => '父栏目',
             'name' => '栏目名称',
             'description' => '栏目描述',
+            'type' => '媒体类型',
             'status' => '状态',
         ];
     }
@@ -66,6 +72,29 @@ class Node extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getTypeName()
+    {
+        return [
+            self::TYPE_ARTICLE => 'article',
+            self::TYPE_PICTURE => 'picture',
+            self::TYPE_VIDEO => 'video',
+        ][$this->type];
+    }
+
+    public function getTypeClass()
+    {
+        return "\common\models\\" . ucfirst($this->typeName);
+    }
+
+    public function getTypeList()
+    {
+        return [
+            self::TYPE_ARTICLE => '文章',
+            self::TYPE_PICTURE => '图片',
+            self::TYPE_VIDEO => '视频',
+        ];
+    }
+
     public static function getMenuItems($id = 0)
     {
         $items = [];
@@ -77,7 +106,7 @@ class Node extends \yii\db\ActiveRecord
                     'label' => Icon::show('circle-o', 'fa') . Html::tag('span', $item->name),
                     'url' => ['post/index', 'node_id' => $item->id],
                     'items' => self::getMenuItems($item->id),
-                    'active' => Yii::$app->controller->id == 'post' && Yii::$app->request->get('node_id') == $item->id,
+                    'active' => Yii::$app->controller->id == 'post' && (Yii::$app->request->get('node_id') == $item->id),
                 ];
             }
         }

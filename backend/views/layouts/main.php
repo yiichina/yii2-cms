@@ -31,15 +31,19 @@ AppAsset::register($this);
 
 <div class="wrapper">
     <?php
-    MainHeader::begin([
-        'brandLabel' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']) . 'Yii CMS',
-        'brandLabelMini' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']),
-    ]);
-    echo Nav::widget([
-        'encodeLabels' => false,
-        'dropDownCaret' => '',
-        'options' => ['class' => 'navbar-nav'],
-        'items' => [
+    if(Yii::$app->user->isGuest) {
+        $userItems = [
+            [
+                'label' => Icon::show('sign-in') . Html::tag('span', 'Login'),
+                'url' => ['site/login'],
+            ],
+            [
+                'label' => Icon::show('user-plus') . Html::tag('span', 'Register'),
+                'url' => ['site/signup'],
+            ]
+        ];
+    } else {
+        $userItems = [
             [
                 'label' => Icon::show('envelope-o') . Html::tag('span', 4, ['class' => 'label label-success']),
                 'url' => '#',
@@ -89,7 +93,7 @@ AppAsset::register($this);
                 ],
             ],
             [
-                'label' => Html::img('http://www.yiichina.com/uploads/avatar/000/00/00/02_avatar_small.jpg', ['alt' => Yii::$app->user->identity->username, 'class' => 'user-image']) . Html::tag('span', Yii::$app->user->identity->username, ['class' => 'hidden-xs']),
+                'label' => Html::img('http://www.yiichina.com/uploads/avatar/000/00/00/02_avatar_small.jpg', ['alt' => 'admin', 'class' => 'user-image']) . Html::tag('span', 'admin', ['class' => 'hidden-xs']),
                 'url' => '#',
                 'options' => ['class' => 'user user-menu'],
                 'items' => [
@@ -98,12 +102,17 @@ AppAsset::register($this);
                     Html::tag('li', 'hello', ['class' => 'user-footer']),
                 ],
             ],
-            [
-                'label' => Icon::show('gears'),
-                'url' => '#',
-                'linkOptions' => ['data' => ['toggle' => 'control-sidebar']],
-            ]
-        ],
+        ];
+    }
+    MainHeader::begin([
+        'brandLabel' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']) . 'Yii CMS',
+        'brandLabelMini' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']),
+    ]);
+    echo Nav::widget([
+        'encodeLabels' => false,
+        'dropDownCaret' => '',
+        'options' => ['class' => 'navbar-nav'],
+        'items' => $userItems,
     ]);
     MainHeader::end();
     Sidebar::begin([
@@ -120,6 +129,12 @@ AppAsset::register($this);
                 'label' => '仪表盘', 
                 'url' => Yii::$app->homeUrl, 
                 'active' => Yii::$app->controller->id == 'site',
+            ],
+            [
+                'icon' => Icon::show('columns', 'fa'),
+                'label' => '禁发词管理',
+                'url' => ['node/index'],
+                'active' => Yii::$app->controller->id == 'node',
             ],
             [
 				'icon' => Icon::show('columns', 'fa'),

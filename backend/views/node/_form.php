@@ -18,6 +18,8 @@ use yii\bootstrap\ActiveForm;
 
     <?= $form->field($model, 'description')->textInput() ?>
 
+    <?= $form->field($model, 'type')->inline()->radioList($model->typeList) ?>
+
     <?= $form->field($model, 'status')->inline()->radioList($model->statusList) ?>
 
     <div class="form-group">

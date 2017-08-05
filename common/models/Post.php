@@ -15,20 +15,20 @@ use Yii;
  */
 class Post extends \yii\db\ActiveRecord
 {
+    public $tags;
+
     const STATUS_TRASH = -1;
     const STATUS_DRAFT = 0;
     const STATUS_PENDING = 1;
 	const STATUS_PUBLISHED = 2;
     const STATUS_FEATURED = 3;
 
-    public $tags;
-
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'post';
+        return '{{%post}}';
     }
 
     /**
@@ -37,29 +37,18 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'content'], 'required'],
-            [['content'], 'string', 'min' => 10],
+            [['title', 'node_id'], 'required'],
             [['title'], 'string', 'max' => 50],
             //[['title'], 'checkWords'],
             ['title', 'unique', 'targetClass' => '\common\models\Post', 'message' => '此标题已被使用，请输入其它标题。'],
             //['status', 'integer'],
-            ['tags', 'safe']
+            ['tags', 'safe'],
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function checkWords()
+    public function getArticle()
     {
-        if (!$this->hasErrors()) {
-            foreach(Yii::$app->params['badWords'] as $data) {
-                if(strpos($this->title, $data) !== false) {
-                    $this->addError('title', '您的标题包含非法字符。');
-                    break;
-                }
-            }
-        }
+        return $this->hasMany(Article::className(), ['post_id' => 'id']);
     }
 
     /**
@@ -100,5 +89,10 @@ class Post extends \yii\db\ActiveRecord
         } else {
             return false;
         }
+    }
+
+    public function getNode()
+    {
+        return $this->hasOne(Node::className(), ['id' => 'node_id']);
     }
 }
