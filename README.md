@@ -53,15 +53,18 @@ environments/            contains environment-based overrides
 
 安装方式
 --------
+创建数据库，推荐 MySQL，默认库名为yii2_cms，编码选utf8_unicode_ci。
 
 ```
 composer create-project --prefer-dist yiichina/yii2-cms <project-name> 
 
 cd <project-name>
 ./init
+```
+修改数据库配置，位于 `@common/config/main-local.php`
+```
 ./yii migrate
 ```
-
 功能简介
 -------
 
