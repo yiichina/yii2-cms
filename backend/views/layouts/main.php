@@ -107,26 +107,20 @@ AppAsset::register($this);
         'items' => [
             [
 				'icon' => Icon::show('cogs'),
-                'label' => '工具区',
+                'label' => '工具专区',
                 'options' => ['class' =>'header'],
             ],
             [
-				'icon' => Icon::show('dashboard'),
-                'label' => '仪表盘', 
-                'url' => Yii::$app->homeUrl, 
+                'icon' => Icon::show('dashboard'),
+                'label' => '仪表盘',
+                'url' => Yii::$app->homeUrl,
                 'active' => Yii::$app->controller->id == 'site',
             ],
             [
-				'icon' => Icon::show('columns', 'fa'),
+                'icon' => Icon::show('columns', 'fa'),
                 'label' => '栏目管理',
                 'url' => ['node/index'],
                 'active' => Yii::$app->controller->id == 'node',
-            ],
-            [
-				'icon' => Icon::show('file-code-o', 'fa'),
-                'label' => '模板管理',
-                'url' => ['template/index'],
-                'active' => Yii::$app->controller->id == 'template',
             ],
             [
                 'icon' => Icon::show('ban', 'fa'),
@@ -135,8 +129,31 @@ AppAsset::register($this);
                 'active' => Yii::$app->controller->id == 'sensitive',
             ],
             [
+                'icon' => Icon::show('cogs'),
+                'label' => '二次开发',
+                'options' => ['class' =>'header'],
+            ],
+            [
+				'icon' => Icon::show('file-code-o', 'fa'),
+                'label' => '模板管理',
+                'url' => ['template/index'],
+                'active' => Yii::$app->controller->id == 'template',
+            ],
+            [
+                'icon' => Icon::show('file-code-o', 'fa'),
+                'label' => '组件管理',
+                'url' => ['widget/index'],
+                'active' => Yii::$app->controller->id == 'template',
+            ],
+            [
+                'icon' => Icon::show('file-code-o', 'fa'),
+                'label' => '切面编程',
+                'url' => ['aspect/index'],
+                'active' => Yii::$app->controller->id == 'template',
+            ],
+            [
 				'icon' => Icon::show('file', 'fa'),
-                'label' => '内容区', 
+                'label' => '内容专区',
                 'options' => ['class' => 'header'],
             ],
             [
@@ -148,7 +165,7 @@ AppAsset::register($this);
             ],
             [
 				'icon' => Icon::show('user', 'fa'),
-                'label' => '用户区', 
+                'label' => '用户专区',
                 'options' => ['class' => 'header'],
             ],
             [
