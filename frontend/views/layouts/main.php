@@ -157,7 +157,7 @@ AppAsset::register($this);
     <footer class="main-footer">
         <div class="container">
             <div class="pull-right hidden-xs">
-                <b>YiiCMS Version</b> 2.4.0 - <?= Yii::powered() ?> - <a href="http://www.miibeian.gov.cn" target="_blank">京ICP备09104811号</a>
+                <b>Yii CMS Version</b> 2.4.0 - <?= Yii::powered() ?> - <a href="http://www.miibeian.gov.cn" target="_blank">京ICP备09104811号</a>
             </div>
             <strong>Copyright &copy; 2009-<?= date('Y') ?> <a href="http://www.yiichina.com">Yii China</a>.</strong> All rights reserved.
         </div>

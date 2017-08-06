@@ -15,13 +15,11 @@ $this->title = 'My Yii Application';
         'controls' => ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
         'items' => [
             // the item contains only the image
-            '<img src="http://placehold.it/900x500/39CCCC/ffffff&text=I+Love+Bootstrap"/>',
+            Html::img('@web/images/slide-2.jpg'),
             // equivalent to the above
-            ['content' => '<img src="http://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap"/>'],
-            // the item contains both the image and the caption
             [
-                'content' => '<img src="http://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap"/>',
-                'caption' => '<h4>This is title</h4><p>This is the caption text</p>',
+                'content' => Html::img('@web/images/slide-3.jpg'),
+                'caption' => '<h4>Yii CMS</h4><p>专业的高度可定制化的开源 CMS</p>'
             ],
         ]
     ]) ?>
