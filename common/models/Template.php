@@ -8,8 +8,10 @@ use Yii;
  * This is the model class for table "template".
  *
  * @property integer $id
- * @property integer $name
- * @property integer $description
+ * @property integer $user_id
+ * @property string $name
+ * @property string $description
+ * @property string $content
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
@@ -30,7 +32,8 @@ class Template extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'description'], 'required'],
+            [['name', 'description', 'content'], 'required'],
+            ['status', 'integer'],
         ];
     }
 
@@ -41,11 +44,13 @@ class Template extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => '模板名称',
-            'description' => '模板描述',
-            'status' => '状态',
-            'created_at' => '创建时间',
-            'updated_at' => '修改时间',
+            'user_id' => Yii::t('app', 'User ID'),
+            'name' => Yii::t('app', 'Name'),
+            'description' => Yii::t('app', 'Description'),
+            'content' => Yii::t('app', 'Content'),
+            'status' => Yii::t('app', 'Status'),
+            'created_at' => Yii::t('app', 'Created At'),
+            'updated_at' => Yii::t('app', 'Updated At'),
         ];
     }
 

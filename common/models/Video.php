@@ -5,13 +5,12 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "post".
+ * This is the model class for table "video".
  *
  * @property integer $id
- * @property string $user_id
- * @property integer $status
- * @property integer $created_at
- * @property integer $updated_at
+ * @property integer $post_id
+ * @property string $flv
+ * @property integer $length
  */
 class Video extends \yii\db\ActiveRecord
 {
@@ -30,6 +29,7 @@ class Video extends \yii\db\ActiveRecord
     {
         return [
             [['flv'], 'required'],
+            ['length', 'integer'],
         ];
     }
 
@@ -40,7 +40,9 @@ class Video extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'flv' => '视频url',
+            'post_id' => Yii::t('app', 'Post ID'),
+            'flv' => Yii::t('app', 'Flv'),
+            'length' => Yii::t('app', 'Length'),
         ];
     }
 

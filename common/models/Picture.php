@@ -5,13 +5,12 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "post".
+ * This is the model class for table "picture".
  *
  * @property integer $id
- * @property string $user_id
- * @property integer $status
- * @property integer $created_at
- * @property integer $updated_at
+ * @property integer $post_id
+ * @property string $url
+ * @property string $description
  */
 class Picture extends \yii\db\ActiveRecord
 {
@@ -29,7 +28,9 @@ class Picture extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['url'], 'required'],
+            [['post_id', 'url'], 'required'],
+            ['post_id', 'integer'],
+            ['description', 'safe'],
         ];
     }
 
@@ -40,7 +41,9 @@ class Picture extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'url' => '图片地址',
+            'post_id' => Yii::t('app', 'Post ID'),
+            'url' => 'URL',
+            'description' => Yii::t('app', 'Description'),
         ];
     }
 

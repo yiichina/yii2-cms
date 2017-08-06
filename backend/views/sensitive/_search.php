@@ -17,12 +17,12 @@ use common\models\Node;
     ]); ?>
 
     <div class="row">
-        <div class="col-xs-3">
-            <?= $form->field($model, 'user_id', ['template' => '{input}', 'inputOptions' => ['class' => 'form-control input-sm']])->textInput() ?>
+		<div class="col-xs-3">
+            <?= $form->field($model, 'node_id', ['template' => '{input}', 'inputOptions' => ['class' => 'form-control input-sm']])->textInput() ?>
         </div>
 
         <div class="col-xs-3">
-            <?= $form->field($model, 'node_id', ['template' => '{input}', 'inputOptions' => ['class' => 'form-control input-sm']])->textInput() ?>
+            <?= $form->field($model, 'words', ['template' => '{input}', 'inputOptions' => ['class' => 'form-control input-sm']])->textInput() ?>
         </div>
 
         <div class="col-xs-3">

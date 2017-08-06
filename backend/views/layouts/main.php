@@ -117,12 +117,6 @@ AppAsset::register($this);
                 'active' => Yii::$app->controller->id == 'site',
             ],
             [
-                'icon' => Icon::show('ban', 'fa'),
-                'label' => '禁发词管理',
-                'url' => ['word/index'],
-                'active' => Yii::$app->controller->id == 'word',
-            ],
-            [
 				'icon' => Icon::show('columns', 'fa'),
                 'label' => '栏目管理',
                 'url' => ['node/index'],
@@ -133,6 +127,12 @@ AppAsset::register($this);
                 'label' => '模板管理',
                 'url' => ['template/index'],
                 'active' => Yii::$app->controller->id == 'template',
+            ],
+            [
+                'icon' => Icon::show('ban', 'fa'),
+                'label' => '敏感词管理',
+                'url' => ['sensitive/index'],
+                'active' => Yii::$app->controller->id == 'sensitive',
             ],
             [
 				'icon' => Icon::show('file', 'fa'),
@@ -189,7 +189,7 @@ AppAsset::register($this);
 				'icon' => Icon::show('group', 'fa'),
                 'label' => Html::tag('span', '编辑组管理'),
                 'url' => ['group/index'],
-                'active' => Yii::$app->controller->id == 'authority',
+                'active' => Yii::$app->controller->id == 'group',
             ],
         ],
     ]);

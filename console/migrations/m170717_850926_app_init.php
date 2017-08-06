@@ -1,6 +1,7 @@
 <?php
 
 use yii\db\Migration;
+use common\models\Node;
 
 class m170717_850926_app_init extends Migration
 {
@@ -27,7 +28,7 @@ class m170717_850926_app_init extends Migration
         // Node
         $this->createTable('{{%node}}', [
             'id' => $this->primaryKey(),
-            'parent_id' => $this->integer()->notNull(),
+            'parent_id' => $this->integer()->notNull()->defaultValue(0),
             'type' => $this->smallInteger()->notNull()->defaultValue(0),
             'name' => $this->string(64)->notNull(),
             'description' => $this->string()->notNull(),
@@ -61,7 +62,7 @@ class m170717_850926_app_init extends Migration
             'id' => $this->primaryKey(),
             'post_id' => $this->integer()->notNull(),
             'url' => $this->string()->notNull(),
-            'description' => $this->string(1024)->notNull(),
+            'description' => $this->string(1024),
         ], $tableOptions);
 
         // Video
@@ -69,8 +70,24 @@ class m170717_850926_app_init extends Migration
             'id' => $this->primaryKey(),
             'post_id' => $this->integer()->notNull(),
             'flv' => $this->string()->notNull(),
-            'length' => $this->integer()->notNull(),
+            'length' => $this->integer()->notNull()->defaultValue(0),
         ], $tableOptions);
+
+        // Group
+        $this->createTable('{{%group}}', [
+            'id' => $this->primaryKey(),
+            'user_id' => $this->integer()->notNull(),
+            'node_id' => $this->integer()->notNull(),
+        ], $tableOptions);
+
+        // Sensitive
+        $this->createTable('{{%sensitive}}', [
+            'id' => $this->primaryKey(),
+            'node_id' => $this->integer()->notNull(),
+            'words' => $this->string()->notNull(),
+        ], $tableOptions);
+
+        $this->dataInit();
     }
 
     public function down()
@@ -81,5 +98,13 @@ class m170717_850926_app_init extends Migration
         $this->dropTable('{{%article}}');
         $this->dropTable('{{%picture}}');
         $this->dropTable('{{%video}}');
+    }
+
+    protected function dataInit()
+    {
+        $node = new Node();
+        $node->name = 'root';
+        $node->description = 'root';
+        $node->save(false);
     }
 }

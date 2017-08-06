@@ -8,20 +8,26 @@ use Yii;
  * This is the model class for table "post".
  *
  * @property integer $id
- * @property string $user_id
+ * @property integer $type
+ * @property integer $user_id
+ * @property integer $node_id
+ * @property string $title
+ * @property string $summary
+ * @property string $source
+ * @property string $image
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
  */
 class Post extends \yii\db\ActiveRecord
 {
-    public $tags;
-
     const STATUS_TRASH = -1;
     const STATUS_DRAFT = 0;
     const STATUS_PENDING = 1;
 	const STATUS_PUBLISHED = 2;
     const STATUS_FEATURED = 3;
+
+    public $tags;
 
     /**
      * @inheritdoc
@@ -38,17 +44,13 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             [['title', 'node_id'], 'required'],
-            [['title'], 'string', 'max' => 50],
-            //[['title'], 'checkWords'],
-            ['title', 'unique', 'targetClass' => '\common\models\Post', 'message' => '此标题已被使用，请输入其它标题。'],
-            //['status', 'integer'],
-            ['tags', 'safe'],
+            [['title', 'source'], 'string', 'max' => 255],
+            ['title', 'checkWords'],
+            ['summary', 'string', 'max' => 1024],
+            ['title', 'unique', 'targetClass' => '\common\models\Post'],
+            [['type', 'node_id', 'status'], 'integer'],
+            [['summary', 'source', 'image', 'tags'], 'safe'],
         ];
-    }
-
-    public function getArticle()
-    {
-        return $this->hasMany(Article::className(), ['post_id' => 'id']);
     }
 
     /**
@@ -58,19 +60,42 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'user_id' => '作者',
-            'title' => '标题',
-            'content' => '内容',
-            'tags' => '标签',
-            'status' => '状态',
-            'created_at' => '发布时间',
-            'updated_at' => '修改时间',
+            'type' => Yii::t('app', 'Type'),
+            'user_id' => Yii::t('app', 'User ID'),
+            'node_id' => Yii::t('app', 'Node ID'),
+            'title' => Yii::t('app', 'Title'),
+            'summary' => Yii::t('app', 'Summary'),
+            'source' => Yii::t('app', 'Source'),
+            'image' => Yii::t('app', 'Image'),
+            'status' => Yii::t('app', 'Status'),
+            'tags' => Yii::t('app', 'Tags'),
+            'created_at' => Yii::t('app', 'Created At'),
+            'updated_at' => Yii::t('app', 'Updated At'),
         ];
     }
 
+    public function getArticle()
+    {
+        return $this->hasMany(Article::className(), ['post_id' => 'id']);
+    }
+
+    public function getPicture()
+    {
+        return $this->hasMany(Picture::className(), ['post_id' => 'id']);
+    }
+
+    public function getVideo()
+    {
+        return $this->hasMany(Video::className(), ['post_id' => 'id']);
+    }
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    public function getNode()
+    {
+        return $this->hasOne(Node::className(), ['id' => 'node_id']);
     }
 
     /**
@@ -89,10 +114,5 @@ class Post extends \yii\db\ActiveRecord
         } else {
             return false;
         }
-    }
-
-    public function getNode()
-    {
-        return $this->hasOne(Node::className(), ['id' => 'node_id']);
     }
 }

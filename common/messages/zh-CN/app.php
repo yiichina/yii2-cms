@@ -17,7 +17,10 @@ return [
     'Register a new membership' => '注册新会员',
     'Home' => '首页',
     'Name' => '名称',
+    'Type' => '类型',
     'Description' => '描述',
     'Status' => '状态',
     'Data' => '数据',
+    'Created At' => '创建时间',
+    'Updated At' => '修改时间',
 ];

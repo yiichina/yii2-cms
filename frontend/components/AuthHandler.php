@@ -25,7 +25,6 @@ class AuthHandler
     public function handle()
     {
         $attributes = $this->client->getUserAttributes();
-        print_r($attributes);exit;
         $email = ArrayHelper::getValue($attributes, 'email');
         $id = ArrayHelper::getValue($attributes, 'id');
         $nickname = ArrayHelper::getValue($attributes, 'login');

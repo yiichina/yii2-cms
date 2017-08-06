@@ -5,20 +5,20 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "article".
+ * This is the model class for table "sensitive".
  *
  * @property integer $id
- * @property integer $post_id
- * @property string $content
+ * @property integer $node_id
+ * @property string $words
  */
-class Article extends \yii\db\ActiveRecord
+class Sensitive extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%article}}';
+        return '{{%sensitive}}';
     }
 
     /**
@@ -27,7 +27,8 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['content'], 'required'],
+            [['node_id', 'words'], 'required'],
+            ['node_id', 'integer'],
         ];
     }
 
@@ -38,8 +39,8 @@ class Article extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'content' => Yii::t('app', 'Content'),
+            'node_id' => Yii::t('app', 'Node ID'),
+            'words' => Yii::t('app', 'Words'),
         ];
     }
-
 }

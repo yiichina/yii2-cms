@@ -5,20 +5,20 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "article".
+ * This is the model class for table "group".
  *
  * @property integer $id
- * @property integer $post_id
- * @property string $content
+ * @property integer $user_id
+ * @property integer $node_id
  */
-class Article extends \yii\db\ActiveRecord
+class Group extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%article}}';
+        return '{{%group}}';
     }
 
     /**
@@ -27,7 +27,8 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['content'], 'required'],
+            [['user_id', 'node_id'], 'required'],
+            [['user_id', 'node_id'], 'integer'],
         ];
     }
 
@@ -38,8 +39,8 @@ class Article extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'content' => Yii::t('app', 'Content'),
+            'user_id' => Yii::t('app', 'User ID'),
+            'node_id' => Yii::t('app', 'Node ID'),
         ];
     }
-
 }

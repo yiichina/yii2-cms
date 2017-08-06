@@ -11,9 +11,10 @@ use yiichina\icons\Icon;
  * This is the model class for table "node".
  *
  * @property integer $id
- * @property string $parent_id
- * @property integer $name
- * @property integer $description
+ * @property integer $parent_id
+ * @property integer $type
+ * @property string $name
+ * @property string $description
  * @property integer $status
  */
 class Node extends \yii\db\ActiveRecord
@@ -40,7 +41,7 @@ class Node extends \yii\db\ActiveRecord
     {
         return [
             [['parent_id', 'name', 'description', 'status'], 'required'],
-            ['type', 'safe'],
+            [['parent_id', 'type', 'status'], 'integer'],
         ];
     }
 
@@ -51,17 +52,17 @@ class Node extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'parent_id' => '父栏目',
-            'name' => '栏目名称',
-            'description' => '栏目描述',
-            'type' => '媒体类型',
-            'status' => '状态',
+            'parent_id' => Yii::t('app', 'Parent ID'),
+            'type' => Yii::t('app', 'Type'),
+            'name' => Yii::t('app', 'Name'),
+            'description' => Yii::t('app', 'Description'),
+            'status' => Yii::t('app', 'Status'),
         ];
     }
 
     public function getParentList()
     {
-        return ArrayHelper::merge(['0' =>'root'], ArrayHelper::map($this->find()->all(), 'id', 'name'));
+        return ArrayHelper::map($this->find()->all(), 'id', 'name');
     }
 
     public function getStatusList()
@@ -98,11 +99,12 @@ class Node extends \yii\db\ActiveRecord
     public static function getMenuItems($id = 0)
     {
         $items = [];
-
         $model = self::find()->where(['status' => self::STATUS_ACTIVE, 'parent_id' => $id])->all();
+
         if(count($model)) {
             foreach($model as $item) {
                 $items[] = [
+                    'icon' => Icon::show('circle-o', 'fa'),
                     'label' => Icon::show('circle-o', 'fa') . Html::tag('span', $item->name),
                     'url' => ['post/index', 'node_id' => $item->id],
                     'items' => self::getMenuItems($item->id),

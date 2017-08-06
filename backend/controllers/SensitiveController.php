@@ -3,17 +3,17 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Group;
-use backend\models\GroupSearch;
+use common\models\Sensitive;
+use backend\models\SensitiveSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 
 /**
- * GroupController implements the CRUD actions for Group model.
+ * SensitiveController implements the CRUD actions for Sensitive model.
  */
-class GroupController extends Controller
+class SensitiveController extends Controller
 {
     /**
      * @inheritdoc
@@ -40,12 +40,12 @@ class GroupController extends Controller
     }
 
     /**
-     * Lists all Group models.
+     * Lists all Sensitive models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new GroupSearch();
+        $searchModel = new SensitiveSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -55,7 +55,7 @@ class GroupController extends Controller
     }
 
     /**
-     * Displays a single Group model.
+     * Displays a single Sensitive model.
      * @param integer $id
      * @return mixed
      */
@@ -67,13 +67,13 @@ class GroupController extends Controller
     }
 
     /**
-     * Creates a new Group model.
+     * Creates a new Sensitive model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Group();
+        $model = new Sensitive();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
@@ -85,7 +85,7 @@ class GroupController extends Controller
     }
 
     /**
-     * Updates an existing Group model.
+     * Updates an existing Sensitive model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -104,7 +104,7 @@ class GroupController extends Controller
     }
 
     /**
-     * Deletes an existing Group model.
+     * Deletes an existing Sensitive model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -117,15 +117,15 @@ class GroupController extends Controller
     }
 
     /**
-     * Finds the Group model based on its primary key value.
+     * Finds the Sensitive model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Group the loaded model
+     * @return Sensitive the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Group::findOne($id)) !== null) {
+        if (($model = Sensitive::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

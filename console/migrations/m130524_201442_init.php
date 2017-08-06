@@ -35,6 +35,7 @@ class m130524_201442_init extends Migration
         ], $tableOptions);
 
         $this->addForeignKey('fk-auth-user_id-user-id', 'auth', 'user_id', 'user', 'id', 'CASCADE', 'CASCADE');
+
         $this->dataInit();
     }
 
