@@ -31,19 +31,15 @@ AppAsset::register($this);
 
 <div class="wrapper">
     <?php
-    if(Yii::$app->user->isGuest) {
-        $userItems = [
-            [
-                'label' => Icon::show('sign-in') . Html::tag('span', 'Login'),
-                'url' => ['site/login'],
-            ],
-            [
-                'label' => Icon::show('user-plus') . Html::tag('span', 'Register'),
-                'url' => ['site/signup'],
-            ]
-        ];
-    } else {
-        $userItems = [
+    MainHeader::begin([
+        'brandLabel' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']) . 'Yii CMS',
+        'brandLabelMini' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']),
+    ]);
+    echo Nav::widget([
+        'encodeLabels' => false,
+        'dropDownCaret' => '',
+        'options' => ['class' => 'navbar-nav'],
+        'items' => [
             [
                 'label' => Icon::show('envelope-o') . Html::tag('span', 4, ['class' => 'label label-success']),
                 'url' => '#',
@@ -99,20 +95,10 @@ AppAsset::register($this);
                 'items' => [
                     Html::tag('li', '您有 4 个任务', ['class' => 'user-header']),
                     Html::tag('li', '您有 4 个任务', ['class' => 'user-body']),
-                    Html::tag('li', 'hello', ['class' => 'user-footer']),
+                    Html::tag('li', Html::tag('div','Profile', ['class' => 'pull-left']) . Html::tag('div', Html::a(Yii::t('app', 'Sign out'), ['site/logout'], ['class' => 'btn btn-default btn-flat', 'data' => ['method' => 'post']]), ['class' => 'pull-right']), ['class' => 'user-footer']),
                 ],
             ],
-        ];
-    }
-    MainHeader::begin([
-        'brandLabel' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']) . 'Yii CMS',
-        'brandLabelMini' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']),
-    ]);
-    echo Nav::widget([
-        'encodeLabels' => false,
-        'dropDownCaret' => '',
-        'options' => ['class' => 'navbar-nav'],
-        'items' => $userItems,
+        ],
     ]);
     MainHeader::end();
     Sidebar::begin([
@@ -169,7 +155,11 @@ AppAsset::register($this);
 				'icon' => Icon::show('user', 'fa'),
                 'label' => '用户管理',
                 'url' => ['user/index'],
-                'active' => Yii::$app->controller->id == 'user',
+            ],
+            [
+                'icon' => Icon::show('user', 'fa'),
+                'label' => '密码重置',
+                'url' => ['user/reset-password'],
             ],
             [
 				'icon' => Icon::show('key', 'fa'),
@@ -212,7 +202,7 @@ AppAsset::register($this);
     <div class="content-wrapper">
         <section class="content-header">
             <?php if(isset($this->params['mainTitle'])): ?>
-            <?= Html::tag('h1', $this->params['mainTitle'] . (empty($this->params['subTitle']) ?: Html::tag('small', $this->params['subTitle']))) ?>
+            <?= Html::tag('h1', $this->params['mainTitle'] . (empty($this->params['subTitle']) ? null : Html::tag('small', $this->params['subTitle']))) ?>
             <?php endif; ?>
             <?= Breadcrumbs::widget([
                 'homeLink' => [

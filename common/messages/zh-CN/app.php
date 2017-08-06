@@ -4,6 +4,8 @@ return [
     'Email' => '电子邮箱',
     'Password' => '密码',
     'Signup' => '注册',
+    'Update' => '修改',
+    'Repeat Password' => '重复密码',
     'Please fill out the following fields to signup:' => '请填写以下字段完成注册：',
     'Please fill out the following fields to login:' => '请填写以下字段进行登录：',
     'I already have a membership' => '我已经是会员了',

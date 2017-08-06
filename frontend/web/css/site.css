@@ -1,5 +1,8 @@
 html, body { height: 100%; font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif; }
 h1, h2, h3, h4, h5, h6 { text-rendering: optimizeLegibility; }
+.container > .navbar-header {
+    margin-right: 10px;
+}
 .navbar-brand {
     font-size: 20px;
     line-height: 50px;

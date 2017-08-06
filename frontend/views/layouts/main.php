@@ -11,6 +11,7 @@ use frontend\assets\AppAsset;
 use common\models\Node;
 use yiichina\adminlte\Alert;
 use yiichina\icons\Icon;
+use yii\widgets\Menu;
 
 AppAsset::register($this);
 ?>
@@ -31,6 +32,79 @@ AppAsset::register($this);
 <div class="wrapper">
     <header class="main-header">
         <?php
+        if(Yii::$app->user->isGuest) {
+            $userItems = [
+                [
+                    'label' => Icon::show('sign-in') . Html::tag('span', 'Login'),
+                    'url' => ['site/login'],
+                ],
+                [
+                    'label' => Icon::show('user-plus') . Html::tag('span', 'Register'),
+                    'url' => ['site/signup'],
+                ]
+            ];
+        } else {
+            $userItems = [
+                [
+                    'label' => Icon::show('envelope-o') . Html::tag('span', 4, ['class' => 'label label-success']),
+                    'url' => '#',
+                    'options' => ['class' => 'messages-menu'],
+                    'items' => [
+                        Html::tag('li', '您有 4 条消息', ['class' => 'header']),
+                        Html::tag('li', Menu::widget([
+                            'options' => ['class' => 'menu'],
+                            'items' => [
+                                ['label' => 'Home', 'url' => ['site/index']],
+                                ['label' => 'Home', 'url' => ['site/index']],
+                            ],
+                        ])),
+                        Html::tag('li', Html::a('查看更多信息', '#'), ['class' => 'footer']),
+                    ],
+                ],
+                [
+                    'label' => Icon::show('bell-o') . Html::tag('span', 10, ['class' => 'label label-warning']),
+                    'url' => '#',
+                    'options' => ['class' => 'notifications-menu'],
+                    'items' => [
+                        Html::tag('li', '您有 10 条通知', ['class' => 'header']),
+                        Html::tag('li', Menu::widget([
+                            'options' => ['class' => 'menu'],
+                            'items' => [
+                                ['label' => 'Home', 'url' => ['site/index']],
+                                ['label' => 'Home', 'url' => ['site/index']],
+                            ],
+                        ])),
+                        Html::tag('li', Html::a('查看更多通知', '#'), ['class' => 'footer']),
+                    ],
+                ],
+                [
+                    'label' => Icon::show('flag-o') . Html::tag('span', 9, ['class' => 'label label-danger']),
+                    'url' => '#',
+                    'options' => ['class' => 'tasks-menu'],
+                    'items' => [
+                        Html::tag('li', '您有 4 个任务', ['class' => 'header']),
+                        Html::tag('li', Menu::widget([
+                            'options' => ['class' => 'menu'],
+                            'items' => [
+                                ['label' => 'Home', 'url' => ['site/index']],
+                                ['label' => 'Home', 'url' => ['site/index']],
+                            ],
+                        ])),
+                        Html::tag('li', Html::a('查看更多任务', '#'), ['class' => 'footer']),
+                    ],
+                ],
+                [
+                    'label' => Html::img('http://www.yiichina.com/uploads/avatar/000/00/00/02_avatar_small.jpg', ['alt' => 'admin', 'class' => 'user-image']) . Html::tag('span', 'admin', ['class' => 'hidden-xs']),
+                    'url' => '#',
+                    'options' => ['class' => 'user user-menu'],
+                    'items' => [
+                        Html::tag('li', '您有 4 个任务', ['class' => 'user-header']),
+                        Html::tag('li', '您有 4 个任务', ['class' => 'user-body']),
+                        Html::tag('li', Html::tag('div','Profile', ['class' => 'pull-left']) . Html::tag('div', Html::a(Yii::t('app', 'Sign out'), ['site/logout'], ['class' => 'btn btn-default btn-flat', 'data' => ['method' => 'post']]), ['class' => 'pull-right']), ['class' => 'user-footer']),
+                    ],
+                ],
+            ];
+        }
         NavBar::begin([
             'brandLabel' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']) . 'Yii CMS',
             'brandUrl' => Yii::$app->homeUrl,
@@ -39,22 +113,14 @@ AppAsset::register($this);
             ],
         ]);
         $menuItems = array_merge([['label' => '首页', 'url' => ['/site/index']]], Node::getMenuItems());
-        if (Yii::$app->user->isGuest) {
-            $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
-            $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
-        } else {
-            $menuItems[] = '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>';
-        }
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-left'],
+            'items' => $menuItems,
+            'encodeLabels' => false,
+        ]);
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
-            'items' => $menuItems,
+            'items' => $userItems,
             'encodeLabels' => false,
         ]);
         NavBar::end();
@@ -87,8 +153,7 @@ AppAsset::register($this);
             <div class="pull-right hidden-xs">
                 <b>YiiCMS Version</b> 2.4.0 - <?= Yii::powered() ?> - <a href="http://www.miibeian.gov.cn" target="_blank">京ICP备09104811号</a>
             </div>
-            <strong>Copyright &copy; 2009-<?= date('Y') ?> <a href="http://www.yiichina.com">Yii China</a>.</strong> All rights
-            reserved.
+            <strong>Copyright &copy; 2009-<?= date('Y') ?> <a href="http://www.yiichina.com">Yii China</a>.</strong> All rights reserved.
         </div>
     </footer>
 </div>
