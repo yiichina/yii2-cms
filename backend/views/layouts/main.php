@@ -89,13 +89,13 @@ AppAsset::register($this);
                 ],
             ],
             [
-                'label' => Html::img('http://www.yiichina.com/uploads/avatar/000/00/00/02_avatar_small.jpg', ['alt' => 'admin', 'class' => 'user-image']) . Html::tag('span', 'admin', ['class' => 'hidden-xs']),
+                'label' => Html::img('http://www.yiichina.com/uploads/avatar/000/00/00/02_avatar_small.jpg', ['alt' => Yii::$app->user->identity->username, 'class' => 'user-image']) . Html::tag('span', Yii::$app->user->identity->username, ['class' => 'hidden-xs']),
                 'url' => '#',
                 'options' => ['class' => 'user user-menu'],
                 'items' => [
                     Html::tag('li', '您有 4 个任务', ['class' => 'user-header']),
                     Html::tag('li', '您有 4 个任务', ['class' => 'user-body']),
-                    Html::tag('li', Html::tag('div','Profile', ['class' => 'pull-left']) . Html::tag('div', Html::a(Yii::t('app', 'Sign out'), ['site/logout'], ['class' => 'btn btn-default btn-flat', 'data' => ['method' => 'post']]), ['class' => 'pull-right']), ['class' => 'user-footer']),
+                    Html::tag('li', Html::tag('div',Html::a('Profile', ['/user'], ['class' => 'btn btn-default btn-flat']), ['class' => 'pull-left']) . Html::tag('div', Html::a(Yii::t('app', 'Sign out'), ['site/logout'], ['class' => 'btn btn-default btn-flat', 'data' => ['method' => 'post']]), ['class' => 'pull-right']), ['class' => 'user-footer']),
                 ],
             ],
         ],

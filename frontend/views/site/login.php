@@ -18,7 +18,7 @@ $this->title = Yii::t('app', 'Login');
         <p class="login-box-msg">Sign in to start your session</p>
         <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-        <?= $form->field($model, 'username', ['template' => '{input}', 'inputOptions' => ['placeholder' => 'Email']])->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'username', ['template' => '{input}', 'inputOptions' => ['placeholder' => 'Username/Email']])->textInput() ?>
 
         <?= $form->field($model, 'password', ['template' => '{input}', 'inputOptions' => ['placeholder' => 'Password']])->passwordInput() ?>
 

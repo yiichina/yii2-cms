@@ -6,7 +6,7 @@ use yiichina\adminlte\InfoBox;
 use yiichina\adminlte\Box;
 use yiichina\icons\Icon;
 use yii\helpers\Html;
-$this->title = 'My Yii Application';
+$this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
 ?>
 <div class="row">
     <div class="col-lg-6">
@@ -36,7 +36,7 @@ $this->title = 'My Yii Application';
             <p>
                 <a class="btn btn-danger btn-flat" href="http://admin.yiicms.com"><?= Icon::show('briefcase') ?>后台演示</a>
                 <a class="btn btn-primary btn-flat" href="https://github.com/yiichina/yii2-cms"><?= Icon::show('github') ?>Git Hub</a>
-                <a class="btn btn-success btn-flat" href="http://www.yiiframework.com"><?= Icon::show('play-circle') ?>开始使用</a>
+                <a class="btn btn-success btn-flat" href="http://www.yiichina.com"><?= Icon::show('play-circle') ?>开始使用</a>
             </p>
         </div>
     </div>

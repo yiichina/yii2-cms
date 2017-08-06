@@ -18,24 +18,22 @@ $this->title = Yii::t('app', 'Signup');
 
         <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-        <?= $form->field($model, 'username', ['template' => '{input}', 'options' => ['class' => 'form-group has-feedback'], 'inputOptions' => ['type' => 'email', 'placeholder' => 'Email']])->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'username', ['template' => '{input}', 'inputOptions' => ['placeholder' => 'Username']])->textInput(['autofocus' => true]) ?>
 
-        <?= $form->field($model, 'email', ['template' => '{input}', 'options' => ['class' => 'form-group has-feedback'], 'inputOptions' => ['placeholder' => 'Password']])->textInput() ?>
+        <?= $form->field($model, 'email', ['template' => '{input}', 'inputOptions' => ['placeholder' => 'Email']])->textInput() ?>
 
-        <?= $form->field($model, 'password', ['template' => '{input}', 'options' => ['class' => 'form-group has-feedback'], 'inputOptions' => ['type' => 'email', 'placeholder' => 'Email']])->textInput() ?>
+        <?= $form->field($model, 'password', ['template' => '{input}', 'inputOptions' => ['placeholder' => 'Password']])->passwordInput() ?>
 
-        <?= $form->field($model, 'password_repeat', ['template' => '{input}', 'options' => ['class' => 'form-group has-feedback'], 'inputOptions' => ['placeholder' => 'Retype password']])->passwordInput() ?>
+        <?= $form->field($model, 'password_repeat', ['template' => '{input}', 'inputOptions' => ['placeholder' => 'Retype password']])->passwordInput() ?>
 
-            <div class="row">
-                <div class="col-xs-8">
-                    <?= Html::checkbox('term', false, ['label' => Yii::t('app', '我同意此 <a href="#">条款</a>')]) ?>
-                </div>
-                <!-- /.col -->
-                <div class="col-xs-4">
-                    <?= Html::submitButton(Yii::t('app', 'Signup'), ['class' => 'btn btn-primary btn-block btn-flat']) ?>
-                </div>
-                <!-- /.col -->
+        <div class="row">
+            <div class="col-xs-8">
+                <?= Html::checkbox('term', false, ['label' => Yii::t('app', '我同意此 <a href="#">条款</a>')]) ?>
             </div>
+            <div class="col-xs-4">
+                <?= Html::submitButton(Yii::t('app', 'Signup'), ['class' => 'btn btn-primary btn-block btn-flat']) ?>
+            </div>
+        </div>
         <?php ActiveForm::end(); ?>
 
         <div class="social-auth-links text-center">
@@ -45,9 +43,6 @@ $this->title = Yii::t('app', 'Signup');
                 'popupMode' => false,
             ]) ?>
         </div>
-
         <a href="login.html" class="text-center"><?= Yii::t('app', 'I already have a membership') ?></a>
     </div>
-    <!-- /.form-box -->
 </div>
-<!-- /.register-box -->
