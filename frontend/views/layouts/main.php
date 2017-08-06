@@ -35,11 +35,11 @@ AppAsset::register($this);
         if(Yii::$app->user->isGuest) {
             $userItems = [
                 [
-                    'label' => Icon::show('sign-in') . Html::tag('span', 'Login'),
+                    'label' => Icon::show('sign-in') . Html::tag('span', Yii::t('app', 'Login')),
                     'url' => ['site/login'],
                 ],
                 [
-                    'label' => Icon::show('user-plus') . Html::tag('span', 'Register'),
+                    'label' => Icon::show('user-plus') . Html::tag('span', Yii::t('app', 'Signup')),
                     'url' => ['site/signup'],
                 ]
             ];
@@ -112,7 +112,11 @@ AppAsset::register($this);
                 'class' => 'navbar-static-top',
             ],
         ]);
-        $menuItems = array_merge([['label' => '首页', 'url' => ['/site/index']]], Node::getMenuItems());
+        $menuItems = array_merge([
+            ['label' => '首页', 'url' => ['/site/index']],
+            ['label' => '模板', 'url' => ['/template/index']],
+            ['label' => '时间线', 'url' => ['/site/timeline']]
+        ], Node::getMenuItems());
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-left'],
             'items' => $menuItems,
@@ -129,6 +133,7 @@ AppAsset::register($this);
 
     <div class="content-wrapper">
         <div class="container">
+            <?php if(isset($this->params['mainTitle']) || isset($this->params['breadcrumbs'])): ?>
             <section class="content-header">
                 <?php if(isset($this->params['mainTitle'])): ?>
                     <?= Html::tag('h1', $this->params['mainTitle'] . (empty($this->params['subTitle']) ? null : Html::tag('small', $this->params['subTitle']))) ?>
@@ -142,6 +147,7 @@ AppAsset::register($this);
                     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                 ]) ?>
             </section>
+            <?php endif; ?>
             <section class="content">
                 <?php echo $content;?>
             </section>

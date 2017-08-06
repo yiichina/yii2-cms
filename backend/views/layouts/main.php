@@ -117,10 +117,10 @@ AppAsset::register($this);
                 'active' => Yii::$app->controller->id == 'site',
             ],
             [
-                'icon' => Icon::show('columns', 'fa'),
+                'icon' => Icon::show('ban', 'fa'),
                 'label' => '禁发词管理',
-                'url' => ['node/index'],
-                'active' => Yii::$app->controller->id == 'node',
+                'url' => ['word/index'],
+                'active' => Yii::$app->controller->id == 'word',
             ],
             [
 				'icon' => Icon::show('columns', 'fa'),
@@ -147,17 +147,17 @@ AppAsset::register($this);
                 'active' => Yii::$app->controller->id == 'post',
             ],
             [
-				'icon' => Icon::show('users', 'fa'),
+				'icon' => Icon::show('user', 'fa'),
                 'label' => '用户区', 
                 'options' => ['class' => 'header'],
             ],
             [
-				'icon' => Icon::show('user', 'fa'),
+				'icon' => Icon::show('user-o', 'fa'),
                 'label' => '用户管理',
                 'url' => ['user/index'],
             ],
             [
-                'icon' => Icon::show('user', 'fa'),
+                'icon' => Icon::show('user-secret', 'fa'),
                 'label' => '密码重置',
                 'url' => ['user/reset-password'],
             ],
@@ -186,7 +186,7 @@ AppAsset::register($this);
                 ],
             ],
             [
-				'icon' => Icon::show('user-secret', 'fa'),
+				'icon' => Icon::show('group', 'fa'),
                 'label' => Html::tag('span', '编辑组管理'),
                 'url' => ['group/index'],
                 'active' => Yii::$app->controller->id == 'authority',

@@ -4,12 +4,11 @@ h1, h2, h3, h4, h5, h6 { text-rendering: optimizeLegibility; }
     margin-right: 10px;
 }
 .navbar-brand {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 50px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    padding: 0 15px;
-    font-weight: 300;
+    font-weight: 500;
     padding: 0;
+    text-rendering: optimizeLegibility;
 }
 .navbar-brand img {
     display: inline-block;
@@ -21,3 +20,21 @@ h1, h2, h3, h4, h5, h6 { text-rendering: optimizeLegibility; }
 .auth-clients li {
     margin: 0 13px 0 0;
 }
+.container .jumbotron {
+    padding: 3px 20px;
+    background: white;
+    margin-bottom: 20px;
+}
+.jumbotron p {
+    font-size: 14px;
+    line-height: 1.8em;
+}
+.jumbotron h1 {
+    font-size: 24px;
+}
+.jumbotron h2 {
+    font-size: 18px;
+    line-height: 1.6em;
+}
+.row { margin: 0 -10px; }
+.row > [class*="col-"] { padding: 0 10px; }
