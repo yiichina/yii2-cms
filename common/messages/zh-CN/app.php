@@ -9,6 +9,7 @@ return [
     'Please fill out the following fields to signup:' => '请填写以下字段完成注册：',
     'Please fill out the following fields to login:' => '请填写以下字段进行登录：',
     'I already have a membership' => '我已经是会员了',
+    'I agree to the terms' => '我同意此条款',
     'Remember Me' => '记住我',
     'reset it' => '重置',
     'Login' => '登录',

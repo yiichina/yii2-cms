@@ -28,7 +28,7 @@ $this->title = Yii::t('app', 'Signup');
 
             <div class="row">
                 <div class="col-xs-8">
-                    <?= Html::checkbox('term', false, ['label' => Yii::t('app', 'I agree to the <a href="#">terms</a>')]) ?>
+                    <?= Html::checkbox('term', false, ['label' => Yii::t('app', '我同意此 <a href="#">条款</a>')]) ?>
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">

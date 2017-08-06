@@ -6,6 +6,7 @@ use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use backend\models\ItemSearch;
+use yii\filters\AccessControl;
 use yii\rbac\Item;
 
 /**
@@ -13,6 +14,30 @@ use yii\rbac\Item;
  */
 class RoleController extends Controller
 {
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
+        ];
+    }
+
     /**
      * Lists all Node models.
      * @return mixed

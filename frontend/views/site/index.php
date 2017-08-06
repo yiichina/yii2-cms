@@ -14,6 +14,10 @@ $this->title = 'My Yii Application';
         'options' => ['class' => 'slide', 'data' => ['ride' => 'carousel']],
         'controls' => ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
         'items' => [
+            [
+                'content' => Html::img('@web/images/slide-1.jpg'),
+                'caption' => '<h4>Yii CMS</h4>'
+            ],
             // the item contains only the image
             Html::img('@web/images/slide-2.jpg'),
             // equivalent to the above

@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\filters\AccessControl;
 use backend\models\RuleSearch;
 
 /**
@@ -12,6 +13,30 @@ use backend\models\RuleSearch;
  */
 class RuleController extends Controller
 {
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
+        ];
+    }
+
     /**
      * Lists all Node models.
      * @return mixed
