@@ -9,7 +9,8 @@
         "issues": "https://github.com/yiichina/yii2-cms/issues?state=open",
         "source": "https://github.com/yiichina/yii2-cms"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.6",
