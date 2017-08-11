@@ -85,6 +85,7 @@ class m170717_850926_app_init extends Migration
             'id' => $this->primaryKey(),
             'node_id' => $this->integer()->notNull(),
             'words' => $this->string()->notNull(),
+            'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $tableOptions);
 
         $this->dataInit();
@@ -102,9 +103,6 @@ class m170717_850926_app_init extends Migration
 
     protected function dataInit()
     {
-        $node = new Node();
-        $node->name = 'root';
-        $node->description = 'root';
-        $node->save(false);
+        Yii::$app->db->createCommand()->batchInsert(Node::tableName(), ['name', 'description'], [['article', '文章'], ['picture', '图集'], ['video', '视频']]);
     }
 }

@@ -18,43 +18,43 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
         <div class="col-lg-3 col-xs-6">
             <?php SmallBox::begin([
                 'options' => ['class' => 'bg-aqua'],
-                'icon' => Icon::show('file'),
-                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => '#'],
-            ]);
-            echo Html::tag('h3', 150);
-            echo Html::tag('p', '栏目总数');
-            SmallBox::end(); ?>
-        </div>
-        <div class="col-lg-3 col-xs-6">
-            <?php SmallBox::begin([
-                'options' => ['class' => 'bg-aqua'],
-                'icon' => Icon::show('file'),
-                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => '#'],
-            ]);
-            echo Html::tag('h3', 150);
-            echo Html::tag('p', '模板总数');
-            SmallBox::end(); ?>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-            <?php SmallBox::begin([
-                'options' => ['class' => 'bg-aqua'],
-                'icon' => Icon::show('file'),
-                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => '#'],
+                'icon' => Icon::show('user-plus'),
+                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => ['/user']],
             ]);
             echo Html::tag('h3', 150);
             echo Html::tag('p', '用户总数');
             SmallBox::end(); ?>
         </div>
-        <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
             <?php SmallBox::begin([
-                'options' => ['class' => 'bg-aqua'],
-                'icon' => Icon::show('file'),
-                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => '#'],
+                'options' => ['class' => 'bg-green'],
+                'icon' => Icon::show('file-text-o'),
+                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => ['/post/index', 'type' => 1]],
             ]);
             echo Html::tag('h3', 150);
             echo Html::tag('p', '文章总数');
+            SmallBox::end(); ?>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <?php SmallBox::begin([
+                'options' => ['class' => 'bg-yellow'],
+                'icon' => Icon::show('photo'),
+                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => ['/post/index', 'type' => 2]],
+            ]);
+            echo Html::tag('h3', 150);
+            echo Html::tag('p', '图集总数');
+            SmallBox::end(); ?>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <?php SmallBox::begin([
+                'options' => ['class' => 'bg-red'],
+                'icon' => Icon::show('video-camera'),
+                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => ['/post/index', 'type' => 3]],
+            ]);
+            echo Html::tag('h3', 150);
+            echo Html::tag('p', '视频总数');
             SmallBox::end(); ?>
         </div>
         <!-- ./col -->
