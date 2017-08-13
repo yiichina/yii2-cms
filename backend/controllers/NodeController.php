@@ -62,6 +62,7 @@ class NodeController extends Controller
     public function actionCreate()
     {
         $model = new Node();
+        $model->loadDefaultValues();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);

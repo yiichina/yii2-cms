@@ -40,7 +40,7 @@ class Node extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id', 'name', 'description', 'status'], 'required'],
+            [['parent_id', 'name', 'description', 'type', 'status'], 'required'],
             [['parent_id', 'type', 'status'], 'integer'],
         ];
     }
@@ -58,6 +58,25 @@ class Node extends \yii\db\ActiveRecord
             'description' => Yii::t('app', 'Description'),
             'status' => Yii::t('app', 'Status'),
         ];
+    }
+    /**
+     * @inheritdoc
+     */
+    public function beforeValidate()
+    {
+        if (parent::beforeValidate()) {
+            if(!empty($this->type)) {
+                $this->type = implode('', $this->type);
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public function afterFind()
+    {
+        parent::afterFind();
+        $this->type = str_split($this->type);
     }
 
     public function getParentList()
@@ -94,6 +113,11 @@ class Node extends \yii\db\ActiveRecord
             self::TYPE_PICTURE => '图片',
             self::TYPE_VIDEO => '视频',
         ];
+    }
+
+    public static function getItems()
+    {
+        return ArrayHelper::map(Node::find()->all(), 'id', 'name');
     }
 
     public static function getMenuItems($id = 0)

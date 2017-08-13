@@ -17,7 +17,7 @@ class GroupSearch extends Group
     public function rules()
     {
         return [
-            [['user_id', 'node_id'], 'integer'],
+            [['node_ids'], 'integer'],
         ];
     }
 
@@ -57,8 +57,7 @@ class GroupSearch extends Group
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'user_id' => $this->user_id,
-            'node_id' => $this->node_id,
+            'node_ids' => $this->node_ids,
         ]);
 
         return $dataProvider;

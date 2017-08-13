@@ -7,6 +7,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use yii\bootstrap\Html;
+use yii\helpers\ArrayHelper;
 use yiichina\icons\Icon;
 
 /**
@@ -27,6 +28,9 @@ class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
+
+    public $roles;
+    public $group;
 
     /**
      * @inheritdoc
@@ -202,6 +206,24 @@ class User extends ActiveRecord implements IdentityInterface
         $this->password_reset_token = null;
     }
 
+    public function getRoleItems()
+    {
+        return ArrayHelper::map(Yii::$app->authManager->getRoles(), 'name', 'name');
+    }
+
+    public function getGroupItems()
+    {
+        return ArrayHelper::map(Yii::$app->authManager->getRoles(), 'name', 'name');
+    }
+
+    public function getStatusList()
+    {
+        return [
+            self::STATUS_ACTIVE => '正常',
+            self::STATUS_DELETED => '禁用',
+        ];
+    }
+
     public function getStatusLabel()
     {
         return [
@@ -212,15 +234,15 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function getRoles()
     {
-        return Yii::$app->authManager->getRolesByUser($this->id);
+        return ArrayHelper::map(Yii::$app->authManager->getRolesByUser($this->id), 'name', 'name');
     }
 
-    public function getRolesLabel()
+    public function getRoleLabels()
     {
         $roles = Yii::$app->authManager->getRolesByUser($this->id);
         $labels = [];
         foreach($roles as $key => $value) {
-            $labels[] = Html::tag('small', $key, ['class' => 'label label-info']);
+            $labels[] = Html::tag('small', Icon::show('user') . $key, ['class' => 'label label-info']);
         }
         return implode(' ', $labels);
     }

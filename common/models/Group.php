@@ -3,6 +3,8 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "group".
@@ -27,8 +29,7 @@ class Group extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'node_id'], 'required'],
-            [['user_id', 'node_id'], 'integer'],
+            [['name', 'node_ids'], 'required'],
         ];
     }
 
@@ -39,8 +40,37 @@ class Group extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'user_id' => Yii::t('app', 'User ID'),
-            'node_id' => Yii::t('app', 'Node ID'),
+            'name' => Yii::t('app', 'Name'),
+            'node_ids' => Yii::t('app', 'Node IDs'),
         ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function beforeSave($insert)
+    {
+        if(parent::beforeSave($insert)) {
+            $this->node_ids = implode(',', $this->node_ids);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function afterFind()
+    {
+        parent::afterFind();
+        $this->node_ids = explode(',', $this->node_ids);
+    }
+
+    public function getNodeLabels()
+    {
+        $nodes = ArrayHelper::map(Node::findAll($this->node_ids), 'id', 'name');
+        $labels = [];
+        foreach($nodes as $key => $value) {
+            $labels[] = Html::tag('small', $value, ['class' => 'label label-info']);
+        }
+        return implode(' ', $labels);
     }
 }

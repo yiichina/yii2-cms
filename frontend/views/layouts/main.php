@@ -5,12 +5,12 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use yii\widgets\Spaceless;
 use frontend\assets\AppAsset;
 use common\models\Node;
 use yiichina\adminlte\Alert;
+use yiichina\adminlte\NavBar;
 use yiichina\icons\Icon;
 use yii\widgets\Menu;
 
@@ -36,11 +36,11 @@ AppAsset::register($this);
         if(Yii::$app->user->isGuest) {
             $userItems = [
                 [
-                    'label' => Icon::show('sign-in') . Html::tag('span', Yii::t('app', 'Login')),
+                    'label' => Icon::show('sign-in') . Yii::t('app', 'Login'),
                     'url' => ['site/login'],
                 ],
                 [
-                    'label' => Icon::show('user-plus') . Html::tag('span', Yii::t('app', 'Signup')),
+                    'label' => Icon::show('user-plus') . Yii::t('app', 'Signup'),
                     'url' => ['site/signup'],
                 ]
             ];
@@ -109,9 +109,16 @@ AppAsset::register($this);
         NavBar::begin([
             'brandLabel' => Html::img('@web/images/logo.png', ['alt' => 'Yii CMS']) . 'Yii CMS',
             'brandUrl' => Yii::$app->homeUrl,
+            'screenReaderToggleText' => Icon::show('bars'),
+            'containerOptions' => ['class' => 'pull-left'],
             'options' => [
                 'class' => 'navbar-static-top',
             ],
+            'customMenu' => Nav::widget([
+                'options' => ['class' => 'navbar-nav'],
+                'items' => $userItems,
+                'encodeLabels' => false,
+            ]),
         ]);
         $menuItems = array_merge([
             ['label' => '首页', 'url' => ['/site/index']],
@@ -119,13 +126,8 @@ AppAsset::register($this);
             ['label' => '时间线', 'url' => ['/site/timeline']]
         ], Node::getMenuItems());
         echo Nav::widget([
-            'options' => ['class' => 'navbar-nav navbar-left'],
+            'options' => ['class' => 'navbar-nav'],
             'items' => $menuItems,
-            'encodeLabels' => false,
-        ]);
-        echo Nav::widget([
-            'options' => ['class' => 'navbar-nav navbar-right'],
-            'items' => $userItems,
             'encodeLabels' => false,
         ]);
         NavBar::end();

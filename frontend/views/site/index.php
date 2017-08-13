@@ -34,9 +34,17 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
             <h2>Yii CMS 是由 <a href="http://www.yiichina.com">Yii Framework 中文社区</a> 发起的开源项目，基于 Yii Framework 2.0 开发，遵循 BSD 开源协议。</h2>
             <p>Yii CMS 实现了高度可定制化，安装简单，使用方便。后台使用 adminLTE 主题，12 种配色，并且完美兼容移动端。功能丰富实用，例如：国际化支持，强大的缓存支持，基于角色的访问控制，第三方登录，自主开发的通用评论模块，并具有回复，分享，投票功能。</p>
             <p>
-                <a class="btn btn-danger btn-flat" href="http://admin.yiicms.com"><?= Icon::show('briefcase') ?>后台演示</a>
-                <a class="btn btn-primary btn-flat" href="https://github.com/yiichina/yii2-cms"><?= Icon::show('github') ?>Git Hub</a>
-                <a class="btn btn-success btn-flat" href="http://www.yiichina.com"><?= Icon::show('play-circle') ?>开始使用</a>
+                <div class="btn-toolbar" role="toolbar">
+                    <div class="btn-group">
+                        <a class="btn btn-danger btn-flat" href="http://admin.yiicms.com"><?= Icon::show('briefcase') ?>后台演示</a>
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn btn-primary btn-flat" href="https://github.com/yiichina/yii2-cms"><?= Icon::show('github') ?>Git Hub</a>
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn btn-success btn-flat" href="http://www.yiichina.com"><?= Icon::show('play-circle') ?>开始使用</a>
+                    </div>
+                </div>
             </p>
         </div>
     </div>

@@ -45,15 +45,19 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
             ],
             [
                 'attribute' => 'name',
-                'options' => ['width' => 60],
+                'options' => ['width' => 200],
             ],
             [
-                'attribute' => 'nodes',
+                'header' => Yii::t('app', 'Node'),
+                'value' => function($data) {
+                    return $data->nodeLabels;
+                },
+                'format' => 'raw',
             ],
             [
                 'class' => 'yii\grid\ActionColumn',
                 'header' => '操作',
-                'options' => ['width' => 70],
+                'options' => ['width' => 80],
             ],
         ],
     ]); ?>

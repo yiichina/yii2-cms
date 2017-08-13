@@ -32,7 +32,7 @@ class Sensitive extends \yii\db\ActiveRecord
     {
         return [
             [['node_id', 'words'], 'required'],
-            ['node_id', 'integer'],
+            ['status', 'integer'],
         ];
     }
 
@@ -45,6 +45,7 @@ class Sensitive extends \yii\db\ActiveRecord
             'id' => 'ID',
             'node_id' => Yii::t('app', 'Node ID'),
             'words' => Yii::t('app', 'Words'),
+            'status' => Yii::t('app', 'Status'),
         ];
     }
 

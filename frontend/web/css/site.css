@@ -1,13 +1,10 @@
 html, body { height: 100%; font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif; }
 h1, h2, h3, h4, h5, h6 { text-rendering: optimizeLegibility; }
-.container > .navbar-header {
-    margin-right: 10px;
-}
 .navbar-brand {
     font-size: 24px;
+    padding: 0 15px;
     line-height: 50px;
     font-weight: 500;
-    padding: 0;
     text-rendering: optimizeLegibility;
 }
 .navbar-brand img {
@@ -38,3 +35,5 @@ h1, h2, h3, h4, h5, h6 { text-rendering: optimizeLegibility; }
 }
 .row { margin: 0 -10px; }
 .row > [class*="col-"] { padding: 0 10px; }
+
+.carousel { margin-bottom: 20px; }

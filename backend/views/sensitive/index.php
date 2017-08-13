@@ -55,7 +55,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
             [
                 'class' => 'yii\grid\ActionColumn',
                 'header' => '操作',
-                'options' => ['width' => 70],
+                'options' => ['width' => 80],
             ],
         ],
     ]); ?>

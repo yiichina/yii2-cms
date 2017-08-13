@@ -75,7 +75,11 @@ class SensitiveController extends Controller
     {
         $model = new Sensitive();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            foreach($model->node_id as $item) {
+                $rows[] = ['node_id' => $item, 'words' => $model->words, 'status' => $model->status];
+            }
+            Yii::$app->db->createCommand()->batchInsert(Sensitive::tableName(), ['node_id', 'words', 'status'], $rows)->execute();
             return $this->redirect(['index']);
         } else {
             return $this->render('create', [

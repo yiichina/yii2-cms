@@ -216,13 +216,13 @@ AppAsset::register($this);
                 'icon' => Icon::show('cubes', 'fa'),
                 'label' => '组件管理',
                 'url' => ['widget/index'],
-                'active' => Yii::$app->controller->id == 'template',
+                'active' => Yii::$app->controller->id == 'widget',
             ],
             [
                 'icon' => Icon::show('code', 'fa'),
                 'label' => '切面编程',
                 'url' => ['aspect/index'],
-                'active' => Yii::$app->controller->id == 'template',
+                'active' => Yii::$app->controller->id == 'aspect',
             ],
         ],
     ]);

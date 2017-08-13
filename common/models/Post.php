@@ -40,6 +40,16 @@ class Post extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function rules()
     {
         return [
@@ -106,9 +116,6 @@ class Post extends \yii\db\ActiveRecord
         if(parent::beforeSave($insert)) {
             if($insert) {
                 $this->user_id = Yii::$app->user->id;
-                $this->created_at = $this->updated_at = time();
-            } else {
-                $this->updated_at = time();
             }
             return true;
         } else {

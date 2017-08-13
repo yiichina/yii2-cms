@@ -9,3 +9,5 @@
 .search .form-group { margin-bottom: 10px; }
 
 .grid-view tr td:last-child a { margin: 0 2px; }
+.icheck label { margin-right: 20px; font-weight: normal; }
+.icheck label div { margin-right: 5px; }

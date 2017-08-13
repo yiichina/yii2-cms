@@ -7,8 +7,8 @@ use yiichina\adminlte\Box;
 /* @var $this yii\web\View */
 /* @var $model common\models\Node */
 
-$mainTitle = '栏目管理';
-$subTitle = '新建栏目';
+$mainTitle = '敏感词管理';
+$subTitle = '新建敏感词';
 $this->title = $subTitle . ' - ' . $mainTitle . ' - ' . Yii::$app->name;
 $breadcrumbs[] = ['label' => $mainTitle, 'url' => ['index']];
 $breadcrumbs[] = $subTitle;
