@@ -4,53 +4,47 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d21abb64c33713a9586c72fdacecdb7",
+    "content-hash": "0d0d714492536188502bf85edef411a3",
     "packages": [
         {
-            "name": "bower-asset/adminlte",
-            "version": "v2.3.11",
+            "name": "almasaeed2010/adminlte",
+            "version": "v2.4.0-rc",
             "source": {
                 "type": "git",
                 "url": "https://github.com/almasaeed2010/AdminLTE.git",
-                "reference": "2be703222af2edcb87e562d3da2299e4352bff8a"
+                "reference": "1ee1030db29f62756a773b868c29a56935607c00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/almasaeed2010/AdminLTE/zipball/2be703222af2edcb87e562d3da2299e4352bff8a",
-                "reference": "2be703222af2edcb87e562d3da2299e4352bff8a",
+                "url": "https://files.phpcomposer.com/files/almasaeed2010/AdminLTE/1ee1030db29f62756a773b868c29a56935607c00.zip",
+                "reference": "1ee1030db29f62756a773b868c29a56935607c00",
                 "shasum": ""
             },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-main": [
-                    "index2.html",
-                    "dist/css/AdminLTE.css",
-                    "dist/js/app.js",
-                    "build/less/AdminLTE.less"
-                ],
-                "bower-asset-ignore": [
-                    "/.*",
-                    "node_modules",
-                    "bower_components",
-                    "composer.json",
-                    "documentation"
-                ]
-            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Admin dashboard and control panel template",
+            "authors": [
+                {
+                    "name": "Abdullah Almsaeed",
+                    "email": "abdullah@almsaeedstudio.com"
+                }
+            ],
+            "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 3",
+            "homepage": "https://adminlte.io/",
             "keywords": [
+                "JS",
                 "admin",
-                "backend",
-                "bootstrap",
+                "back-end",
                 "css",
-                "html",
-                "js",
+                "less",
                 "responsive",
                 "template",
-                "theme"
-            ]
+                "theme",
+                "web"
+            ],
+            "time": "2017-07-02T15:38:16+00:00"
         },
         {
             "name": "bower-asset/bootstrap",
@@ -100,6 +94,48 @@
                 "responsive",
                 "web"
             ]
+        },
+        {
+            "name": "bower-asset/bootstrap-switch",
+            "version": "v3.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nostalgiaz/bootstrap-switch.git",
+                "reference": "e1a9a9c135ed062ac362d2f8345a71417fb10758"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nostalgiaz/bootstrap-switch/zipball/e1a9a9c135ed062ac362d2f8345a71417fb10758",
+                "reference": "e1a9a9c135ed062ac362d2f8345a71417fb10758",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap": ">=2.3.2",
+                "bower-asset/jquery": ">=1.9.0"
+            },
+            "require-dev": {
+                "bower-asset/jquery": "~2.1"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./dist/js/bootstrap-switch.js",
+                    "./dist/css/bootstrap3/bootstrap-switch.css"
+                ],
+                "bower-asset-ignore": [
+                    "docs",
+                    "test",
+                    "CNAME",
+                    "composer.json",
+                    "CONTRIBUTING.md",
+                    "index.html",
+                    "package.json"
+                ]
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Turn checkboxes and radio buttons into toggle switches."
         },
         {
             "name": "bower-asset/chart.js",
@@ -392,6 +428,48 @@
                 ]
             },
             "description": "Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results."
+        },
+        {
+            "name": "bower-asset/select2-bootstrap-theme",
+            "version": "0.1.0-beta.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fk/select2-bootstrap-theme.git",
+                "reference": "7ad6e79f01dbb67c5f77ef102f9570266eca1aea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fk/select2-bootstrap-theme/zipball/7ad6e79f01dbb67c5f77ef102f9570266eca1aea",
+                "reference": "7ad6e79f01dbb67c5f77ef102f9570266eca1aea",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap": ">=3.3.4,<4.0.0",
+                "bower-asset/select2": ">=4.0.0,<5.0.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "src/build.scss",
+                    "src/build.less"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "components"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A theme for Select2 v4 and Bootstrap 3.",
+            "keywords": [
+                "bootstrap",
+                "css",
+                "less",
+                "sass",
+                "select2"
+            ]
         },
         {
             "name": "bower-asset/treegrid",
@@ -784,20 +862,20 @@
         },
         {
             "name": "yiichina/yii2-adminlte",
-            "version": "v1.11.0",
+            "version": "v1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiichina/yii2-adminlte.git",
-                "reference": "e5dcc39984f9f42f21600b5d3c804eff01e6816f"
+                "reference": "9f5b4c705602c8ebf43c11bbe0f8032b01f91744"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiichina/yii2-adminlte/zipball/e5dcc39984f9f42f21600b5d3c804eff01e6816f",
-                "reference": "e5dcc39984f9f42f21600b5d3c804eff01e6816f",
+                "url": "https://files.phpcomposer.com/files/yiichina/yii2-adminlte/9f5b4c705602c8ebf43c11bbe0f8032b01f91744.zip",
+                "reference": "9f5b4c705602c8ebf43c11bbe0f8032b01f91744",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/adminlte": ">=2.3.0",
+                "almasaeed2010/adminlte": "~2.4@RC",
                 "yiisoft/yii2-bootstrap": "~2.0.0"
             },
             "type": "yii2-extension",
@@ -822,7 +900,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-08-02T06:33:59+00:00"
+            "time": "2017-08-08T23:11:27+00:00"
         },
         {
             "name": "yiichina/yii2-auth",
@@ -998,16 +1076,16 @@
         },
         {
             "name": "yiichina/yii2-icheck",
-            "version": "v0.2.0",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiichina/yii2-icheck.git",
-                "reference": "16ba8ff546aa65ad6949b80240840eab1065f452"
+                "reference": "b47b4c11c1dc03fb63851275047b69d18746d462"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiichina/yii2-icheck/zipball/16ba8ff546aa65ad6949b80240840eab1065f452",
-                "reference": "16ba8ff546aa65ad6949b80240840eab1065f452",
+                "url": "https://files.phpcomposer.com/files/yiichina/yii2-icheck/b47b4c11c1dc03fb63851275047b69d18746d462.zip",
+                "reference": "b47b4c11c1dc03fb63851275047b69d18746d462",
                 "shasum": ""
             },
             "require": {
@@ -1036,7 +1114,7 @@
                 "iCheck",
                 "yii2"
             ],
-            "time": "2017-08-05T09:37:32+00:00"
+            "time": "2017-08-12T12:20:46+00:00"
         },
         {
             "name": "yiichina/yii2-icons",
@@ -1084,20 +1162,21 @@
         },
         {
             "name": "yiichina/yii2-select2",
-            "version": "v0.10.0",
+            "version": "v0.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiichina/yii2-select2.git",
-                "reference": "08245e0897aab6cbaef1eaca2550e3c02dd9e9f3"
+                "reference": "23d12b89e58d58a6079d7217b12eb8cfeb6c3981"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiichina/yii2-select2/zipball/08245e0897aab6cbaef1eaca2550e3c02dd9e9f3",
-                "reference": "08245e0897aab6cbaef1eaca2550e3c02dd9e9f3",
+                "url": "https://files.phpcomposer.com/files/yiichina/yii2-select2/23d12b89e58d58a6079d7217b12eb8cfeb6c3981.zip",
+                "reference": "23d12b89e58d58a6079d7217b12eb8cfeb6c3981",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/select2": "~4.0.1",
+                "bower-asset/select2-bootstrap-theme": "*@beta",
                 "yiisoft/yii2-bootstrap": "~2.0.0"
             },
             "type": "yii2-extension",
@@ -1122,7 +1201,49 @@
                 "select2",
                 "yii2"
             ],
-            "time": "2017-08-05T09:37:02+00:00"
+            "time": "2017-08-07T09:35:56+00:00"
+        },
+        {
+            "name": "yiichina/yii2-switch",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiichina/yii2-switch.git",
+                "reference": "2b86c2f64bff5760c30daccf3807113d5634b22e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/yiichina/yii2-switch/2b86c2f64bff5760c30daccf3807113d5634b22e.zip",
+                "reference": "2b86c2f64bff5760c30daccf3807113d5634b22e",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap-switch": "*",
+                "yiisoft/yii2-bootstrap": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yiichina\\switch\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "cuileon",
+                    "email": "admin@yiichina.com"
+                }
+            ],
+            "description": "Yii2 中使用 switch",
+            "keywords": [
+                "extension",
+                "switch",
+                "yii2"
+            ],
+            "time": "2017-08-05T04:15:07+00:00"
         },
         {
             "name": "yiichina/yii2-treegrid",
@@ -4140,11 +4261,11 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "dektrium/yii2-rbac": 20
     },
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.4.0"

@@ -44,16 +44,18 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
                 'options' => ['width' => 60],
             ],
             [
-                'attribute' => 'parent_id',
-                'options' => ['width' => 60],
+                'attribute' => 'node_id',
+                'options' => ['width' => 100],
             ],
-            'name',
-            'description',
-            'status',
+            'words',
+            [
+                'attribute' => 'status',
+                'options' => ['width' => 100],
+            ],
             [
                 'class' => 'yii\grid\ActionColumn',
                 'header' => '操作',
-                'options' => ['width' => 65],
+                'options' => ['width' => 70],
             ],
         ],
     ]); ?>

@@ -7,3 +7,5 @@
 .btn-search.active .fa-search-plus:before { content: "\f010"; }
 .search { display: none; background: #f4f4f4; margin-bottom: 10px; padding: 10px 10px 0 10px; }
 .search .form-group { margin-bottom: 10px; }
+
+.grid-view tr td:last-child a { margin: 0 2px; }

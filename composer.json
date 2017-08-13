@@ -24,6 +24,7 @@
         "yiichina/yii2-select2": "*",
         "yiichina/yii2-icheck": "*",
         "yiichina/yii2-chart": "*",
+        "yiichina/yii2-switch": "*",
         "dektrium/yii2-rbac": "1.0.0-alpha@dev"
     },
     "require-dev": {

@@ -76,8 +76,9 @@ class m170717_850926_app_init extends Migration
         // Group
         $this->createTable('{{%group}}', [
             'id' => $this->primaryKey(),
-            'user_id' => $this->integer()->notNull(),
-            'node_id' => $this->integer()->notNull(),
+            'name' => $this->string()->notNull(),
+            'node_ids' => $this->string()->notNull(),
+            'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $tableOptions);
 
         // Sensitive

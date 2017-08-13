@@ -6,6 +6,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\widgets\Spaceless;
 use backend\assets\AppAsset;
 
 $this->title = 'Login';
@@ -26,7 +27,7 @@ AppAsset::register($this);
 </head>
 <body class="hold-transition login-page">
 <?php $this->beginBody() ?>
-
+<?php Spaceless::begin(); ?>
 <div class="login-box">
     <div class="login-logo"><b>Yii CMS</b> 后台管理系统</div>
     <!-- /.login-logo -->
@@ -51,6 +52,7 @@ AppAsset::register($this);
     <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
+<?php Spaceless::end(); ?>
 <?php $this->endBody() ?>
 </body>
 </html>

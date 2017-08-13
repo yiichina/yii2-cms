@@ -8,9 +8,11 @@ use backend\assets\AppAsset;
 use yiichina\adminlte\Nav;
 use yiichina\adminlte\MainHeader;
 use yiichina\adminlte\SideBar;
+use yiichina\adminlte\Alert;
 use yiichina\icons\Icon;
 use yii\widgets\Breadcrumbs;
 use yii\widgets\Menu;
+use yii\widgets\Spaceless;
 use common\models\Node;
 
 AppAsset::register($this);
@@ -28,7 +30,7 @@ AppAsset::register($this);
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <?php $this->beginBody() ?>
-
+<?php Spaceless::begin(); ?>
 <div class="wrapper">
     <?php
     MainHeader::begin([
@@ -245,7 +247,8 @@ AppAsset::register($this);
             ]) ?>
         </section>
         <section class="content">
-            <?php echo $content;?>
+            <?= Alert::widget() ?>
+            <?= $content ?>
         </section>
     </div>
 
@@ -446,6 +449,7 @@ AppAsset::register($this);
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<?php Spaceless::end(); ?>
 <?php $this->endBody() ?>
 </body>
 </html>

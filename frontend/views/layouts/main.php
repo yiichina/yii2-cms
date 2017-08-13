@@ -7,6 +7,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use yii\widgets\Spaceless;
 use frontend\assets\AppAsset;
 use common\models\Node;
 use yiichina\adminlte\Alert;
@@ -28,7 +29,7 @@ AppAsset::register($this);
 </head>
 <body class="hold-transition skin-blue layout-top-nav">
 <?php $this->beginBody() ?>
-
+<?php Spaceless::begin(); ?>
 <div class="wrapper">
     <header class="main-header">
         <?php
@@ -149,7 +150,8 @@ AppAsset::register($this);
             </section>
             <?php endif; ?>
             <section class="content">
-                <?php echo $content;?>
+                <?= Alert::widget() ?>
+                <?= $content ?>
             </section>
         </div>
     </div>
@@ -163,6 +165,7 @@ AppAsset::register($this);
         </div>
     </footer>
 </div>
+<?php Spaceless::end(); ?>
 <?php $this->endBody() ?>
 </body>
 </html>

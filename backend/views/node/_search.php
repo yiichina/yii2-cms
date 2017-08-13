@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-use common\models\Node;
+use yiichina\icheck\ICheck;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\NodeSearch */
@@ -15,7 +15,7 @@ use common\models\Node;
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
-
+    <?= ICheck::widget(['type' => ICheck::TYPE_RADIO_LIST, 'color' => ICheck::COLOR_GREEN, 'model' => $model, 'attribute' => 'status', 'items' => ['a' => 'b']]) ?>
     <div class="row">
         <div class="col-xs-3">
             <?= $form->field($model, 'parent_id', ['template' => '{input}', 'inputOptions' => ['class' => 'form-control input-sm']])->dropDownList($model->parentList, ['prompt' => '请选择父栏目']) ?>

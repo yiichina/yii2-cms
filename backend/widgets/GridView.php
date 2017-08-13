@@ -5,6 +5,7 @@ namespace backend\widgets;
 use yii\bootstrap\ButtonDropdown;
 use yii\helpers\Html;
 use yiichina\icons\Icon;
+use yiichina\icheck\ICheckAsset;
 
 use Yii;
 
@@ -25,6 +26,18 @@ class GridView extends \yii\grid\GridView
     public function init()
     {
 		parent::init();
+        $view = $this->getView();
+        $asset = ICheckAsset::register($view);
+        $view->registerCssFile($asset->baseUrl . '/skins/minimal/blue.css');
+        $view->registerJs("$('input[type=\"checkbox\"]').iCheck({
+            checkboxClass: 'icheckbox_minimal-blue',
+            radioClass: 'iradio_minimal-blue',
+        });
+        $('input[name=\"selection_all\"]').on('ifToggled', function (event) {
+            var chkToggle;
+            $(this).is(':checked') ? chkToggle = \"check\" : chkToggle = \"uncheck\";
+            $('input[name=\"selection[]\"]').iCheck(chkToggle);
+        });");
         $this->pager['hideOnSinglePage'] = false;
 	}
 

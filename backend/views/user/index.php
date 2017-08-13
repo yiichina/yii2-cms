@@ -55,11 +55,26 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
                 'options' => ['width' => 150],
                 'format' => ['date', 'php:Y-m-d H:i:s'],
             ],
-            'status',
+            [
+                'attribute' => 'roles',
+                'options' => ['width' => 100],
+                'value' => function($data) {
+                    return $data->rolesLabel;
+                },
+                'format' => 'raw',
+            ],
+            [
+                'attribute' => 'status',
+                'options' => ['width' => 100],
+                'value' => function($data) {
+                    return $data->statusLabel;
+                },
+                'format' => 'raw',
+            ],
             [
                 'class' => 'yii\grid\ActionColumn',
                 'header' => '操作',
-                'options' => ['width' => 100],
+                'options' => ['width' => 70],
             ],
         ],
     ]); ?>

@@ -6,6 +6,8 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use yii\bootstrap\Html;
+use yiichina\icons\Icon;
 
 /**
  * User model
@@ -25,7 +27,6 @@ class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
-
 
     /**
      * @inheritdoc
@@ -199,5 +200,28 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    public function getStatusLabel()
+    {
+        return [
+            self::STATUS_DELETED => Html::tag('small', Icon::show('delete') . Yii::t('app', 'Deleted'), ['class' => 'label label-danger']),
+            self::STATUS_ACTIVE => Html::tag('small', Icon::show('check') . Yii::t('app', 'Active'), ['class' => 'label label-success']),
+        ][$this->status];
+    }
+
+    public function getRoles()
+    {
+        return Yii::$app->authManager->getRolesByUser($this->id);
+    }
+
+    public function getRolesLabel()
+    {
+        $roles = Yii::$app->authManager->getRolesByUser($this->id);
+        $labels = [];
+        foreach($roles as $key => $value) {
+            $labels[] = Html::tag('small', $key, ['class' => 'label label-info']);
+        }
+        return implode(' ', $labels);
     }
 }

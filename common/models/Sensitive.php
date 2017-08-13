@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "sensitive".
@@ -13,6 +14,9 @@ use Yii;
  */
 class Sensitive extends \yii\db\ActiveRecord
 {
+    const STATUS_INACTIVE = 0;
+    const STATUS_ACTIVE = 1;
+
     /**
      * @inheritdoc
      */
@@ -41,6 +45,19 @@ class Sensitive extends \yii\db\ActiveRecord
             'id' => 'ID',
             'node_id' => Yii::t('app', 'Node ID'),
             'words' => Yii::t('app', 'Words'),
+        ];
+    }
+
+    public function getNodeList()
+    {
+        return ArrayHelper::map(Node::find()->all(), 'id', 'name');
+    }
+
+    public function getStatusList()
+    {
+        return [
+            self::STATUS_ACTIVE => '正常',
+            self::STATUS_INACTIVE => '禁用',
         ];
     }
 }

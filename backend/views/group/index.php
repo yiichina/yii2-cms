@@ -9,8 +9,8 @@ use yiichina\icons\Icon;
 /* @var $searchModel common\models\NodeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$mainTitle = '栏目管理';
-$subTitle = '栏目列表';
+$mainTitle = '编辑组管理';
+$subTitle = '编辑组列表';
 $this->title = $subTitle . ' - ' . $mainTitle . ' - ' . Yii::$app->name;
 $breadcrumbs[] = ['label' => $mainTitle, 'url' => ['index']];
 $breadcrumbs[] = $subTitle;
@@ -33,7 +33,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
             ['label' => '禁用', 'url' => ['disable']],
             ['label' => '启用', 'url' => ['enable']],
         ],
-        'button' => Html::a(Icon::show('plus', 'fa') . '新建栏目', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
+        'button' => Html::a(Icon::show('plus', 'fa') . '新建编辑组', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
         'columns' => [
             [
                 'class' => 'yii\grid\CheckboxColumn',
@@ -44,16 +44,16 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
                 'options' => ['width' => 60],
             ],
             [
-                'attribute' => 'parent_id',
+                'attribute' => 'name',
                 'options' => ['width' => 60],
             ],
-            'name',
-            'description',
-            'status',
+            [
+                'attribute' => 'nodes',
+            ],
             [
                 'class' => 'yii\grid\ActionColumn',
                 'header' => '操作',
-                'options' => ['width' => 65],
+                'options' => ['width' => 70],
             ],
         ],
     ]); ?>

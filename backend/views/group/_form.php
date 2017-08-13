@@ -12,13 +12,9 @@ use yii\bootstrap\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'parent_id')->dropDownList($model->parentList) ?>
-
     <?= $form->field($model, 'name')->textInput() ?>
 
-    <?= $form->field($model, 'description')->textInput() ?>
-
-    <?= $form->field($model, 'status')->inline()->radioList($model->statusList) ?>
+    <?= $form->field($model, 'node_ids')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? '新建' : '修改', ['class' => $model->isNewRecord ? 'btn btn-success btn-flat' : 'btn btn-primary btn-flat']) ?>

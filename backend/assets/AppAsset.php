@@ -21,8 +21,6 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'yiichina\adminlte\AdminlteAsset',
-        //'yiichina\icheck\ICheckAsset',
-        //'yiichina\icheck\Select2Asset',
         'yiichina\icons\IconAsset',
     ];
 }
