@@ -92,6 +92,14 @@ class Node extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getStatusLabel()
+    {
+        return [
+            self::STATUS_INACTIVE => Html::tag('small', Icon::show('delete') . Yii::t('app', 'Deleted'), ['class' => 'label label-danger']),
+            self::STATUS_ACTIVE => Html::tag('small', Icon::show('check') . Yii::t('app', 'Active'), ['class' => 'label label-success']),
+        ][$this->status];
+    }
+
     public function getTypeName()
     {
         return [

@@ -55,6 +55,10 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
             [
                 'attribute' => 'status',
                 'options' => ['width' => 100],
+                'value' => function($data) {
+                    return $data->statusLabel;
+                },
+                'format' => 'raw',
             ],
             [
                 'class' => 'yii\grid\ActionColumn',
