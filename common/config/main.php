@@ -19,6 +19,7 @@ return [
         ],
         'authManager' => [
             'class' => 'dektrium\rbac\components\DbManager',
+            'defaultRoles' => ['visitor'],
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
