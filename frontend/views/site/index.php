@@ -36,97 +36,248 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
             <p>
                 <div class="btn-toolbar" role="toolbar">
                     <div class="btn-group">
-                        <a class="btn btn-danger btn-flat" href="http://admin.yiicms.com"><?= Icon::show('briefcase') ?>后台演示</a>
+                        <a class="btn btn-danger" href="http://admin.yiicms.com"><?= Icon::show('briefcase') ?>后台演示</a>
                     </div>
                     <div class="btn-group">
-                        <a class="btn btn-primary btn-flat" href="https://github.com/yiichina/yii2-cms"><?= Icon::show('github') ?>Git Hub</a>
+                        <a class="btn btn-primary" href="https://github.com/yiichina/yii2-cms"><?= Icon::show('github') ?>Git Hub</a>
                     </div>
                     <div class="btn-group">
-                        <a class="btn btn-success btn-flat" href="http://www.yiichina.com"><?= Icon::show('play-circle') ?>开始使用</a>
+                        <a class="btn btn-success" href="http://www.yiichina.com"><?= Icon::show('play-circle') ?>开始使用</a>
                     </div>
                 </div>
             </p>
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-3 col-xs-6">
-        <?php InfoBox::begin([
-            'options' => ['class' => 'bg-aqua'],
-            'icon' => Icon::show('file'),
-            'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => '#'],
-        ]);
-        echo Html::tag('h3', '快速');
-        echo Html::tag('p', '栏目总数');
-        InfoBox::end(); ?>
+<div class="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="media">
+                    <div class="media-left">
+                        <span class="fa-stack fa-4x">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">No theme to wrestle with</h3>
+                        <p>
+                            Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="media">
+                    <div class="media-left">
+                        <span class="fa-stack fa-4x">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">No theme to wrestle with</h3>
+                        <p>
+                            Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="media">
+                    <div class="media-left">
+                        <span class="fa-stack fa-4x">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">No theme to wrestle with</h3>
+                        <p>
+                            Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="media">
+                    <div class="media-left">
+                        <span class="fa-stack fa-4x">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">No theme to wrestle with</h3>
+                        <p>
+                            Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-lg-3 col-xs-6">
-        <?php InfoBox::begin([
-            'options' => ['class' => 'bg-aqua'],
-            'icon' => Icon::show('file'),
-            'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => '#'],
-        ]);
-        echo Html::tag('h3', 150);
-        echo Html::tag('p', '模板总数');
-        InfoBox::end(); ?>
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-        <?php InfoBox::begin([
-            'options' => ['class' => 'bg-aqua'],
-            'icon' => Icon::show('file'),
-            'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => '#'],
-        ]);
-        echo Html::tag('h3', 150);
-        echo Html::tag('p', '用户总数');
-        InfoBox::end(); ?>
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-        <?php InfoBox::begin([
-            'options' => ['class' => 'bg-aqua'],
-            'icon' => Icon::show('file'),
-            'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => '#'],
-        ]);
-        echo Html::tag('h3', 150);
-        echo Html::tag('p', '文章总数');
-        InfoBox::end(); ?>
-    </div>
-    <!-- ./col -->
 </div>
 <div class="row">
     <div class="col-lg-6">
-    <?php Box::begin([
-        'options' => ['class' => 'box-primary'],
-        'title' => '最新动态',
-    ]); ?>
-
-    <?php Box::end(); ?>
+        <?php Box::begin([
+            'options' => ['class' => 'box-success'],
+            'title' => '最新动态',
+        ]); ?>
+        <ul class="article">
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+        </ul>
+        <?php Box::end(); ?>
     </div>
     <div class="col-lg-6">
         <?php Box::begin([
             'options' => ['class' => 'box-primary'],
             'title' => '常见问题',
         ]); ?>
-
+        <ul class="article">
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+        </ul>
         <?php Box::end(); ?>
     </div>
 </div>
 <div class="row">
     <div class="col-lg-6">
         <?php Box::begin([
-            'options' => ['class' => 'box-primary'],
+            'options' => ['class' => 'box-danger'],
             'title' => '最新会员',
         ]); ?>
-
+        <ul class="users-list clearfix">
+            <li>
+                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user1-128x128.jpg" alt="User Image">
+                <a class="users-list-name" href="#">Alexander Pierce</a>
+                <span class="users-list-date">Today</span>
+            </li>
+            <li>
+                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user8-128x128.jpg" alt="User Image">
+                <a class="users-list-name" href="#">Norman</a>
+                <span class="users-list-date">Yesterday</span>
+            </li>
+            <li>
+                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user7-128x128.jpg" alt="User Image">
+                <a class="users-list-name" href="#">Jane</a>
+                <span class="users-list-date">12 Jan</span>
+            </li>
+            <li>
+                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user6-128x128.jpg" alt="User Image">
+                <a class="users-list-name" href="#">John</a>
+                <span class="users-list-date">12 Jan</span>
+            </li>
+            <li>
+                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user2-160x160.jpg" alt="User Image">
+                <a class="users-list-name" href="#">Alexander</a>
+                <span class="users-list-date">13 Jan</span>
+            </li>
+            <li>
+                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user5-128x128.jpg" alt="User Image">
+                <a class="users-list-name" href="#">Sarah</a>
+                <span class="users-list-date">14 Jan</span>
+            </li>
+            <li>
+                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user4-128x128.jpg" alt="User Image">
+                <a class="users-list-name" href="#">Nora</a>
+                <span class="users-list-date">15 Jan</span>
+            </li>
+            <li>
+                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user3-128x128.jpg" alt="User Image">
+                <a class="users-list-name" href="#">Nadia</a>
+                <span class="users-list-date">15 Jan</span>
+            </li>
+        </ul>
         <?php Box::end(); ?>
     </div>
     <div class="col-lg-6">
         <?php Box::begin([
-            'options' => ['class' => 'box-primary'],
+            'options' => ['class' => 'box-warning'],
             'title' => '最新评论',
         ]); ?>
+        <div class="box-footer box-comments">
+            <div class="box-comment">
+                <!-- User image -->
+                <img class="img-circle img-sm" src="https://adminlte.io/themes/AdminLTE/dist/img/user3-128x128.jpg" alt="User Image">
 
+                <div class="comment-text">
+                      <span class="username">
+                        Maria Gonzales
+                        <span class="text-muted pull-right">8:03 PM Today</span>
+                      </span><!-- /.username -->
+                    It is a long established fact that a reader will be distracted
+                    by the readable content of a page when looking at its layout.
+                </div>
+                <!-- /.comment-text -->
+            </div>
+            <!-- /.box-comment -->
+            <div class="box-comment">
+                <!-- User image -->
+                <img class="img-circle img-sm" src="https://adminlte.io/themes/AdminLTE/dist/img/user4-128x128.jpg" alt="User Image">
+
+                <div class="comment-text">
+                      <span class="username">
+                        Luna Stark
+                        <span class="text-muted pull-right">8:03 PM Today</span>
+                      </span><!-- /.username -->
+                    It is a long established fact that a reader will be distracted
+                    by the readable content of a page when looking at its layout.
+                </div>
+                <!-- /.comment-text -->
+            </div>
+            <!-- /.box-comment -->
+            <div class="box-comment">
+                <!-- User image -->
+                <img class="img-circle img-sm" src="https://adminlte.io/themes/AdminLTE/dist/img/user3-128x128.jpg" alt="User Image">
+
+                <div class="comment-text">
+                      <span class="username">
+                        Maria Gonzales
+                        <span class="text-muted pull-right">8:03 PM Today</span>
+                      </span><!-- /.username -->
+                    It is a long established fact that a reader will be distracted
+                    by the readable content of a page when looking at its layout.
+                </div>
+                <!-- /.comment-text -->
+            </div>
+            <!-- /.box-comment -->
+            <div class="box-comment">
+                <!-- User image -->
+                <img class="img-circle img-sm" src="https://adminlte.io/themes/AdminLTE/dist/img/user4-128x128.jpg" alt="User Image">
+
+                <div class="comment-text">
+                      <span class="username">
+                        Luna Stark
+                        <span class="text-muted pull-right">8:03 PM Today</span>
+                      </span><!-- /.username -->
+                    It is a long established fact that a reader will be distracted
+                    by the readable content of a page when looking at its layout.
+                </div>
+                <!-- /.comment-text -->
+            </div>
+            <!-- /.box-comment -->
+        </div>
         <?php Box::end(); ?>
     </div>
 </div>
