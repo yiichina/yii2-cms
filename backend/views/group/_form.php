@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yiichina\select2\Select2;
+use yiichina\icons\Icon;
 use common\models\Node;
 
 /* @var $this yii\web\View */

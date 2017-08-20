@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yiichina\select2\Select2;
 use yiichina\icheck\ICheck;
+use yiichina\icons\Icon;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Post */

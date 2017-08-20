@@ -2,9 +2,10 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-use common\models\Node;
 use yiichina\select2\Select2;
 use yiichina\icheck\ICheck;
+use yiichina\icons\Icon;
+use common\models\Node;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Node */

@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yiichina\ckeditor\CKEditor;
+use yiichina\icons\Icon;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Post */
