@@ -17,7 +17,7 @@ $breadcrumbs[] = $subTitle;
 $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'breadcrumbs'));
 ?>
 
-<div class="node-index">
+<div class="sensitive-index">
     <?php Box::begin([
         'options' => ['class' => 'box-primary'],
         'title' => $subTitle,

@@ -14,7 +14,7 @@ $breadcrumbs[] = ['label' => $mainTitle, 'url' => ['index']];
 $breadcrumbs[] = $subTitle;
 $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'breadcrumbs'));
 ?>
-<div class="node-create">
+<div class="rule-create">
 
     <?php Box::begin([
         'options' => ['class' => 'box-primary'],
