@@ -13,6 +13,19 @@ class m170717_850926_app_init extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
+        // Setting
+        $this->createTable('{{%Setting}}', [
+            'id' => $this->primaryKey(),
+            'pretty_url' => $this->smallInteger()->notNull()->defaultValue(0),
+        ], $tableOptions);
+
+        // Preference
+        $this->createTable('{{%Preference}}', [
+            'id' => $this->primaryKey(),
+            'user_id' => $this->integer()->notNull(),
+            'theme' => $this->string(32)->notNull(),
+        ], $tableOptions);
+
         // Template
         $this->createTable('{{%template}}', [
             'id' => $this->primaryKey(),
