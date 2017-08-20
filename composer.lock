@@ -170,16 +170,16 @@
         },
         {
             "name": "bower-asset/ckeditor",
-            "version": "4.7.1",
+            "version": "4.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ckeditor/ckeditor-releases.git",
-                "reference": "d62153e131ad4187700342fc044cf069c2fb5d8a"
+                "reference": "e1db4f159d7743c076e464ce90dc8b421ebc8ef0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ckeditor/ckeditor-releases/zipball/d62153e131ad4187700342fc044cf069c2fb5d8a",
-                "reference": "d62153e131ad4187700342fc044cf069c2fb5d8a",
+                "url": "https://api.github.com/repos/ckeditor/ckeditor-releases/zipball/e1db4f159d7743c076e464ce90dc8b421ebc8ef0",
+                "reference": "e1db4f159d7743c076e464ce90dc8b421ebc8ef0",
                 "shasum": ""
             },
             "type": "bower-asset-library",
@@ -862,16 +862,16 @@
         },
         {
             "name": "yiichina/yii2-adminlte",
-            "version": "v1.15.0",
+            "version": "v1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiichina/yii2-adminlte.git",
-                "reference": "9f5b4c705602c8ebf43c11bbe0f8032b01f91744"
+                "reference": "203744b72d6b5cefab52b5e7cccd7ae5b5591692"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/yiichina/yii2-adminlte/9f5b4c705602c8ebf43c11bbe0f8032b01f91744.zip",
-                "reference": "9f5b4c705602c8ebf43c11bbe0f8032b01f91744",
+                "url": "https://files.phpcomposer.com/files/yiichina/yii2-adminlte/203744b72d6b5cefab52b5e7cccd7ae5b5591692.zip",
+                "reference": "203744b72d6b5cefab52b5e7cccd7ae5b5591692",
                 "shasum": ""
             },
             "require": {
@@ -900,7 +900,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-08-08T23:11:27+00:00"
+            "time": "2017-08-16T12:13:10+00:00"
         },
         {
             "name": "yiichina/yii2-auth",
@@ -945,16 +945,16 @@
         },
         {
             "name": "yiichina/yii2-chart",
-            "version": "v0.1.0",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiichina/yii2-chart.git",
-                "reference": "d1e019f572dede5fedb63dea84b89c0c183542b9"
+                "reference": "604bae5b7c429050476c8a5f341cab1efdc6df7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiichina/yii2-chart/zipball/d1e019f572dede5fedb63dea84b89c0c183542b9",
-                "reference": "d1e019f572dede5fedb63dea84b89c0c183542b9",
+                "url": "https://files.phpcomposer.com/files/yiichina/yii2-chart/604bae5b7c429050476c8a5f341cab1efdc6df7e.zip",
+                "reference": "604bae5b7c429050476c8a5f341cab1efdc6df7e",
                 "shasum": ""
             },
             "require": {
@@ -983,7 +983,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2017-07-30T12:35:02+00:00"
+            "time": "2017-08-13T09:24:10+00:00"
         },
         {
             "name": "yiichina/yii2-ckeditor",
@@ -1076,16 +1076,16 @@
         },
         {
             "name": "yiichina/yii2-icheck",
-            "version": "v0.3.0",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiichina/yii2-icheck.git",
-                "reference": "b47b4c11c1dc03fb63851275047b69d18746d462"
+                "reference": "db757eeffd438b749857bb88c039aba20b1a10df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/yiichina/yii2-icheck/b47b4c11c1dc03fb63851275047b69d18746d462.zip",
-                "reference": "b47b4c11c1dc03fb63851275047b69d18746d462",
+                "url": "https://files.phpcomposer.com/files/yiichina/yii2-icheck/db757eeffd438b749857bb88c039aba20b1a10df.zip",
+                "reference": "db757eeffd438b749857bb88c039aba20b1a10df",
                 "shasum": ""
             },
             "require": {
@@ -1114,7 +1114,7 @@
                 "iCheck",
                 "yii2"
             ],
-            "time": "2017-08-12T12:20:46+00:00"
+            "time": "2017-08-13T12:51:56+00:00"
         },
         {
             "name": "yiichina/yii2-icons",
@@ -1162,16 +1162,16 @@
         },
         {
             "name": "yiichina/yii2-select2",
-            "version": "v0.11.0",
+            "version": "v0.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiichina/yii2-select2.git",
-                "reference": "23d12b89e58d58a6079d7217b12eb8cfeb6c3981"
+                "reference": "f4472fdba07ba727a8598a580a253f8dba87dc0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/yiichina/yii2-select2/23d12b89e58d58a6079d7217b12eb8cfeb6c3981.zip",
-                "reference": "23d12b89e58d58a6079d7217b12eb8cfeb6c3981",
+                "url": "https://files.phpcomposer.com/files/yiichina/yii2-select2/f4472fdba07ba727a8598a580a253f8dba87dc0a.zip",
+                "reference": "f4472fdba07ba727a8598a580a253f8dba87dc0a",
                 "shasum": ""
             },
             "require": {
@@ -1201,7 +1201,7 @@
                 "select2",
                 "yii2"
             ],
-            "time": "2017-08-07T09:35:56+00:00"
+            "time": "2017-08-13T12:50:47+00:00"
         },
         {
             "name": "yiichina/yii2-switch",
@@ -1909,29 +1909,31 @@
         },
         {
             "name": "fzaninotto/faker",
-            "version": "v1.6.0",
+            "version": "v1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "44f9a286a04b80c76a4e5fb7aad8bb539b920123"
+                "reference": "d3ed4cc37051c1ca52d22d76b437d14809fc7e0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/44f9a286a04b80c76a4e5fb7aad8bb539b920123",
-                "reference": "44f9a286a04b80c76a4e5fb7aad8bb539b920123",
+                "url": "https://files.phpcomposer.com/files/fzaninotto/Faker/d3ed4cc37051c1ca52d22d76b437d14809fc7e0d.zip",
+                "reference": "d3ed4cc37051c1ca52d22d76b437d14809fc7e0d",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.3|^7.0"
+                "php": "^5.3.3 || ^7.0"
             },
             "require-dev": {
                 "ext-intl": "*",
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~1.5"
+                "phpunit/phpunit": "^4.0 || ^5.0",
+                "squizlabs/php_codesniffer": "^1.5"
             },
             "type": "library",
             "extra": {
-                "branch-alias": []
+                "branch-alias": {
+                    "dev-master": "1.8-dev"
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -1953,7 +1955,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2016-04-29T12:21:54+00:00"
+            "time": "2017-08-15T16:48:10+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -3910,16 +3912,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "f29dca382a6485c3cbe6379f0c61230167681937"
+                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f29dca382a6485c3cbe6379f0c61230167681937",
-                "reference": "f29dca382a6485c3cbe6379f0c61230167681937",
+                "url": "https://files.phpcomposer.com/files/symfony/polyfill-mbstring/7c8fae0ac1d216eb54349e6a8baa57d515fe8803.zip",
+                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
                 "shasum": ""
             },
             "require": {
@@ -3931,7 +3933,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -3965,7 +3967,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09T14:24:12+00:00"
+            "time": "2017-06-14T15:44:48+00:00"
         },
         {
             "name": "symfony/yaml",

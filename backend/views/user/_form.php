@@ -18,14 +18,14 @@ use yiichina\icheck\ICheck;
 
     <?= $form->field($model, 'email')->textInput() ?>
 
-    <?= $form->field($model, 'roles')->widget(Select2::className(), ['items' => $model->roleItems, 'bootstrapTheme' => true, 'multiple' => true, 'select2Options' => ['width' => '100%']]) ?>
+    <?= $form->field($model, 'roles')->widget(Select2::className(), ['items' => $model->roleItems, 'bootstrapTheme' => true, 'multiple' => true, 'clientOptions' => ['width' => '100%']]) ?>
 
-    <?= $form->field($model, 'group')->widget(Select2::className(), ['items' => $model->groupItems, 'bootstrapTheme' => true, 'select2Options' => ['width' => '100%']]) ?>
+    <?= $form->field($model, 'group')->widget(Select2::className(), ['items' => $model->groupItems, 'bootstrapTheme' => true, 'clientOptions' => ['width' => '100%']]) ?>
 
     <?= $form->field($model, 'status')->widget(ICheck::className(), ['type' => ICheck::TYPE_RADIO_LIST, 'items' => $model->statusList]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Icon::show('plus') . Yii::t('app', 'Create') : Icon::show('edit') . Yii::t('app', 'Reset'), ['class' => $model->isNewRecord ? 'btn btn-success btn-flat' : 'btn btn-primary btn-flat']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

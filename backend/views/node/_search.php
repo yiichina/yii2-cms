@@ -31,8 +31,8 @@ use yiichina\icheck\ICheck;
 
         <div class="col-xs-3">
             <div class="form-group pull-right">
-                <?= Html::submitButton('搜索', ['class' => 'btn btn-primary btn-sm btn-flat']) ?>
-                <?= Html::resetButton('重置', ['class' => 'btn btn-default btn-sm btn-flat']) ?>
+                <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary btn-sm btn-flat']) ?>
+                <?= Html::resetButton(Yii::t('app', 'Reset'), ['class' => 'btn btn-default btn-sm btn-flat']) ?>
             </div>
         </div>
     </div>
