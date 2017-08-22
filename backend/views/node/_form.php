@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yiichina\icheck\ICheck;
 use yiichina\icons\Icon;
+use yiichina\select2\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Node */
@@ -14,7 +15,7 @@ use yiichina\icons\Icon;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'parent_id')->dropDownList($model->parentList) ?>
+    <?= $form->field($model, 'parent_id')->widget(Select2::className(), ['items' => $model->parentList, 'bootstrapTheme' => true, 'clientOptions' => ['width' => '100%']]) ?>
 
     <?= $form->field($model, 'name')->textInput() ?>
 

@@ -101,8 +101,6 @@ class m170717_850926_app_init extends Migration
             'words' => $this->string()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $tableOptions);
-
-        $this->dataInit();
     }
 
     public function down()
@@ -113,10 +111,5 @@ class m170717_850926_app_init extends Migration
         $this->dropTable('{{%article}}');
         $this->dropTable('{{%picture}}');
         $this->dropTable('{{%video}}');
-    }
-
-    protected function dataInit()
-    {
-        Yii::$app->db->createCommand()->batchInsert(Node::tableName(), ['name', 'description'], [['article', '文章'], ['picture', '图集'], ['video', '视频']])->execute();
     }
 }

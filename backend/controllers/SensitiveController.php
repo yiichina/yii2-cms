@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * SensitiveController implements the CRUD actions for Sensitive model.
@@ -47,11 +48,18 @@ class SensitiveController extends Controller
     {
         $batch = Yii::$app->request->get('batch');
         $ids = Yii::$app->request->post('ids');
-        if($batch == 'disabled') {
-            Sensitive::updateAll(['status' => Sensitive::STATUS_INACTIVE], "id IN ($ids)");
-        } elseif ($batch == 'enabled') {
-            Sensitive::updateAll(['status' => Sensitive::STATUS_INACTIVE], "id IN ($ids)");
+        if($batch) {
+            if($batch == 'disabled') {
+                Sensitive::updateAll(['status' => Sensitive::STATUS_INACTIVE], "id IN ($ids)");
+            } elseif ($batch == 'enabled') {
+                Sensitive::updateAll(['status' => Sensitive::STATUS_ACTIVE], "id IN ($ids)");
+            }
+            $params = Yii::$app->request->getQueryParams();
+            $params[0] = Yii::$app->controller->getRoute();
+            ArrayHelper::remove($params, 'batch');
+            $this->redirect($params);
         }
+
         $searchModel = new SensitiveSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
