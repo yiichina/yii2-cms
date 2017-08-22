@@ -2,7 +2,6 @@
 
 /* @var $this yii\web\View */
 use yii\bootstrap\Carousel;
-use yiichina\adminlte\InfoBox;
 use yiichina\adminlte\Box;
 use yiichina\icons\Icon;
 use yii\helpers\Html;
@@ -55,7 +54,7 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
             <div class="col-lg-6">
                 <div class="media">
                     <div class="media-left">
-                        <span class="fa-stack fa-4x">
+                        <span class="fa-stack fa-4x text-light-blue">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
                         </span>
@@ -71,7 +70,7 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
             <div class="col-lg-6">
                 <div class="media">
                     <div class="media-left">
-                        <span class="fa-stack fa-4x">
+                        <span class="fa-stack fa-4x text-red">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
                         </span>
@@ -89,7 +88,7 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
             <div class="col-lg-6">
                 <div class="media">
                     <div class="media-left">
-                        <span class="fa-stack fa-4x">
+                        <span class="fa-stack fa-4x text-yellow">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
                         </span>
@@ -105,7 +104,7 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
             <div class="col-lg-6">
                 <div class="media">
                     <div class="media-left">
-                        <span class="fa-stack fa-4x">
+                        <span class="fa-stack fa-4x text-green">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa fa-user fa-stack-1x fa-inverse"></i>
                         </span>

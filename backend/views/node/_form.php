@@ -20,8 +20,6 @@ use yiichina\icons\Icon;
 
     <?= $form->field($model, 'description')->textInput() ?>
 
-    <?= $form->field($model, 'type')->widget(ICheck::className(), ['type' => ICheck::TYPE_CHECBOX_LIST, 'items' => $model->typeList]) ?>
-
     <?= $form->field($model, 'status')->widget(ICheck::className(), ['type' => ICheck::TYPE_RADIO_LIST, 'items' => $model->statusList]) ?>
 
     <div class="form-group">

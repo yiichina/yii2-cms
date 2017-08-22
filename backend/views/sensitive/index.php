@@ -30,8 +30,8 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'batchItems' => [
-            ['label' => '禁用', 'url' => ['disable']],
-            ['label' => '启用', 'url' => ['enable']],
+            ['label' => '禁用', 'url' => ['index', 'batch' => 'disabled']],
+            ['label' => '启用', 'url' => ['index', 'batch' => 'enabled']],
         ],
         'button' => Html::a(Icon::show('plus', 'fa') . '新建敏感词', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
         'columns' => [

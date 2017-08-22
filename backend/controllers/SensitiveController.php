@@ -45,6 +45,13 @@ class SensitiveController extends Controller
      */
     public function actionIndex()
     {
+        $batch = Yii::$app->request->get('batch');
+        $ids = Yii::$app->request->post('ids');
+        if($batch == 'disabled') {
+            Sensitive::updateAll(['status' => Sensitive::STATUS_INACTIVE], "id IN ($ids)");
+        } elseif ($batch == 'enabled') {
+            Sensitive::updateAll(['status' => Sensitive::STATUS_INACTIVE], "id IN ($ids)");
+        }
         $searchModel = new SensitiveSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -74,12 +81,9 @@ class SensitiveController extends Controller
     public function actionCreate()
     {
         $model = new Sensitive();
+        $model->loadDefaultValues();
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            foreach($model->node_id as $item) {
-                $rows[] = ['node_id' => $item, 'words' => $model->words, 'status' => $model->status];
-            }
-            Yii::$app->db->createCommand()->batchInsert(Sensitive::tableName(), ['node_id', 'words', 'status'], $rows)->execute();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         } else {
             return $this->render('create', [

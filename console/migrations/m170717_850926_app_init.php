@@ -117,6 +117,6 @@ class m170717_850926_app_init extends Migration
 
     protected function dataInit()
     {
-        Yii::$app->db->createCommand()->batchInsert(Node::tableName(), ['name', 'description'], [['article', '文章'], ['picture', '图集'], ['video', '视频']]);
+        Yii::$app->db->createCommand()->batchInsert(Node::tableName(), ['name', 'description'], [['article', '文章'], ['picture', '图集'], ['video', '视频']])->execute();
     }
 }
