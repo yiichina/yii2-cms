@@ -49,72 +49,70 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
     </div>
 </div>
 <div class="features">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="media">
-                    <div class="media-left">
-                        <span class="fa-stack fa-4x text-light-blue">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="media-heading">No theme to wrestle with</h3>
-                        <p>
-                            Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
-                        </p>
-                    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="media">
+                <div class="media-left">
+                    <span class="fa-stack fa-4x text-light-blue">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+                    </span>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="media">
-                    <div class="media-left">
-                        <span class="fa-stack fa-4x text-red">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="media-heading">No theme to wrestle with</h3>
-                        <p>
-                            Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
-                        </p>
-                    </div>
+                <div class="media-body">
+                    <h3 class="media-heading">No theme to wrestle with</h3>
+                    <p>
+                        Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="media">
-                    <div class="media-left">
-                        <span class="fa-stack fa-4x text-yellow">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="media-heading">No theme to wrestle with</h3>
-                        <p>
-                            Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
-                        </p>
-                    </div>
+        <div class="col-lg-6">
+            <div class="media">
+                <div class="media-left">
+                    <span class="fa-stack fa-4x text-red">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading">No theme to wrestle with</h3>
+                    <p>
+                        Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
+                    </p>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="media">
-                    <div class="media-left">
-                        <span class="fa-stack fa-4x text-green">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-user fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="media-heading">No theme to wrestle with</h3>
-                        <p>
-                            Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
-                        </p>
-                    </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="media">
+                <div class="media-left">
+                    <span class="fa-stack fa-4x text-yellow">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading">No theme to wrestle with</h3>
+                    <p>
+                        Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="media">
+                <div class="media-left">
+                    <span class="fa-stack fa-4x text-green">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading">No theme to wrestle with</h3>
+                    <p>
+                        Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
+                    </p>
                 </div>
             </div>
         </div>

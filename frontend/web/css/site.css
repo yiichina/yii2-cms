@@ -40,16 +40,7 @@ h1, h2, h3, h4, h5, h6 { text-rendering: optimizeLegibility; }
 .carousel { margin-bottom: 20px;  }
 .carousel .carousel-inner {border-radius: 6px; border: #ddd solid 1px;}
 
-.features { background: white; margin-bottom: 20px;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    border-top: #ddd solid 1px;
-    border-bottom: #ddd solid 1px;
-    padding-top: 15px;
-}
-.features .container { padding-left: 30px; padding-right: 30px; }
+.features { border: #ddd solid 1px; border-radius: 6px; padding: 15px; background: white; margin-bottom: 20px; }
 .features .media { margin-bottom: 15px; }
 .features .media h3 { margin-top: 10px; }
 .article { margin: 0; padding: 0; list-style-position: inside; }
