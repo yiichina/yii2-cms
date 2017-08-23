@@ -81,7 +81,7 @@ class Node extends \yii\db\ActiveRecord
 
     public function getParentList()
     {
-        return ArrayHelper::map($this->find()->all(), 'id', 'name');
+        return array_merge(['0' => 'ROOT'], ArrayHelper::map(Node::find()->all(), 'id', 'name'));
     }
 
     public function getStatusList()
