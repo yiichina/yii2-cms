@@ -53,15 +53,15 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
         <div class="col-lg-6">
             <div class="media">
                 <div class="media-left">
-                    <span class="fa-stack fa-4x text-light-blue">
+                    <span class="fa-stack fa-4x text-green">
                       <i class="fa fa-circle fa-stack-2x"></i>
                       <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
                     </span>
                 </div>
                 <div class="media-body">
-                    <h3 class="media-heading">No theme to wrestle with</h3>
+                    <h3 class="media-heading">开源免费</h3>
                     <p>
-                        Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
+                        Yii CMS 基于 Yii Framework 开发，它开源、免费，用户可以自由下载、使用、修改、学习交流。
                     </p>
                 </div>
             </div>
@@ -71,13 +71,13 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
                 <div class="media-left">
                     <span class="fa-stack fa-4x text-red">
                       <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+                      <i class="fa fa-hourglass-half fa-stack-1x fa-inverse"></i>
                     </span>
                 </div>
                 <div class="media-body">
-                    <h3 class="media-heading">No theme to wrestle with</h3>
+                    <h3 class="media-heading">快速高效</h3>
                     <p>
-                        Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
+                        Yii 只加载您需要的功能。它具有强大的缓存支持。它明确的设计能与 AJAX 一起高效率的工作。
                     </p>
                 </div>
             </div>
@@ -87,15 +87,15 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
         <div class="col-lg-6">
             <div class="media">
                 <div class="media-left">
-                    <span class="fa-stack fa-4x text-yellow">
+                    <span class="fa-stack fa-4x text-light-blue">
                       <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+                      <i class="fa fa-thumbs-o-up fa-stack-1x fa-inverse"></i>
                     </span>
                 </div>
                 <div class="media-body">
-                    <h3 class="media-heading">No theme to wrestle with</h3>
+                    <h3 class="media-heading">专业稳定</h3>
                     <p>
-                        Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
+                        Yii 可帮助您开发清洁和可重用的代码。它遵循了 MVC 模式，确保了清晰分离逻辑层和表示层。
                     </p>
                 </div>
             </div>
@@ -103,15 +103,15 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
         <div class="col-lg-6">
             <div class="media">
                 <div class="media-left">
-                    <span class="fa-stack fa-4x text-green">
+                    <span class="fa-stack fa-4x text-yellow">
                       <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                      <i class="fa fa-cubes fa-stack-1x fa-inverse"></i>
                     </span>
                 </div>
                 <div class="media-body">
-                    <h3 class="media-heading">No theme to wrestle with</h3>
+                    <h3 class="media-heading">易用扩展</h3>
                     <p>
-                        Perch has no themes or inbuilt mark-up. Develop your own starting points, or start from scratch. You’ll never have to overrule our decisions first.
+                        Yii CMS 功能强大，易于扩展，并支持二次开发。
                     </p>
                 </div>
             </div>

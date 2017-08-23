@@ -42,7 +42,7 @@ class m170717_850926_app_init extends Migration
         $this->createTable('{{%node}}', [
             'id' => $this->primaryKey(),
             'parent_id' => $this->integer()->notNull()->defaultValue(0),
-            'type' => $this->smallInteger()->notNull()->defaultValue(0),
+            'type' => $this->smallInteger()->notNull()->defaultValue(1),
             'name' => $this->string(64)->notNull(),
             'description' => $this->string()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),

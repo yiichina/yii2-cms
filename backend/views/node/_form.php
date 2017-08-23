@@ -15,7 +15,9 @@ use yiichina\select2\Select2;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'parent_id')->widget(Select2::className(), ['items' => $model->parentList, 'bootstrapTheme' => true, 'clientOptions' => ['width' => '100%']]) ?>
+    <?= $form->field($model, 'parent_id')->widget(Select2::className(), ['items' => $model->parentList, 'clientOptions' => ['width' => '100%']]) ?>
+
+    <?= $form->field($model, 'type')->widget(ICheck::className(), ['type' => ICheck::TYPE_RADIO_LIST, 'items' => $model->typeList]) ?>
 
     <?= $form->field($model, 'name')->textInput() ?>
 

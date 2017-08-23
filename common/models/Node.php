@@ -59,25 +59,6 @@ class Node extends \yii\db\ActiveRecord
             'status' => Yii::t('app', 'Status'),
         ];
     }
-    /**
-     * @inheritdoc
-     */
-    public function beforeValidate()
-    {
-        if (parent::beforeValidate()) {
-            if(!empty($this->type)) {
-                $this->type = implode('', $this->type);
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public function afterFind()
-    {
-        parent::afterFind();
-        $this->type = str_split($this->type);
-    }
 
     public function getParentList()
     {
