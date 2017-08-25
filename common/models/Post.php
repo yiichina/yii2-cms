@@ -85,6 +85,9 @@ class Post extends \yii\db\ActiveRecord
         ];
     }
 
+    public function checkWords()
+    {}
+
     public function getArticle()
     {
         return $this->hasMany(Article::className(), ['post_id' => 'id']);

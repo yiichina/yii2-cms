@@ -122,7 +122,7 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
     <div class="col-lg-6">
         <?php Box::begin([
             'options' => ['class' => 'box-success'],
-            'title' => '最新动态',
+            'title' => Icon::show('calendar') . '最新动态',
         ]); ?>
         <ul class="article">
             <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
@@ -141,7 +141,7 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
     <div class="col-lg-6">
         <?php Box::begin([
             'options' => ['class' => 'box-primary'],
-            'title' => '常见问题',
+            'title' => Icon::show('question-circle-o') . '常见问题',
         ]); ?>
         <ul class="article">
             <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
@@ -162,7 +162,7 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
     <div class="col-lg-6">
         <?php Box::begin([
             'options' => ['class' => 'box-danger'],
-            'title' => '最新会员',
+            'title' => Icon::show('users') . '最新会员',
         ]); ?>
         <ul class="users-list clearfix">
             <li>
@@ -211,7 +211,7 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
     <div class="col-lg-6">
         <?php Box::begin([
             'options' => ['class' => 'box-warning'],
-            'title' => '最新评论',
+            'title' => Icon::show('comments-o') . '最新评论',
         ]); ?>
         <div class="box-footer box-comments">
             <div class="box-comment">

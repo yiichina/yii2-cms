@@ -121,10 +121,16 @@ AppAsset::register($this);
             ]),
         ]);
         $menuItems = array_merge([
-            ['label' => '首页', 'url' => ['/site/index']],
-            ['label' => '模板', 'url' => ['/template/index']],
-            ['label' => '时间线', 'url' => ['/site/timeline']]
-        ], Node::getMenuItems());
+            ['label' => Icon::show('home') . '首页', 'url' => ['/site/index']],
+            ['label' => Icon::show('calendar') . '动态', 'url' => ['/template/index']],
+            ['label' => Icon::show('book') . '文档', 'url' => ['/site/timeline']],
+            ['label' => Icon::show('question-circle-o') . '常见问题', 'url' => ['/site/timeline']],
+            ['label' => Icon::show('files-o') . '模板', 'url' => ['/site/timeline']],
+            ['label' => Icon::show('cubes') . '插件', 'url' => ['/site/timeline']],
+            ['label' => Icon::show('users') . '社区', 'url' => ['/site/timeline']],
+
+            ['label' => Icon::show('clock-o') . '时间线', 'url' => ['/site/timeline']],
+        ]);
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav'],
             'items' => $menuItems,
