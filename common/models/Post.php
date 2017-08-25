@@ -90,7 +90,7 @@ class Post extends \yii\db\ActiveRecord
 
     public function getArticle()
     {
-        return $this->hasMany(Article::className(), ['post_id' => 'id']);
+        return $this->hasOne(Article::className(), ['post_id' => 'id']);
     }
 
     public function getPicture()
@@ -100,7 +100,7 @@ class Post extends \yii\db\ActiveRecord
 
     public function getVideo()
     {
-        return $this->hasMany(Video::className(), ['post_id' => 'id']);
+        return $this->hasOne(Video::className(), ['post_id' => 'id']);
     }
     public function getUser()
     {

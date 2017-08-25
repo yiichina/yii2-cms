@@ -125,16 +125,9 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
             'title' => Icon::show('calendar') . '最新动态',
         ]); ?>
         <ul class="article">
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <?php foreach($news as $data): ?>
+            <li><?= Html::a($data->title, ['view', 'id' => $data->id]) ?><span class="pull-right"><?= date('Y-m-d', $data->created_at) ?></span></li>
+            <?php endforeach; ?>
         </ul>
         <?php Box::end(); ?>
     </div>
@@ -144,16 +137,9 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
             'title' => Icon::show('question-circle-o') . '常见问题',
         ]); ?>
         <ul class="article">
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
-            <li><a href="">Yii CMS 2.0 发布了！</a><span class="pull-right">2017-08-17</span></li>
+            <?php foreach($faqs as $data): ?>
+                <li><?= Html::a($data->title, ['view', 'id' => $data->id]) ?><span class="pull-right"><?= date('Y-m-d', $data->created_at) ?></span></li>
+            <?php endforeach; ?>
         </ul>
         <?php Box::end(); ?>
     </div>

@@ -8,6 +8,9 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\Post;
+use common\models\User;
+//use common\models\Comment;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -82,7 +85,23 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $news = Post::findAll([
+            'status' => Post::STATUS_PUBLISHED,
+            'node_id' => 1,
+        ]);
+        $faqs = Post::findAll([
+            'status' => Post::STATUS_PUBLISHED,
+            'node_id' => 2,
+        ]);
+        $users = User::find()->all();
+        //$comments = Comment::find()->all();
+
+        return $this->render('index', [
+            'news' => $news,
+            'faqs' => $faqs,
+            'users' => $users,
+            //'comments' => $comments,
+        ]);
     }
 
     /**

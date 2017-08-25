@@ -84,7 +84,7 @@ class PostController extends Controller
             Yii::$app->db->transaction(function() use($post, $model) {
                 $post->save() && $post->link($post->node->typeName, $model);
             });
-            return $this->redirect(['view', 'id' => $post->id]);
+            return $this->redirect(['admin']);
         } else {
             return $this->render('create', [
                 'post' => $post,
@@ -101,12 +101,18 @@ class PostController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $post = $this->findModel($id);
+        $relationName = $post->node->typeName;
+        $model = $post->$relationName;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($post->load(Yii::$app->request->post()) && $model->load(Yii::$app->request->post())) {
+            Yii::$app->db->transaction(function() use($post, $model) {
+                $post->save() && $post->link($post->node->typeName, $model);
+            });
+            return $this->redirect(['admin']);
         } else {
             return $this->render('update', [
+                'post' => $post,
                 'model' => $model,
             ]);
         }
