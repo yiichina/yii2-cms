@@ -5,12 +5,16 @@ h1, h2, h3, h4, h5, h6 { text-rendering: optimizeLegibility; }
     padding: 0 15px;
     line-height: 50px;
     font-weight: 500;
+    font-family: "Source Sans Pro";
     text-rendering: optimizeLegibility;
 }
 .navbar-brand img {
     display: inline-block;
 }
 
+.user-image {
+    background: #fff;
+}
 .auth-clients {
     padding: 0;
 }

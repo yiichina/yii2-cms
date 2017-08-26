@@ -95,7 +95,7 @@ AppAsset::register($this);
                     ],
                 ],
                 [
-                    'label' => Html::img('http://www.yiichina.com/uploads/avatar/000/00/00/02_avatar_small.jpg', ['alt' => Yii::$app->user->identity->username, 'class' => 'user-image']) . Html::tag('span', Yii::$app->user->identity->username, ['class' => 'hidden-xs']),
+                    'label' => Html::img(Yii::$app->user->identity->avatar, ['alt' => Yii::$app->user->identity->username, 'class' => 'user-image']) . Html::tag('span', Yii::$app->user->identity->username, ['class' => 'hidden-xs']),
                     'url' => '#',
                     'options' => ['class' => 'user user-menu'],
                     'items' => [
@@ -122,14 +122,13 @@ AppAsset::register($this);
         ]);
         $menuItems = array_merge([
             ['label' => Icon::show('home') . '首页', 'url' => ['/site/index']],
-            ['label' => Icon::show('calendar') . '动态', 'url' => ['/template/index']],
-            ['label' => Icon::show('book') . '文档', 'url' => ['/site/timeline']],
-            ['label' => Icon::show('question-circle-o') . '常见问题', 'url' => ['/site/timeline']],
-            ['label' => Icon::show('files-o') . '模板', 'url' => ['/site/timeline']],
-            ['label' => Icon::show('cubes') . '插件', 'url' => ['/site/timeline']],
-            ['label' => Icon::show('users') . '社区', 'url' => ['/site/timeline']],
-
-            ['label' => Icon::show('clock-o') . '时间线', 'url' => ['/site/timeline']],
+            ['label' => Icon::show('calendar') . '动态', 'url' => ['/news/index']],
+            ['label' => Icon::show('book') . '文档', 'url' => ['/doc/index']],
+            ['label' => Icon::show('question-circle-o') . '常见问题', 'url' => ['/faq/index']],
+            ['label' => Icon::show('files-o') . '模板', 'url' => ['/template/index']],
+            ['label' => Icon::show('cubes') . '插件', 'url' => ['/plugins/index']],
+            ['label' => Icon::show('users') . '社区', 'url' => 'http://www.yiichina.com', 'linkOptions' => ['target' => '_blank']],
+            ['label' => Icon::show('clock-o') . '时间线', 'url' => ['/timeline/index']],
         ]);
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav'],

@@ -9,6 +9,7 @@ use yii\web\IdentityInterface;
 use yii\bootstrap\Html;
 use yii\helpers\ArrayHelper;
 use yiichina\icons\Icon;
+use yii\helpers\Url;
 
 /**
  * User model
@@ -204,6 +205,22 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    public function getUrl()
+    {
+        return Url::to(['/user/index', 'id' => $this->id]);
+    }
+
+    public function getAvatar()
+    {
+        $avatar = $this->id . "_avatar.jpg";
+
+        if(file_exists(Yii::getAlias('@webroot/uploads/avatar/'.$avatar))) {
+            return '@web/uploads/avatar/'.$avatar;
+        } else {
+            return '@web/images/no-avatar.png';
+        }
     }
 
     public function getRoleItems()

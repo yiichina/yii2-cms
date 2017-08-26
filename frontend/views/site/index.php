@@ -41,7 +41,7 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
                         <a class="btn btn-primary" href="https://github.com/yiichina/yii2-cms"><?= Icon::show('github') ?>Git Hub</a>
                     </div>
                     <div class="btn-group">
-                        <a class="btn btn-success" href="http://www.yiichina.com"><?= Icon::show('play-circle') ?>开始使用</a>
+                        <?= Html::a(Icon::show('play-circle') . '开始使用', ['/doc/index'], ['class' => 'btn btn-success']) ?>
                     </div>
                 </div>
             </p>
@@ -151,46 +151,13 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
             'title' => Icon::show('users') . '最新会员',
         ]); ?>
         <ul class="users-list clearfix">
+            <?php foreach($users as $data): ?>
             <li>
-                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user1-128x128.jpg" alt="User Image">
-                <a class="users-list-name" href="#">Alexander Pierce</a>
-                <span class="users-list-date">Today</span>
+                <?= Html::img($data->avatar, ['alt' => $data->username]) ?>
+                <?= Html::a($data->username, $data->url, ['class' => 'users-list-name']) ?>
+                <span class="users-list-date"><?= Yii::$app->formatter->asRelativeTime($data->created_at) ?></span>
             </li>
-            <li>
-                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user8-128x128.jpg" alt="User Image">
-                <a class="users-list-name" href="#">Norman</a>
-                <span class="users-list-date">Yesterday</span>
-            </li>
-            <li>
-                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user7-128x128.jpg" alt="User Image">
-                <a class="users-list-name" href="#">Jane</a>
-                <span class="users-list-date">12 Jan</span>
-            </li>
-            <li>
-                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user6-128x128.jpg" alt="User Image">
-                <a class="users-list-name" href="#">John</a>
-                <span class="users-list-date">12 Jan</span>
-            </li>
-            <li>
-                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user2-160x160.jpg" alt="User Image">
-                <a class="users-list-name" href="#">Alexander</a>
-                <span class="users-list-date">13 Jan</span>
-            </li>
-            <li>
-                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user5-128x128.jpg" alt="User Image">
-                <a class="users-list-name" href="#">Sarah</a>
-                <span class="users-list-date">14 Jan</span>
-            </li>
-            <li>
-                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user4-128x128.jpg" alt="User Image">
-                <a class="users-list-name" href="#">Nora</a>
-                <span class="users-list-date">15 Jan</span>
-            </li>
-            <li>
-                <img src="https://adminlte.io/themes/AdminLTE/dist/img/user3-128x128.jpg" alt="User Image">
-                <a class="users-list-name" href="#">Nadia</a>
-                <span class="users-list-date">15 Jan</span>
-            </li>
+            <?php endforeach; ?>
         </ul>
         <?php Box::end(); ?>
     </div>
