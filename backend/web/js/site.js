@@ -11,10 +11,19 @@ jQuery(document).ready(function () {
 	// $('select').select2({
 	// 	width: '100%'
 	// });
-	$('.btn-search').click(function(){
-		$(this).toggleClass('active');
-		$('.search').animate({
-			height: 'toggle'
-		});
+    $('.btn-search').click(function(){
+        $(this).toggleClass('active');
+        $('.search').animate({
+            height: 'toggle'
+        });
+    });
+
+    $('#node-parent_id').on("change", function (e) {
+    	if($(this).val() > 0) {
+    		$('[name="Node[type]"').val($(this).val());
+    		$('.field-node-type').hide();
+        } else {
+            $('.field-node-type').show();
+		}
 	});
 });
