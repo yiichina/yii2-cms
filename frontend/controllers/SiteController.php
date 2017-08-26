@@ -85,15 +85,17 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $news = Post::findAll([
+        $news = Post::find()->where([
             'status' => Post::STATUS_PUBLISHED,
             'node_id' => 1,
-        ]);
-        $faqs = Post::findAll([
+        ])->orderBy(['id' => SORT_DESC])->all();
+
+        $faqs = Post::find()->where([
             'status' => Post::STATUS_PUBLISHED,
             'node_id' => 2,
-        ]);
-        $users = User::find()->all();
+        ])->orderBy(['id' => SORT_DESC])->all();
+
+        $users = User::find()->orderBy(['id' => SORT_DESC])->all();
         //$comments = Comment::find()->all();
 
         return $this->render('index', [

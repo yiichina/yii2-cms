@@ -207,6 +207,12 @@ class User extends ActiveRecord implements IdentityInterface
         $this->password_reset_token = null;
     }
 
+    public function active($state = true)
+    {
+        $this->andWhere(['active' => $state]);
+        return $this;
+    }
+
     public function getUrl()
     {
         return Url::to(['/user/index', 'id' => $this->id]);
