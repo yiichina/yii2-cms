@@ -84,7 +84,7 @@ class PostController extends Controller
             Yii::$app->db->transaction(function() use($post, $model) {
                 $post->save() && $post->link($post->node->typeName, $model);
             });
-            return $this->redirect(['admin']);
+            return $this->redirect(['admin', 'node_id' => $node_id]);
         } else {
             return $this->render('create', [
                 'post' => $post,
@@ -109,7 +109,7 @@ class PostController extends Controller
             Yii::$app->db->transaction(function() use($post, $model) {
                 $post->save() && $post->link($post->node->typeName, $model);
             });
-            return $this->redirect(['admin']);
+            return $this->redirect(['admin', 'node_id' => $post->node_id]);
         } else {
             return $this->render('update', [
                 'post' => $post,

@@ -30,7 +30,7 @@ AppAsset::register($this);
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <?php $this->beginBody() ?>
-<?php Spaceless::begin(); ?>
+<?php //Spaceless::begin(); ?>
 <div class="wrapper">
     <?php
     MainHeader::begin([
@@ -106,7 +106,7 @@ AppAsset::register($this);
     Sidebar::begin([
         'encodeLabels' => false,
 		'defaultRight' => Icon::show('angle-left', 'fa', null, null, ['class' => 'pull-right']),
-        'items' => [
+        'items' => array_merge([
             [
 				'icon' => Icon::show('cogs'),
                 'label' => '工具专区',
@@ -135,27 +135,7 @@ AppAsset::register($this);
                 'label' => '内容专区',
                 'options' => ['class' => 'header'],
             ],
-            [
-				'icon' => Icon::show('file-text-o', 'fa'),
-                'label' => '文章栏目',
-				'url' => '#',
-                'items'=> Node::getMenuItems(),
-                'active' => Yii::$app->controller->id == 'post',
-            ],
-            [
-                'icon' => Icon::show('photo', 'fa'),
-                'label' => '图集栏目',
-                'url' => '#',
-                'items'=> Node::getMenuItems(),
-                'active' => Yii::$app->controller->id == 'post',
-            ],
-            [
-                'icon' => Icon::show('video-camera', 'fa'),
-                'label' => '视频栏目',
-                'url' => '#',
-                'items'=> Node::getMenuItems(),
-                'active' => Yii::$app->controller->id == 'post',
-            ],
+        ], Node::getMenuItems(), [
             [
                 'icon' => Icon::show('user', 'fa'),
                 'label' => '用户专区',
@@ -224,7 +204,7 @@ AppAsset::register($this);
                 'url' => ['aspect/index'],
                 'active' => Yii::$app->controller->id == 'aspect',
             ],
-        ],
+        ])
     ]);
     echo Html::beginForm(['/site/search'], 'get', ['class' => 'sidebar-form']);
     echo Html::tag('div', Html::textInput('q', Yii::$app->request->get('q'), ['class' => 'form-control', 'placeholder' => '搜索']) . Html::tag('span', Html::submitButton('<span class="fa fa-search"></span>', ['class'=>'btn btn-flat']), ['class'=>'input-group-btn']), ['class'=>'input-group']);
@@ -449,7 +429,7 @@ AppAsset::register($this);
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-<?php Spaceless::end(); ?>
+<?php //Spaceless::end(); ?>
 <?php $this->endBody() ?>
 </body>
 </html>

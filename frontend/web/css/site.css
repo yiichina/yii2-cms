@@ -17,6 +17,10 @@ h1, h2, h3, h4, h5, h6 { text-rendering: optimizeLegibility; }
 .auth-clients li {
     margin: 0 13px 0 0;
 }
+.content-wrapper section {
+    padding-left: 0;
+    padding-right: 0;
+}
 .container .jumbotron {
     padding: 3px 20px;
     background: white;

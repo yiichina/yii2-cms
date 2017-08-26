@@ -90,6 +90,15 @@ class Node extends \yii\db\ActiveRecord
         ][$this->type];
     }
 
+    public function getTypeIcon()
+    {
+        return [
+            self::TYPE_ARTICLE => 'file-text-o',
+            self::TYPE_PICTURE => 'picture-o',
+            self::TYPE_VIDEO => 'video-camera',
+        ][$this->type];
+    }
+
     public function getTypeClass()
     {
         return "\common\models\\" . ucfirst($this->typeName);
@@ -113,17 +122,23 @@ class Node extends \yii\db\ActiveRecord
     {
         $items = [];
         $model = self::find()->where(['status' => self::STATUS_ACTIVE, 'parent_id' => $id])->all();
-
-        if(count($model)) {
-            foreach($model as $item) {
-                $items[] = [
-                    'icon' => Icon::show('circle-o', 'fa'),
-                    'label' => Icon::show('circle-o', 'fa') . Html::tag('span', $item->name),
-                    'url' => ['post/index', 'node_id' => $item->id],
-                    'items' => self::getMenuItems($item->id),
-                    'active' => Yii::$app->controller->id == 'post' && (Yii::$app->request->get('node_id') == $item->id),
-                ];
+        foreach($model as $item) {
+            $active = Yii::$app->request->get('node_id') == $item->id;
+            $subMenuItems = self::getMenuItems($item->id);
+            if($active === false) {
+                foreach ($subMenuItems as $subItem) {
+                    if (isset($subItem['active']) && $subItem['active']) {
+                        $active = true;
+                    }
+                }
             }
+            $items[] = [
+                'icon' => Icon::show($item->typeIcon),
+                'label' => Html::tag('span', $item->name),
+                'url' => ['post/index', 'node_id' => $item->id],
+                'items' => $subMenuItems,
+                'active' => $active,
+            ];
         }
 
         return $items;
