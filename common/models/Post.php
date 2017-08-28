@@ -126,4 +126,14 @@ class Post extends \yii\db\ActiveRecord
             return false;
         }
     }
+
+    public function getStatusList()
+    {
+        return [
+            self::STATUS_DRAFT => '草稿',
+            self::STATUS_PENDING => '待发布',
+            self::STATUS_PUBLISHED => '已发布',
+            self::STATUS_FEATURED => '精华',
+        ];
+    }
 }

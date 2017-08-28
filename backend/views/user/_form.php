@@ -19,9 +19,9 @@ use yiichina\icons\Icon;
 
     <?= $form->field($model, 'email')->textInput() ?>
 
-    <?= $form->field($model, 'roles')->widget(Select2::className(), ['items' => $model->roleItems, 'bootstrapTheme' => true, 'multiple' => true, 'clientOptions' => ['width' => '100%']]) ?>
+    <?= $form->field($model, 'roles')->widget(Select2::className(), ['items' => $model->roleItems, 'multiple' => true, 'clientOptions' => ['width' => '100%']]) ?>
 
-    <?= $form->field($model, 'group')->widget(Select2::className(), ['items' => $model->groupItems, 'bootstrapTheme' => true, 'clientOptions' => ['width' => '100%']]) ?>
+    <?= $form->field($model, 'group')->widget(Select2::className(), ['items' => $model->groupItems, 'clientOptions' => ['width' => '100%']]) ?>
 
     <?= $form->field($model, 'status')->widget(ICheck::className(), ['type' => ICheck::TYPE_RADIO_LIST, 'items' => $model->statusList]) ?>
 

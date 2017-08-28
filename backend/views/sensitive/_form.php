@@ -16,7 +16,7 @@ use common\models\Node;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'node_id')->widget(Select2::className(), ['items' => Node::getItems(), 'bootstrapTheme' => true, 'clientOptions' => ['width' => '100%']]) ?>
+    <?= $form->field($model, 'node_id')->widget(Select2::className(), ['items' => Node::getItems(), 'clientOptions' => ['width' => '100%']]) ?>
 
     <?= $form->field($model, 'words')->textInput() ?>
 

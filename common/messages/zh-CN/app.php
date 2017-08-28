@@ -27,4 +27,11 @@ return [
     'Update' => '修改',
     'Created At' => '创建时间',
     'Updated At' => '修改时间',
+    'Content' => '内容',
+    'Title' => '标题',
+    'Tags' => '标签',
+    'Roles' => '角色',
+    'Group' => '编辑组',
+    'Node ID' => '栏目',
+    'Parent ID' => '父栏目',
 ];
