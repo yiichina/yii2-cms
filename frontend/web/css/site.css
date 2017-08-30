@@ -12,8 +12,9 @@ h1, h2, h3, h4, h5, h6 { text-rendering: optimizeLegibility; }
     display: inline-block;
 }
 
-.user-image {
-    background: #fff;
+.user-image, .users-list img {
+    background: #ddd;
+    border: #eee solid 1px;
 }
 .auth-clients {
     padding: 0;

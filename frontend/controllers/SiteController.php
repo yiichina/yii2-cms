@@ -88,14 +88,14 @@ class SiteController extends Controller
         $news = Post::find()->where([
             'status' => Post::STATUS_PUBLISHED,
             'node_id' => 1,
-        ])->orderBy(['id' => SORT_DESC])->all();
+        ])->orderBy(['id' => SORT_DESC])->limit(10)->all();
 
         $faqs = Post::find()->where([
             'status' => Post::STATUS_PUBLISHED,
             'node_id' => 2,
-        ])->orderBy(['id' => SORT_DESC])->all();
+        ])->orderBy(['id' => SORT_DESC])->limit(10)->all();
 
-        $users = User::find()->orderBy(['id' => SORT_DESC])->all();
+        $users = User::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
         //$comments = Comment::find()->all();
 
         return $this->render('index', [
