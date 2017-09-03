@@ -100,6 +100,11 @@ AppAsset::register($this);
                     Html::tag('li', Html::tag('div',Html::a('Profile', ['/user'], ['class' => 'btn btn-default btn-flat']), ['class' => 'pull-left']) . Html::tag('div', Html::a(Yii::t('app', 'Sign out'), ['site/logout'], ['class' => 'btn btn-default btn-flat', 'data' => ['method' => 'post']]), ['class' => 'pull-right']), ['class' => 'user-footer']),
                 ],
             ],
+            [
+                'label' => Icon::show('gears'),
+                'url' => '#',
+                'options' => ['data-toggle' => 'control-sidebar'],
+            ]
         ],
     ]);
     MainHeader::end();

@@ -153,7 +153,7 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
         <ul class="users-list clearfix">
             <?php foreach($users as $data): ?>
             <li>
-                <?= Html::img($data->avatar, ['alt' => $data->username]) ?>
+                <?= Html::a(Html::img($data->avatar, ['alt' => $data->username]), $data->url) ?>
                 <?= Html::a($data->username, $data->url, ['class' => 'users-list-name']) ?>
                 <span class="users-list-date"><?= Yii::$app->formatter->asRelativeTime($data->created_at) ?></span>
             </li>
