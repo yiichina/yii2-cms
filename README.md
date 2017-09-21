@@ -56,6 +56,7 @@ environments/            contains environment-based overrides
 创建数据库，推荐 MySQL，默认库名为yii2_cms，编码选utf8_unicode_ci。
 
 ```
+composer global require "fxp/composer-asset-plugin:*"
 composer create-project --prefer-dist yiichina/yii2-cms <project-name> 
 
 cd <project-name>
