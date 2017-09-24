@@ -174,6 +174,7 @@ AppAsset::register($this);
 </div>
 <?php Spaceless::end(); ?>
 <?php $this->endBody() ?>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
 <?php $this->endPage() ?>
