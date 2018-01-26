@@ -33,9 +33,11 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
             <h2>Yii CMS 是由 <a href="http://www.yiichina.com">Yii Framework 中文社区</a> 发起的开源项目，基于 Yii Framework 2.0 开发，遵循 BSD 开源协议。</h2>
             <p>
                 Yii CMS 实现了高度可定制化，安装简单，使用方便。后台使用 adminLTE 主题，12 种配色，并且完美兼容移动端。功能丰富实用，例如：国际化支持，强大的缓存支持，基于角色的访问控制，第三方登录，自主开发的通用评论模块，并具有回复，分享，投票功能。
-                <a class="github-button" href="https://github.com/yiichina/yii2-cms/subscription" data-icon="octicon-eye" data-show-count="true" aria-label="Watch yiichina/yii2-cms on GitHub">Watch</a>
-                <a class="github-button" href="https://github.com/yiichina/yii2-cms" data-icon="octicon-star" data-show-count="true" aria-label="Star yiichina/yii2-cms on GitHub">Star</a>
-                <a class="github-button" href="https://github.com/yiichina/yii2-cms/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork yiichina/yii2-cms on GitHub">Fork</a>
+                <div class="pull-right">
+                    <a class="github-button" href="https://github.com/yiichina/yii2-cms/subscription" data-icon="octicon-eye" data-show-count="true" aria-label="Watch yiichina/yii2-cms on GitHub">Watch</a>
+                    <a class="github-button" href="https://github.com/yiichina/yii2-cms" data-icon="octicon-star" data-show-count="true" aria-label="Star yiichina/yii2-cms on GitHub">Star</a>
+                    <a class="github-button" href="https://github.com/yiichina/yii2-cms/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork yiichina/yii2-cms on GitHub">Fork</a>
+                </div>
             </p>
             <p>
                 <div class="btn-toolbar" role="toolbar">
@@ -114,9 +116,9 @@ $this->title = Yii::$app->name . ' - 专业的高度可定制化的开源 CMS';
                     </span>
                 </div>
                 <div class="media-body">
-                    <h3 class="media-heading">易用扩展</h3>
+                    <h3 class="media-heading">灵活扩展</h3>
                     <p>
-                        Yii CMS 功能强大，易于扩展，并支持二次开发。
+                        Yii CMS 功能强大，易于扩展，并支持二次开发。能快速对栏目进行配置，轻松实现模板的切换。
                     </p>
                 </div>
             </div>

@@ -95,7 +95,7 @@ class SiteController extends Controller
             'node_id' => 2,
         ])->orderBy(['id' => SORT_DESC])->limit(10)->all();
 
-        $users = User::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
+        $users = User::find()->orderBy(['id' => SORT_DESC])->limit(8)->all();
         //$comments = Comment::find()->all();
 
         return $this->render('index', [
