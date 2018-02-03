@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\Url;
 use yii\behaviors\TimestampBehavior;
 
 /**
@@ -110,6 +111,11 @@ class Post extends \yii\db\ActiveRecord
     public function getNode()
     {
         return $this->hasOne(Node::className(), ['id' => 'node_id']);
+    }
+
+    public function getUrl()
+    {
+        return Url::to(['/post/view', 'id'=>$this->id]);
     }
 
     /**

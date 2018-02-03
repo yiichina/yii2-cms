@@ -36,6 +36,9 @@ h1, h2, h3, h4, h5, h6 { text-rendering: optimizeLegibility; }
     font-size: 14px;
     line-height: 1.8em;
 }
+.jumbotron p .pull-right {
+    margin-top: 5px;
+}
 .jumbotron h1 {
     font-size: 24px;
 }

@@ -8,7 +8,7 @@ use yiichina\icons\Icon;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$mainTitle = '新闻中心';
+$mainTitle = '常见问题';
 $subTitle = '栏目列表';
 $this->title = $subTitle . ' - ' . $mainTitle . ' - ' . Yii::$app->name;
 $breadcrumbs[] = ['label' => $mainTitle, 'url' => ['index']];
@@ -21,7 +21,6 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
         'title' => $subTitle,
         'tools' => Html::a(Icon::show('search-plus', 'fa') . '高级搜索', 'javascript:void(0)', ['class' => 'btn btn-sm btn-flat btn-primary btn-search']),
     ]); ?>
-
     <?= ListView::widget([
         'dataProvider' => $dataProvider,
         'itemOptions' => ['class' => 'item'],
