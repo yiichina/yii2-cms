@@ -20,7 +20,7 @@ class NewsController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Post::find(),
+            'query' => Post::find()->where(['node_id' => 1]),
         ]);
 
         return $this->render('index', [

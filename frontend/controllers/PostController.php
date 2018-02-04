@@ -4,30 +4,14 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\Post;
-use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 /**
- * FaqController implements the CRUD actions for Post model.
+ * PostController implements the CRUD actions for Post model.
  */
-class FaqController extends Controller
+class PostController extends Controller
 {
-    /**
-     * Lists all Post models.
-     * @return mixed
-     */
-    public function actionIndex()
-    {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Post::find()->where(['node_id' => 2]),
-        ]);
-
-        return $this->render('index', [
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
     /**
      * Displays a single Post model.
      * @param integer $id
