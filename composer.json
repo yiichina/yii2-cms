@@ -13,8 +13,8 @@
     "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": "~2.0.6",
-        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "yiisoft/yii2": "~2.0.14",
+        "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "yiichina/yii2-adminlte": "*",
         "yiichina/yii2-icons": "*",
         "yiichina/yii2-auth": "*",
@@ -31,20 +31,21 @@
         "yiisoft/yii2-debug": "~2.0.0",
         "yiisoft/yii2-gii": "~2.0.0",
         "yiisoft/yii2-faker": "~2.0.0",
+
         "codeception/base": "^2.2.3",
-        "codeception/verify": "~0.3.1"
+        "codeception/verify": "~0.3.1",
+        "codeception/specify": "~0.4.3"
     },
     "config": {
         "process-timeout": 1800,
-        "fxp-asset":{
-            "installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
-            },
-            "vcs-driver-options": {
-                "github-no-api": true
-            },
-            "pattern-skip-version": "(-build|-patch)"
+        "fxp-asset": {
+            "enabled": false
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
 }

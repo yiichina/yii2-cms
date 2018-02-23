@@ -32,19 +32,19 @@ AppAsset::register($this);
     <div class="login-logo"><b>Yii CMS</b> 后台管理系统</div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">后台登录</p>
         <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-        <?= $form->field($model, 'username', ['template' => '{input}', 'inputOptions' => ['placeholder' => 'Email']])->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'username', ['template' => '{input}', 'inputOptions' => ['placeholder' => '电子邮箱']])->textInput(['autofocus' => true]) ?>
 
-        <?= $form->field($model, 'password', ['template' => '{input}', 'inputOptions' => ['placeholder' => 'Password']])->passwordInput() ?>
+        <?= $form->field($model, 'password', ['template' => '{input}', 'inputOptions' => ['placeholder' => '密码']])->passwordInput() ?>
 
         <div class="row">
             <div class="col-xs-8">
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>
             </div>
             <div class="col-xs-4">
-                <?= Html::submitButton('Sign In', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'login-button']) ?>
+                <?= Html::submitButton('登录', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'login-button']) ?>
             </div>
         </div>
         <?php ActiveForm::end(); ?>
