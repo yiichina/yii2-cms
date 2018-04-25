@@ -1,1 +1,0 @@
-aabbccdd <?= $title ?>  <?= \frontend\widgets\MyList::widget() ?>
