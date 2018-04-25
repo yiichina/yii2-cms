@@ -33,7 +33,3 @@ phpunit.phar
 
 # vagrant runtime
 /.vagrant
-
-# views and widgets
-/frontend/views
-/frontend/widgets
