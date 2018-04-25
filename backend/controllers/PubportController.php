@@ -65,6 +65,7 @@ class PubportController extends Controller
         $model->loadDefaultValues();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', Yii::t('app', 'Operation success.'));
             return $this->redirect(['index']);
         } else {
             return $this->render('create', [

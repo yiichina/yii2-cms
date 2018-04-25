@@ -82,16 +82,21 @@ class SiteController extends Controller
 
     /**
      * Displays homepage.
-     *
+     * @param $key string
      * @return mixed
      */
-    public function actionIndex($key = 'index')
+    public function actionIndex($key = 'site/index')
     {
         $model = Pubport::findOne(['key' => $key]);
         if ($model === null) {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
         return $this->render('/' . $model->template->key);
+    }
+    
+    public function actionList($key, $page = 1, $pageSize = 20)
+    {
+
     }
 
     public function actionView($id)

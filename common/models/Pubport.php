@@ -42,7 +42,7 @@ class Pubport extends \yii\db\ActiveRecord
     {
         return [
             [['key', 'description', 'type', 'status'], 'required'],
-            [['node_id', 'type', 'status'], 'integer'],
+            [['node_id', 'template_id', 'type', 'status'], 'integer'],
         ];
     }
 
@@ -54,7 +54,9 @@ class Pubport extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'type' => Yii::t('app', 'Type'),
-            'key' => Yii::t('app', 'key'),
+            'key' => Yii::t('app', 'Key'),
+            'node_id' => Yii::t('app', 'Node'),
+            'template_id' => Yii::t('app', 'Template'),
             'description' => Yii::t('app', 'Description'),
             'status' => Yii::t('app', 'Status'),
         ];
@@ -113,6 +115,11 @@ class Pubport extends \yii\db\ActiveRecord
     public function getNodeList()
     {
         return ArrayHelper::map(Node::find()->all(), 'id', 'name');
+    }
+
+    public function getTemplateList()
+    {
+        return ArrayHelper::map(Template::find()->all(), 'id', 'name');
     }
 
     public static function getMenuItems($id = 0)

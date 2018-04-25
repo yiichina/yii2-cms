@@ -64,7 +64,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
                 'class' => 'yii\grid\ActionColumn',
                 'header' => '操作',
                 'options' => ['width' => 120],
-                'template' => '{config}{update}',
+                'template' => '{config} {update}',
                 'buttons' => [
                     'config' => function ($url, $model, $key) {
                         return Html::a(Icon::show('cog') . '配置', ['pubport/index', 'id' => $model->id]);

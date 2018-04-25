@@ -10,8 +10,8 @@ use yiichina\icons\Icon;
 /* @var $searchModel common\models\TemplateSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$mainTitle = '模板管理';
-$subTitle = '模板列表';
+$mainTitle = '组件管理';
+$subTitle = '组件列表';
 $this->title = $subTitle . ' - ' . $mainTitle . ' - ' . Yii::$app->name;
 $breadcrumbs[] = ['label' => $mainTitle, 'url' => ['index']];
 $breadcrumbs[] = $subTitle;
@@ -33,7 +33,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
             ['label' => '禁用', 'url' => ['disable']],
             ['label' => '启用', 'url' => ['enable']],
         ],
-        'button' => Html::a(Icon::show('plus', 'fa') . '新建栏目', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
+        'button' => Html::a(Icon::show('plus', 'fa') . '新建组件', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
         'columns' => [
             [
                 'class' => 'yii\grid\CheckboxColumn',

@@ -1,20 +1,18 @@
 <?php
 
-use yii\helpers\Html;
 use yiichina\adminlte\Box;
 
-
 /* @var $this yii\web\View */
-/* @var $model common\models\Template */
+/* @var $model common\models\Node */
 
-$mainTitle = '组件管理';
-$subTitle = '新建组件';
+$mainTitle = '栏目管理';
+$subTitle = '新建栏目';
 $this->title = $subTitle . ' - ' . $mainTitle . ' - ' . Yii::$app->name;
 $breadcrumbs[] = ['label' => $mainTitle, 'url' => ['index']];
 $breadcrumbs[] = $subTitle;
 $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'breadcrumbs'));
 ?>
-<div class="template-create">
+<div class="node-create">
 
     <?php Box::begin([
         'options' => ['class' => 'box-primary'],

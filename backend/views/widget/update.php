@@ -3,10 +3,10 @@
 use yiichina\adminlte\Box;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Post */
+/* @var $model common\models\Widget */
 
-$mainTitle = '模板管理';
-$subTitle = '修改模板';
+$mainTitle = '组件管理';
+$subTitle = '修改组件';
 $this->title = $subTitle . ' - ' . $mainTitle . ' - ' . Yii::$app->name;
 $breadcrumbs[] = ['label' => $mainTitle, 'url' => ['index']];
 $breadcrumbs[] = $subTitle;

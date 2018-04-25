@@ -18,7 +18,8 @@ use Yii;
  */
 class Template extends \yii\db\ActiveRecord
 {
-    public $content;
+    const STATUS_INACTIVE = 0;
+    const STATUS_ACTIVE = 1;
 
     /**
      * @inheritdoc
@@ -34,7 +35,7 @@ class Template extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['key', 'description', 'content'], 'required'],
+            [['key', 'name', 'description', 'content'], 'required'],
             ['status', 'integer'],
         ];
     }
@@ -46,19 +47,15 @@ class Template extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'user_id' => Yii::t('app', 'User ID'),
-            'key' => Yii::t('app', 'Name'),
+            'user_id' => Yii::t('app', 'Creator'),
+            'key' => Yii::t('app', 'Key'),
+            'name' => Yii::t('app', 'Name'),
             'description' => Yii::t('app', 'Description'),
             'content' => Yii::t('app', 'Content'),
             'status' => Yii::t('app', 'Status'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
         ];
-    }
-
-    public function afterFind()
-    {
-        $this->content = file_get_contents(Yii::getAlias('@frontend/views/' . $this->key) . '.php');
     }
 
     /**
@@ -77,5 +74,23 @@ class Template extends \yii\db\ActiveRecord
         } else {
             return false;
         }
+    }
+
+    public function afterSave($insert, $changedAttributes)
+    {
+        parent::afterSave($insert, $changedAttributes);
+        $filename = Yii::getAlias('@frontend/views/' . $this->key) . '.php';
+        if(!is_dir(dirname($filename))) {
+            mkdir(dirname($filename));
+        }
+        file_put_contents($filename, $this->content);
+    }
+
+    public function getStatusList()
+    {
+        return [
+            self::STATUS_ACTIVE => '正常',
+            self::STATUS_INACTIVE => '禁用',
+        ];
     }
 }

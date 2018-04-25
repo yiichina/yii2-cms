@@ -18,8 +18,6 @@ use Yii;
  */
 class Widget extends \yii\db\ActiveRecord
 {
-    public $content;
-
     /**
      * @inheritdoc
      */
@@ -46,7 +44,7 @@ class Widget extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'user_id' => Yii::t('app', 'User ID'),
+            'user_id' => Yii::t('app', 'Creator'),
             'name' => Yii::t('app', 'Name'),
             'description' => Yii::t('app', 'Description'),
             'content' => Yii::t('app', 'Content'),
@@ -54,11 +52,6 @@ class Widget extends \yii\db\ActiveRecord
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
         ];
-    }
-
-    public function afterFind()
-    {
-        $this->content = file_get_contents(Yii::getAlias('@frontend/widgets/' . $this->name) . '.php');
     }
 
     /**
