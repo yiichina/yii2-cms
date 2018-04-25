@@ -13,13 +13,13 @@ use yiichina\icons\Icon;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'key')->textInput() ?>
+    <?= $form->field($model, 'name')->textInput() ?>
 
     <?= $form->field($model, 'description')->textInput() ?>
 
     <?= $form->field($model, 'status')->textInput() ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 10]) ?>
+    <?= $form->field($model, 'content')->textarea() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Icon::show('plus') . Yii::t('app', 'Create') : Icon::show('edit') . Yii::t('app', 'Reset'), ['class' => $model->isNewRecord ? 'btn btn-success btn-flat' : 'btn btn-primary btn-flat']) ?>

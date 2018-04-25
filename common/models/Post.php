@@ -12,7 +12,7 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $id
  * @property integer $type
  * @property integer $user_id
- * @property integer $node_id
+ * @property integer $pubport_id
  * @property string $title
  * @property string $summary
  * @property string $source
@@ -55,12 +55,12 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'node_id'], 'required'],
+            [['title', 'pubport_id'], 'required'],
             [['title', 'source'], 'string', 'max' => 255],
             ['title', 'checkWords'],
             ['summary', 'string', 'max' => 1024],
             ['title', 'unique', 'targetClass' => '\common\models\Post'],
-            [['type', 'node_id', 'status'], 'integer'],
+            [['type', 'pubport_id', 'status'], 'integer'],
             [['summary', 'source', 'image', 'tags'], 'safe'],
         ];
     }
@@ -74,7 +74,7 @@ class Post extends \yii\db\ActiveRecord
             'id' => 'ID',
             'type' => Yii::t('app', 'Type'),
             'user_id' => Yii::t('app', 'User ID'),
-            'node_id' => Yii::t('app', 'Node ID'),
+            'pubport_id' => Yii::t('app', 'Pubport ID'),
             'title' => Yii::t('app', 'Title'),
             'summary' => Yii::t('app', 'Summary'),
             'source' => Yii::t('app', 'Source'),
@@ -108,9 +108,9 @@ class Post extends \yii\db\ActiveRecord
         return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 
-    public function getNode()
+    public function getPubport()
     {
-        return $this->hasOne(Node::className(), ['id' => 'node_id']);
+        return $this->hasOne(Pubport::className(), ['id' => 'pubport_id']);
     }
 
     public function getUrl()

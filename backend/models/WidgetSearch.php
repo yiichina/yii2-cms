@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Post;
+use common\models\Widget;
 
 /**
- * PostSearch represents the model behind the search form about `common\models\Post`.
+ * WidgetSearch represents the model behind the search form about `common\models\Widget`.
  */
-class PostSearch extends Post
+class WidgetSearch extends Widget
 {
     /**
      * @inheritdoc
@@ -18,8 +18,7 @@ class PostSearch extends Post
     public function rules()
     {
         return [
-            [['id', 'pubport_id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['user_id'], 'safe'],
+            [['id', 'name', 'description', 'status', 'created_at', 'updated_at'], 'integer'],
         ];
     }
 
@@ -41,7 +40,7 @@ class PostSearch extends Post
      */
     public function search($params)
     {
-        $query = Post::find();
+        $query = Widget::find();
 
         // add conditions that should always apply here
 
@@ -60,13 +59,12 @@ class PostSearch extends Post
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'pubport_id' => $this->pubport_id,
+            'name' => $this->name,
+            'description' => $this->description,
             'status' => $this->status,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);
-
-        $query->andFilterWhere(['like', 'user_id', $this->user_id]);
 
         return $dataProvider;
     }

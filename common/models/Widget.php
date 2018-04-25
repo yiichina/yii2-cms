@@ -5,7 +5,7 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "template".
+ * This is the model class for table "widget".
  *
  * @property integer $id
  * @property integer $user_id
@@ -16,7 +16,7 @@ use Yii;
  * @property integer $created_at
  * @property integer $updated_at
  */
-class Template extends \yii\db\ActiveRecord
+class Widget extends \yii\db\ActiveRecord
 {
     public $content;
 
@@ -25,7 +25,7 @@ class Template extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%template}}';
+        return '{{%widget}}';
     }
 
     /**
@@ -34,7 +34,7 @@ class Template extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['key', 'description', 'content'], 'required'],
+            [['name', 'description', 'content'], 'required'],
             ['status', 'integer'],
         ];
     }
@@ -47,7 +47,7 @@ class Template extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'user_id' => Yii::t('app', 'User ID'),
-            'key' => Yii::t('app', 'Name'),
+            'name' => Yii::t('app', 'Name'),
             'description' => Yii::t('app', 'Description'),
             'content' => Yii::t('app', 'Content'),
             'status' => Yii::t('app', 'Status'),
@@ -58,7 +58,7 @@ class Template extends \yii\db\ActiveRecord
 
     public function afterFind()
     {
-        $this->content = file_get_contents(Yii::getAlias('@frontend/views/' . $this->key) . '.php');
+        $this->content = file_get_contents(Yii::getAlias('@frontend/widgets/' . $this->name) . '.php');
     }
 
     /**

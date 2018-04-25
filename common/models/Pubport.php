@@ -6,6 +6,7 @@ use Yii;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yiichina\icons\Icon;
+use common\models\Node;
 
 /**
  * This is the model class for table "node".
@@ -17,21 +18,21 @@ use yiichina\icons\Icon;
  * @property string $description
  * @property integer $status
  */
-class Node extends \yii\db\ActiveRecord
+class Pubport extends \yii\db\ActiveRecord
 {
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 1;
 
-    const TYPE_ARTICLE = 1;
-    const TYPE_PICTURE = 2;
-    const TYPE_VIDEO = 3;
+    const TYPE_INDEX = 1;
+    const TYPE_LIST = 2;
+    const TYPE_DOCUMENT = 3;
 
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%node}}';
+        return '{{%pubport}}';
     }
 
     /**
@@ -40,8 +41,8 @@ class Node extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parent_id', 'name', 'description', 'type', 'status'], 'required'],
-            [['parent_id', 'type', 'status'], 'integer'],
+            [['key', 'description', 'type', 'status'], 'required'],
+            [['node_id', 'type', 'status'], 'integer'],
         ];
     }
 
@@ -52,9 +53,8 @@ class Node extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'parent_id' => Yii::t('app', 'Parent ID'),
             'type' => Yii::t('app', 'Type'),
-            'name' => Yii::t('app', 'Name'),
+            'key' => Yii::t('app', 'key'),
             'description' => Yii::t('app', 'Description'),
             'status' => Yii::t('app', 'Status'),
         ];
@@ -81,24 +81,6 @@ class Node extends \yii\db\ActiveRecord
         ][$this->status];
     }
 
-    public function getTypeName()
-    {
-        return [
-            self::TYPE_ARTICLE => 'article',
-            self::TYPE_PICTURE => 'picture',
-            self::TYPE_VIDEO => 'video',
-        ][$this->type];
-    }
-
-    public function getTypeIcon()
-    {
-        return [
-            self::TYPE_ARTICLE => 'file-text-o',
-            self::TYPE_PICTURE => 'picture-o',
-            self::TYPE_VIDEO => 'video-camera',
-        ][$this->type];
-    }
-
     public function getTypeClass()
     {
         return "\common\models\\" . ucfirst($this->typeName);
@@ -107,13 +89,28 @@ class Node extends \yii\db\ActiveRecord
     public function getTypeList()
     {
         return [
-            self::TYPE_ARTICLE => '文章',
-            self::TYPE_PICTURE => '图片',
-            self::TYPE_VIDEO => '视频',
+            self::TYPE_INDEX => '首页',
+            self::TYPE_LIST => '列表页',
+            self::TYPE_DOCUMENT => '文档',
         ];
     }
 
     public static function getItems()
+    {
+        return ArrayHelper::map(Node::find()->all(), 'id', 'name');
+    }
+
+    public function getTemplate()
+    {
+        return $this->hasOne(Template::className(), ['id' => 'template_id']);
+    }
+
+    public function getNode()
+    {
+        return $this->hasOne(Node::className(), ['id' => 'node_id']);
+    }
+
+    public function getNodeList()
     {
         return ArrayHelper::map(Node::find()->all(), 'id', 'name');
     }
@@ -132,18 +129,10 @@ class Node extends \yii\db\ActiveRecord
                     }
                 }
             }
-            $pubports = Pubport::findAll(['node_id' => $item->id]);
-            foreach ($pubports as $pubport) {
-                $subMenuItems[] = [
-                    'icon' => '',
-                    'label' => Html::tag('span', $pubport->description),
-                    'url' => $pubport->type == 3 ? ['post/index', 'id' => $pubport->id] : ['pubport/update', 'id' => $pubport->id],
-                ];
-            }
             $items[] = [
                 'icon' => Icon::show($item->typeIcon),
                 'label' => Html::tag('span', $item->name),
-                'url' => '#',
+                'url' => ['post/index', 'node_id' => $item->id],
                 'items' => $subMenuItems,
                 'active' => $active,
             ];

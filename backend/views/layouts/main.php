@@ -114,7 +114,7 @@ AppAsset::register($this);
         'items' => array_merge([
             [
 				'icon' => Icon::show('cogs'),
-                'label' => '工具专区',
+                'label' => '配置工具',
                 'options' => ['class' =>'header'],
             ],
             [
@@ -130,6 +130,12 @@ AppAsset::register($this);
                 'active' => Yii::$app->controller->id == 'node',
             ],
             [
+                'icon' => Icon::show('cog', 'fa'),
+                'label' => '发布点配置',
+                'url' => ['pubport/index'],
+                'active' => Yii::$app->controller->id == 'pubport',
+            ],
+            [
                 'icon' => Icon::show('ban', 'fa'),
                 'label' => '敏感词管理',
                 'url' => ['sensitive/index'],
@@ -137,13 +143,13 @@ AppAsset::register($this);
             ],
             [
 				'icon' => Icon::show('files-o', 'fa'),
-                'label' => '内容专区',
+                'label' => '内容维护',
                 'options' => ['class' => 'header'],
             ],
         ], Node::getMenuItems(), [
             [
                 'icon' => Icon::show('user', 'fa'),
-                'label' => '用户专区',
+                'label' => '用户权限',
                 'options' => ['class' => 'header'],
             ],
             [

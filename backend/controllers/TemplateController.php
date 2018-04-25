@@ -76,7 +76,8 @@ class TemplateController extends Controller
         $model = new Template();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            file_put_contents(Yii::getAlias('@frontend/views/' . $model->key) . '.php', $model->content);
+            return $this->redirect(['update', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -95,7 +96,8 @@ class TemplateController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            file_put_contents(Yii::getAlias('@frontend/views/' . $model->key) . '.php', $model->content);
+            return $this->redirect(['update', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,

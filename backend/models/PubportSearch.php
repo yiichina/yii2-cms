@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Post;
+use common\models\Pubport;
 
 /**
- * PostSearch represents the model behind the search form about `common\models\Post`.
+ * NodeSearch represents the model behind the search form about `common\models\Node`.
  */
-class PostSearch extends Post
+class PubportSearch extends Pubport
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class PostSearch extends Post
     public function rules()
     {
         return [
-            [['id', 'pubport_id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['user_id'], 'safe'],
+            [['id', 'status'], 'integer'],
+            [['node_id'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class PostSearch extends Post
      */
     public function search($params)
     {
-        $query = Post::find();
+        $query = Pubport::find();
 
         // add conditions that should always apply here
 
@@ -60,13 +60,8 @@ class PostSearch extends Post
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'pubport_id' => $this->pubport_id,
             'status' => $this->status,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
         ]);
-
-        $query->andFilterWhere(['like', 'user_id', $this->user_id]);
 
         return $dataProvider;
     }

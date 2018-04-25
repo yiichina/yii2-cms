@@ -48,7 +48,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
                 'options' => ['width' => 100],
             ],
             [
-                'attribute' => 'name',
+                'attribute' => 'key',
                 'options' => ['width' => 200],
             ],
             'description',

@@ -18,7 +18,7 @@ class TemplateSearch extends Template
     public function rules()
     {
         return [
-            [['id', 'name', 'description', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['id', 'key', 'description', 'status', 'created_at', 'updated_at'], 'integer'],
         ];
     }
 
@@ -59,7 +59,7 @@ class TemplateSearch extends Template
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'name' => $this->name,
+            'key' => $this->key,
             'description' => $this->description,
             'status' => $this->status,
             'created_at' => $this->created_at,
