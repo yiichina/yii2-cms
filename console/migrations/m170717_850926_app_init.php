@@ -10,17 +10,17 @@ class m170717_850926_app_init extends Migration
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
-            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+            $tableOptions = 'CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci ENGINE=InnoDB';
         }
 
         // Setting
-        $this->createTable('{{%Setting}}', [
+        $this->createTable('{{%setting}}', [
             'id' => $this->primaryKey(),
             'pretty_url' => $this->smallInteger()->notNull()->defaultValue(0),
         ], $tableOptions);
 
         // Preference
-        $this->createTable('{{%Preference}}', [
+        $this->createTable('{{%preference}}', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer()->notNull(),
             'theme' => $this->string(32)->notNull(),
@@ -31,6 +31,7 @@ class m170717_850926_app_init extends Migration
             'id' => $this->primaryKey(),
             'user_id' => $this->integer()->notNull(),
             'name' => $this->string(64)->notNull(),
+            'key' => $this->string(64)->notNull(),
             'description' => $this->string()->notNull(),
             'content' => $this->text()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
@@ -44,6 +45,17 @@ class m170717_850926_app_init extends Migration
             'parent_id' => $this->integer()->notNull()->defaultValue(0),
             'type' => $this->smallInteger()->notNull()->defaultValue(1),
             'name' => $this->string(64)->notNull(),
+            'description' => $this->string()->notNull(),
+            'status' => $this->smallInteger()->notNull()->defaultValue(1),
+        ], $tableOptions);
+
+        // Pubport
+        $this->createTable('{{%pubport}}', [
+            'id' => $this->primaryKey(),
+            'type' => $this->smallInteger()->notNull()->defaultValue(1),
+            'key' => $this->string(64)->notNull(),
+            'node_id' => $this->integer()->notNull()->defaultValue(0),
+            'template_id' => $this->integer()->notNull()->defaultValue(0),
             'description' => $this->string()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $tableOptions);

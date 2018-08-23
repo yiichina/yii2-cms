@@ -53,11 +53,11 @@ environments/            contains environment-based overrides
 
 安装方式
 --------
-创建数据库，推荐 MySQL，默认库名为 `yii_cms`，编码选 `utf8mb4_general_ci` ，[utf8-general-ci 和 utf8-unicode-ci 的区别](http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci)。
+创建数据库，推荐 MySQL，默认库名为 `yiicms`，编码选 `utf8mb4_general_ci`。
 
 ```
 composer global require "fxp/composer-asset-plugin:*"
-composer create-project --prefer-dist yiichina/yii2-cms <project-name> 
+composer create-project --prefer-dist yiichina/yii-cms <project-name> 
 
 cd <project-name>
 ./init

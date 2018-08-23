@@ -12,7 +12,6 @@ use yiichina\adminlte\Alert;
 use yiichina\icons\Icon;
 use yii\widgets\Breadcrumbs;
 use yii\widgets\Menu;
-use yii\widgets\Spaceless;
 use common\models\Node;
 
 AppAsset::register($this);
