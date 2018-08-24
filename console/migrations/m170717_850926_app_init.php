@@ -29,6 +29,7 @@ class m170717_850926_app_init extends Migration
         // Template
         $this->createTable('{{%template}}', [
             'id' => $this->primaryKey(),
+            'type' => $this->tinyInteger()->notNull(),
             'user_id' => $this->integer()->notNull(),
             'name' => $this->string(64)->notNull(),
             'key' => $this->string(64)->notNull(),

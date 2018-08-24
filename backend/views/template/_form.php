@@ -14,6 +14,8 @@ use yiichina\icheck\ICheck;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'type')->widget(ICheck::className(), ['type' => ICheck::TYPE_RADIO_LIST, 'items' => $model->typeList]) ?>
+
     <?= $form->field($model, 'key')->textInput() ?>
 
     <?= $form->field($model, 'name')->textInput() ?>

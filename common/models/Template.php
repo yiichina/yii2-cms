@@ -22,6 +22,9 @@ class Template extends \yii\db\ActiveRecord
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 1;
 
+    const TYPE_LAYOUT = 1;
+    const TYPE_PAGE = 2;
+
     /**
      * @inheritdoc
      */
@@ -36,7 +39,7 @@ class Template extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['key', 'name', 'description', 'content'], 'required'],
+            [['type', 'key', 'name', 'description', 'content'], 'required'],
             ['status', 'integer'],
         ];
     }
@@ -48,6 +51,7 @@ class Template extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'type' => Yii::t('app', 'Type'),
             'user_id' => Yii::t('app', 'Creator'),
             'key' => Yii::t('app', 'Key'),
             'name' => Yii::t('app', 'Name'),
@@ -80,7 +84,7 @@ class Template extends \yii\db\ActiveRecord
     public function afterSave($insert, $changedAttributes)
     {
         parent::afterSave($insert, $changedAttributes);
-        $filename = Yii::getAlias('@frontend/views/' . $this->key) . '.php';
+        $filename = Yii::getAlias('@frontend/views/' . ($this->type == self::TYPE_LAYOUT ? 'layouts/' : null) . $this->key) . '.php';
         if(!is_dir(dirname($filename))) {
             mkdir(dirname($filename));
         }
@@ -92,6 +96,14 @@ class Template extends \yii\db\ActiveRecord
         return [
             self::STATUS_ACTIVE => '正常',
             self::STATUS_INACTIVE => '禁用',
+        ];
+    }
+
+    public function getTypeList()
+    {
+        return [
+            self::TYPE_LAYOUT => '布局',
+            self::TYPE_PAGE => '页面',
         ];
     }
 }
