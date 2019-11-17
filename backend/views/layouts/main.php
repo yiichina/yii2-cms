@@ -12,7 +12,6 @@ use yiichina\adminlte\Alert;
 use yiichina\icons\Icon;
 use yii\widgets\Breadcrumbs;
 use yii\widgets\Menu;
-use yii\widgets\Spaceless;
 use common\models\Node;
 
 AppAsset::register($this);
@@ -114,11 +113,11 @@ AppAsset::register($this);
         'items' => array_merge([
             [
 				'icon' => Icon::show('cogs'),
-                'label' => '工具专区',
+                'label' => '配置工具',
                 'options' => ['class' =>'header'],
             ],
             [
-                'icon' => Icon::show('dashboard'),
+                'icon' => Icon::show('tachometer-alt'),
                 'label' => '仪表盘',
                 'url' => Yii::$app->homeUrl,
                 'active' => Yii::$app->controller->id == 'site',
@@ -130,29 +129,35 @@ AppAsset::register($this);
                 'active' => Yii::$app->controller->id == 'node',
             ],
             [
+                'icon' => Icon::show('cog', 'fa'),
+                'label' => '发布点配置',
+                'url' => ['pubport/index'],
+                'active' => Yii::$app->controller->id == 'pubport',
+            ],
+            [
                 'icon' => Icon::show('ban', 'fa'),
                 'label' => '敏感词管理',
                 'url' => ['sensitive/index'],
                 'active' => Yii::$app->controller->id == 'sensitive',
             ],
             [
-				'icon' => Icon::show('files-o', 'fa'),
-                'label' => '内容专区',
+				'icon' => Icon::show('copy'),
+                'label' => '内容维护',
                 'options' => ['class' => 'header'],
             ],
         ], Node::getMenuItems(), [
             [
-                'icon' => Icon::show('user', 'fa'),
-                'label' => '用户专区',
+                'icon' => Icon::show('user'),
+                'label' => '用户权限',
                 'options' => ['class' => 'header'],
             ],
             [
-                'icon' => Icon::show('user-o', 'fa'),
+                'icon' => Icon::show('user'),
                 'label' => '用户管理',
                 'url' => ['user/index'],
             ],
             [
-                'icon' => Icon::show('user-secret', 'fa'),
+                'icon' => Icon::show('user-secret'),
                 'label' => '密码重置',
                 'url' => ['user/reset-password'],
             ],
@@ -163,25 +168,25 @@ AppAsset::register($this);
                 'active' => in_array(Yii::$app->controller->id, ['permission', 'role', 'rule']),
                 'items' => [
                     [
-                        'icon' => Icon::show('circle-o', 'fa'),
+                        'icon' => Icon::show('circle', 'fa'),
                         'label' => '权限项管理',
                         'url' => ['permission/index'],
                         'active' => Yii::$app->controller->id == 'permission',
                     ],
                     [
-                        'icon' => Icon::show('circle-o', 'fa'),
+                        'icon' => Icon::show('circle', 'fa'),
                         'label' => '角色管理',
                         'url' => ['role/index'],
                     ],
                     [
-                        'icon' => Icon::show('circle-o', 'fa'),
+                        'icon' => Icon::show('circle', 'fa'),
                         'label' => '规则管理',
                         'url' => ['rule/index'],
                     ],
                 ],
             ],
             [
-                'icon' => Icon::show('group', 'fa'),
+                'icon' => Icon::show('users'),
                 'label' => Html::tag('span', '编辑组管理'),
                 'url' => ['group/index'],
                 'active' => Yii::$app->controller->id == 'group',
@@ -192,7 +197,7 @@ AppAsset::register($this);
                 'options' => ['class' =>'header'],
             ],
             [
-                'icon' => Icon::show('files-o', 'fa'),
+                'icon' => Icon::show('file-alt', 'fa'),
                 'label' => '模板管理',
                 'url' => ['template/index'],
                 'active' => Yii::$app->controller->id == 'template',

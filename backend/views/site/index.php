@@ -20,7 +20,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
             <?php SmallBox::begin([
                 'options' => ['class' => 'bg-aqua'],
                 'icon' => Icon::show('user-plus'),
-                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => ['/user']],
+                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right'), 'url' => ['/user']],
             ]);
             echo Html::tag('h3', 150);
             echo Html::tag('p', '用户总数');
@@ -30,7 +30,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
             <?php SmallBox::begin([
                 'options' => ['class' => 'bg-green'],
                 'icon' => Icon::show('file-text-o'),
-                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => ['/post/index', 'type' => 1]],
+                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right'), 'url' => ['/post/index', 'type' => 1]],
             ]);
             echo Html::tag('h3', 150);
             echo Html::tag('p', '文章总数');
@@ -40,7 +40,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
             <?php SmallBox::begin([
                 'options' => ['class' => 'bg-yellow'],
                 'icon' => Icon::show('photo'),
-                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => ['/post/index', 'type' => 2]],
+                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right'), 'url' => ['/post/index', 'type' => 2]],
             ]);
             echo Html::tag('h3', 150);
             echo Html::tag('p', '图集总数');
@@ -50,7 +50,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
             <?php SmallBox::begin([
                 'options' => ['class' => 'bg-red'],
                 'icon' => Icon::show('video-camera'),
-                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right', 'fa', ' ', null), 'url' => ['/post/index', 'type' => 3]],
+                'footer' => ['label' => '更多信息' . Icon::show('arrow-circle-right'), 'url' => ['/post/index', 'type' => 3]],
             ]);
             echo Html::tag('h3', 150);
             echo Html::tag('p', '视频总数');

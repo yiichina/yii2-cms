@@ -5,32 +5,25 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "template".
+ * This is the model class for table "widget".
  *
  * @property integer $id
  * @property integer $user_id
  * @property string $name
- * @property string $key
  * @property string $description
  * @property string $content
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
  */
-class Template extends \yii\db\ActiveRecord
+class Widget extends \yii\db\ActiveRecord
 {
-    const STATUS_INACTIVE = 0;
-    const STATUS_ACTIVE = 1;
-
-    const TYPE_LAYOUT = 1;
-    const TYPE_PAGE = 2;
-
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return '{{%template}}';
+        return '{{%widget}}';
     }
 
     /**
@@ -39,7 +32,7 @@ class Template extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['type', 'key', 'name', 'description', 'content'], 'required'],
+            [['name', 'description', 'content'], 'required'],
             ['status', 'integer'],
         ];
     }
@@ -51,9 +44,7 @@ class Template extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'type' => Yii::t('app', 'Type'),
             'user_id' => Yii::t('app', 'Creator'),
-            'key' => Yii::t('app', 'Key'),
             'name' => Yii::t('app', 'Name'),
             'description' => Yii::t('app', 'Description'),
             'content' => Yii::t('app', 'Content'),
@@ -79,31 +70,5 @@ class Template extends \yii\db\ActiveRecord
         } else {
             return false;
         }
-    }
-
-    public function afterSave($insert, $changedAttributes)
-    {
-        parent::afterSave($insert, $changedAttributes);
-        $filename = Yii::getAlias('@frontend/views/' . ($this->type == self::TYPE_LAYOUT ? 'layouts/' : null) . $this->key) . '.php';
-        if(!is_dir(dirname($filename))) {
-            mkdir(dirname($filename));
-        }
-        file_put_contents($filename, $this->content);
-    }
-
-    public function getStatusList()
-    {
-        return [
-            self::STATUS_ACTIVE => '正常',
-            self::STATUS_INACTIVE => '禁用',
-        ];
-    }
-
-    public function getTypeList()
-    {
-        return [
-            self::TYPE_LAYOUT => '布局',
-            self::TYPE_PAGE => '页面',
-        ];
     }
 }

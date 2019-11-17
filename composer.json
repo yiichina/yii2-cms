@@ -1,5 +1,5 @@
 {
-    "name": "yiisoft/yii2-cms",
+    "name": "yiichina/yii-cms",
     "description": "基于 Yii 2 的高度可定制化 CMS",
     "keywords": ["yii2", "framework", "cms", "yiichina"],
     "homepage": "http://www.yiichina.com/",
@@ -25,7 +25,7 @@
         "yiichina/yii2-icheck": "*",
         "yiichina/yii2-chart": "*",
         "yiichina/yii2-switch": "*",
-        "dektrium/yii2-rbac": "1.0.0-alpha@dev"
+        "dektrium/yii2-rbac": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

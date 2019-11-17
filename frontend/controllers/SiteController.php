@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Pubport;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -16,6 +17,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\components\AuthHandler;
+use yii\web\NotFoundHttpException;
 
 /**
  * Site controller
@@ -80,30 +82,27 @@ class SiteController extends Controller
 
     /**
      * Displays homepage.
-     *
+     * @param $key string
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($key = 'site/index')
     {
-        $news = Post::find()->where([
-            'status' => Post::STATUS_PUBLISHED,
-            'node_id' => 1,
-        ])->orderBy(['id' => SORT_DESC])->limit(10)->all();
+        $model = Pubport::findOne(['key' => $key]);
+        if ($model === null) {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+        return $this->render('/' . $model->template->key);
+    }
+    
+    public function actionList($key, $page = 1, $pageSize = 20)
+    {
 
-        $faqs = Post::find()->where([
-            'status' => Post::STATUS_PUBLISHED,
-            'node_id' => 2,
-        ])->orderBy(['id' => SORT_DESC])->limit(10)->all();
+    }
 
-        $users = User::find()->orderBy(['id' => SORT_DESC])->limit(8)->all();
-        //$comments = Comment::find()->all();
-
-        return $this->render('index', [
-            'news' => $news,
-            'faqs' => $faqs,
-            'users' => $users,
-            //'comments' => $comments,
-        ]);
+    public function actionView($id)
+    {
+        $model = Post::findOne($id);
+        return $this->render('/' . $model->pubport->template->key, $model->attributes);
     }
 
     /**

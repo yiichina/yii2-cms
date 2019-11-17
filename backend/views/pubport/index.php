@@ -33,7 +33,7 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
             ['label' => '禁用', 'url' => ['disable']],
             ['label' => '启用', 'url' => ['enable']],
         ],
-        'button' => Html::a(Icon::show('plus', 'fa') . '新建栏目', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
+        'button' => Html::a(Icon::show('plus', 'fa') . '新建发布点', ['create'], ['class' => 'btn btn-sm btn-flat btn-success']),
         'columns' => [
             [
                 'class' => 'yii\grid\CheckboxColumn',
@@ -44,13 +44,10 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
                 'options' => ['width' => 60],
             ],
             [
-                'attribute' => 'parent_id',
-                'options' => ['width' => 100],
+                'attribute' => 'key',
+                'options' => ['width' => 120],
             ],
-            [
-                'attribute' => 'name',
-                'options' => ['width' => 200],
-            ],
+            'template_id',
             'description',
             [
                 'attribute' => 'status',
@@ -63,12 +60,9 @@ $this->params = array_merge($this->params, compact('mainTitle', 'subTitle', 'bre
             [
                 'class' => 'yii\grid\ActionColumn',
                 'header' => '操作',
-                'options' => ['width' => 120],
-                'template' => '{config} {update}',
+                'options' => ['width' => 80],
+                'template' => '{update}',
                 'buttons' => [
-                    'config' => function ($url, $model, $key) {
-                        return Html::a(Icon::show('cog') . '配置', ['pubport/index', 'id' => $model->id]);
-                    },
                     'update' => function ($url, $model, $key) {
                         return Html::a(Icon::show('edit') . '修改', $url);
                     },
